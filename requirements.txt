@@ -1,0 +1,4 @@
+requests
+python-dotenv
+openai==0.28
+beautifulsoup4

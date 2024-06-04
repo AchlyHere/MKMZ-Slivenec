@@ -37,3 +37,4 @@ jobs:
         git add events.json last_run.txt
         git commit -m 'Update events.json and last_run.txt' || echo "No changes to commit"
         git push
+

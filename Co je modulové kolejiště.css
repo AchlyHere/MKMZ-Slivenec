@@ -133,3 +133,28 @@ body {
 .content ul li {
     margin: 10px 0;
 }
+
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+footer .license {
+    font-size: 0.8em;
+}
+
+footer .license a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+footer .license a:hover {
+    text-decoration: none;
+}

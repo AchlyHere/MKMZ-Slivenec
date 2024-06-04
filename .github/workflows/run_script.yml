@@ -1,14 +1,14 @@
-name: Run Daily Script
+name: run-script
 
 on:
-  schedule:
-    - cron: '0 0 * * *'  # Spustí skript každý den ve 00:00 UTC
   push:
     branches:
       - main
+  schedule:
+    - cron: '0 0 * * *' # Runs daily at midnight
 
 jobs:
-  run-script:
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -18,22 +18,22 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: 3.11
+        python-version: 3.x
 
     - name: Install dependencies
       run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
+        pip install requests beautifulsoup4 python-dotenv openai
 
     - name: Run the script
+      env:
+        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        TAVILY_API_KEY: ${{ secrets.TAVILY_API_KEY }}
       run: python ask_chatgpt_about_events.py
 
     - name: Commit and push updates
       run: |
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-        git add events.json
-        git commit -m 'Update events.json'
+        git add events.json last_run.txt
+        git commit -m 'Update events.json and last_run.txt' || echo "No changes to commit"
         git push
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

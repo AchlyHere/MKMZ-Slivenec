@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Kalendář železničních akcí.css">
+    <title>Kalendář železničních akcí</title>
+</head>
+<body>
+    <div class="container">
+        <div class="left-section">
+            <img src="IMG_0488.JPEG" alt="MKMŽ Slivenec Logo">
+            <p class="title">MKMŽ Slivenec</p>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="index.html">Úvod</a></li>
+                    <li><a href="O_nás.html">O nás</a></li>
+                    <li><a href="Co_je_modulové_kolejiště.html">Co je modulové kolejiště?</a></li>
+                    <li><a href="Jak_stavíme.html">Jak stavíme</a></li>
+                    <li><a href="Jak_jezdíme.html">Jak jezdíme</a></li>
+                    <li><a href="Kdy máme schůzky.html">Schůzky</a></li>
+                    <li><a href="Fotoalbum.html">Fotoalbum</a></li>
+                    <li><a href="Kalendář železničních akcí.html">Kalendář železničních akcí</a></li>
+                </ul>
+            </nav>
+            <div class="contact-info">
+                <p>Kontakt:</p>
+                <p>nadrazislivenec@seznam.cz</p>
+            </div>
+        </div>
+        <div class="right-section">
+            <h1>Kalendář železničních akcí</h1>
+            <div id="events-container">
+                <!-- Events will be dynamically inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        async function loadEvents() {
+            try {
+                const response = await fetch('events.json');
+                const data = await response.json();
+                const parsedData = JSON.parse(data.response); // Correct the JSON parsing
+                const events = parsedData.akce;
+
+                const eventsContainer = document.getElementById('events-container');
+                events.forEach(event => {
+                    const eventElement = document.createElement('div');
+                    eventElement.classList.add('event');
+
+                    eventElement.innerHTML = `
+                        <h2>${event.název}</h2>
+                        <p>${event.datum}</p>
+                        <p>${event.místo}</p>
+                        <p>${event.popis}</p>
+                    `;
+
+                    eventsContainer.appendChild(eventElement);
+                });
+            } catch (error) {
+                console.error('Error loading events:', error);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', loadEvents);
+    </script>
+</body>
+</html>

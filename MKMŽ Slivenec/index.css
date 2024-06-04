@@ -1,0 +1,109 @@
+body {
+    margin: 0;
+    display: flex;
+    height: 100vh;
+    overflow: hidden; /* Ensure the whole body doesn't scroll */
+}
+
+.container {
+    display: flex;
+    width: 100%;
+}
+
+.left-section {
+    width: 250px;
+    background-color: #252525;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+}
+
+.left-section img {
+    width: 80%;
+    margin-bottom: 30px;
+}
+
+.title {
+    color: #fff;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.5em;
+    margin: 0;
+}
+
+.navigation {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.navigation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navigation li {
+    margin: 10px 0;
+}
+
+.navigation a {
+    color: #fff;
+    text-decoration: none;
+    font-family: Helvetica, sans-serif;
+    font-size: 1.2em;
+}
+
+.navigation a:hover {
+    text-decoration: underline;
+}
+
+.contact-info {
+    margin-top: auto;
+    text-align: center;
+    color: #fff;
+    font-size: 0.8em;
+    font-family: Helvetica, sans-serif;
+    width: 100%;
+}
+
+.right-section {
+    flex: 1;
+    background-image: url('index-bg-rs.jpeg'); /* Background image */
+    background-size: cover; /* Cover the entire section */
+    background-position: center; /* Center the background image */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    padding: 20px;
+    overflow-y: auto; /* Enable scrolling for the right section */
+    overflow-x: hidden;
+}
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    color: #fff;
+    box-sizing: border-box; /* Ensure padding is included in the width */
+}
+
+.overlay h1,
+.overlay p {
+    margin: 0; /* Remove default margins */
+}
+
+.overlay h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.overlay p {
+    font-size: 1.5em;
+}

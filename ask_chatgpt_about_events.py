@@ -1,9 +1,9 @@
 import os
 import json
 import requests
-from datetime import datetime, timedelta
 from dotenv import load_dotenv
 import openai
+from datetime import datetime
 
 # Načtení .env souboru
 dotenv_path = 'C:\\Users\\ADMIN\\Documents\\Web\\MKMŽ Slivenec\\.env'
@@ -67,22 +67,18 @@ def save_response_to_file(response, filename):
     except Exception as e:
         print(f"Error saving response to file: {e}")
 
-def should_run():
-    last_run_file = 'last_run.txt'
-    if os.path.exists(last_run_file):
-        with open(last_run_file, 'r') as f:
-            last_run = datetime.fromisoformat(f.read().strip())
-            if datetime.now() - last_run < timedelta(days=1):
-                print("Skript již byl spuštěn během posledních 24 hodin.")
-                return False
-    return True
-
-def update_last_run():
-    with open('last_run.txt', 'w') as f:
-        f.write(datetime.now().isoformat())
-
 def main():
-    if not should_run():
+    # Kontrola last_run.txt souboru
+    last_run_file = 'last_run.txt'
+    try:
+        with open(last_run_file, 'r') as f:
+            last_run = f.read().strip()
+    except FileNotFoundError:
+        last_run = ''
+
+    today = datetime.today().strftime('%Y-%m-%d')
+    if last_run == today:
+        print("Script has already run today.")
         return
 
     events = ask_tavily_for_events()
@@ -93,7 +89,8 @@ def main():
         
         if response:
             save_response_to_file(response, 'events.json')
-            update_last_run()
+            with open(last_run_file, 'w') as f:
+                f.write(today)
         else:
             print("No response from AI.")
     else:

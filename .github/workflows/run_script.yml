@@ -26,6 +26,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Debug environment
+        run: env
+
       - name: Run the script
         run: python ask_chatgpt_about_events.py
         env:

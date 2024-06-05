@@ -40,4 +40,4 @@ jobs:
           git commit -m 'Update events.json and last_run.txt'
           git push
         env:
-          GITHUB_TOKEN: ${{ secrets.Token_github }}
+          GITHUB_TOKEN: ${{ secrets.TOKEN_GITHUB }}

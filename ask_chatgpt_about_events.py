@@ -5,15 +5,15 @@ from dotenv import load_dotenv
 import openai
 from datetime import datetime
 
-# Načtení .env souboru
-dotenv_path = 'C:\\Users\\ADMIN\\Documents\\Web\\MKMŽ Slivenec\\.env'
+# Load .env file
+dotenv_path = os.path.join(os.path.dirname(__file__), '.env')
 load_dotenv(dotenv_path, override=True)
 
-# Načtení API klíčů z environmentálních proměnných
+# Load API keys from environment variables
 openai_api_key = os.getenv('OPENAI_API_KEY')
 tavily_api_key = os.getenv('TAVILY_API_KEY')
 
-# Inicializace OpenAI API
+# Initialize OpenAI API
 openai.api_key = openai_api_key
 
 def ask_tavily_for_events():
@@ -23,7 +23,6 @@ def ask_tavily_for_events():
         'Content-Type': 'application/json'
     }
     payload = {
-        'api_key': tavily_api_key,
         'query': 'aktuální a budoucí železniční akce v České republice a sousedních zemích',
         'search_depth': 'advanced',
         'include_answer': False,
@@ -68,15 +67,15 @@ def save_response_to_file(response, filename):
         print(f"Error saving response to file: {e}")
 
 def main():
-    # Kontrola last_run.txt souboru
     last_run_file = 'last_run.txt'
+    today = datetime.today().strftime('%Y-%m-%d')
+
     try:
         with open(last_run_file, 'r') as f:
             last_run = f.read().strip()
     except FileNotFoundError:
         last_run = ''
 
-    today = datetime.today().strftime('%Y-%m-%d')
     if last_run == today:
         print("Script has already run today.")
         return

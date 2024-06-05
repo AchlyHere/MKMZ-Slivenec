@@ -45,8 +45,7 @@
             try {
                 const response = await fetch('events.json');
                 const data = await response.json();
-                const parsedData = JSON.parse(data.response); // Correct the JSON parsing
-                const events = parsedData.akce;
+                const events = JSON.parse(data);
 
                 const eventsContainer = document.getElementById('events-container');
                 events.forEach(event => {

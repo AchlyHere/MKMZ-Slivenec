@@ -1,0 +1,2 @@
+- name: Verify GITHUB_TOKEN
+        run: echo ${{ secrets.GITHUB_TOKEN }}

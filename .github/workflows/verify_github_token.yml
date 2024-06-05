@@ -1,2 +1,16 @@
-- name: Verify GITHUB_TOKEN
-        run: echo ${{ secrets.GITHUB_TOKEN }}
+name: Verify GITHUB_TOKEN
+
+on: [push, pull_request]
+
+jobs:
+  verify-github-token:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Verify GITHUB_TOKEN
+        run: echo "GITHUB_TOKEN is available"
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN_GITHUB }}

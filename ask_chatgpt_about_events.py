@@ -5,15 +5,15 @@ from dotenv import load_dotenv
 import openai
 from datetime import datetime
 
-# Load .env file
-dotenv_path = os.path.join(os.path.dirname(__file__), '.env')
+# Načtení .env souboru
+dotenv_path = 'C:\\Users\\ADMIN\\Documents\\Web\\MKMŽ Slivenec\\.env'
 load_dotenv(dotenv_path, override=True)
 
-# Load API keys from environment variables
+# Načtení API klíčů z environmentálních proměnných
 openai_api_key = os.getenv('OPENAI_API_KEY')
 tavily_api_key = os.getenv('TAVILY_API_KEY')
 
-# Initialize OpenAI API
+# Inicializace OpenAI API
 openai.api_key = openai_api_key
 
 def ask_tavily_for_events():
@@ -23,6 +23,7 @@ def ask_tavily_for_events():
         'Content-Type': 'application/json'
     }
     payload = {
+        'api_key': tavily_api_key,
         'query': 'aktuální a budoucí železniční akce v České republice a sousedních zemích',
         'search_depth': 'advanced',
         'include_answer': False,
@@ -34,6 +35,7 @@ def ask_tavily_for_events():
     response = requests.post(url, headers=headers, json=payload)
 
     if response.status_code == 200:
+        print("Tavily API response:", response.json())
         return response.json()
     else:
         print(f"Error with Tavily API: {response.status_code}")
@@ -54,8 +56,10 @@ def ask_chatgpt_to_format(events):
                 {"role": "user", "content": prompt}
             ]
         )
+        print("ChatGPT response:", response['choices'][0]['message']['content'])
         return response['choices'][0]['message']['content']
     except Exception as e:
+        print("Error with ChatGPT:", e)
         return str(e)
 
 def save_response_to_file(response, filename):
@@ -67,15 +71,15 @@ def save_response_to_file(response, filename):
         print(f"Error saving response to file: {e}")
 
 def main():
+    # Kontrola last_run.txt souboru
     last_run_file = 'last_run.txt'
-    today = datetime.today().strftime('%Y-%m-%d')
-
     try:
         with open(last_run_file, 'r') as f:
             last_run = f.read().strip()
     except FileNotFoundError:
         last_run = ''
 
+    today = datetime.today().strftime('%Y-%m-%d')
     if last_run == today:
         print("Script has already run today.")
         return

@@ -11,10 +11,6 @@ jobs:
 
     permissions:
       contents: write
-      pull-requests: write
-      repository-projects: write
-      security-events: write
-      statuses: write
 
     steps:
       - name: Checkout repository

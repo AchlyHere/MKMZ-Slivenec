@@ -9,13 +9,6 @@ jobs:
   run-script:
     runs-on: ubuntu-latest
 
-    permissions:
-      contents: write
-      pull-requests: write
-      repository-projects: write
-      security-events: write
-      statuses: write
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -28,10 +21,10 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          python -m pip install -r requirements.txt
 
       - name: Run the script
-        run: python ask_chatgpt_about_events.py
+        run: python -m python ask_chatgpt_about_events.py
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           TAVILY_API_KEY: ${{ secrets.TAVILY_API_KEY }}

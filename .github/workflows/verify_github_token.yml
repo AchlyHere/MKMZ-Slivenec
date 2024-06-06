@@ -1,4 +1,4 @@
-name: Verify GITHUB_TOKEN
+name: Verify GitHub Token
 
 on: [push, pull_request]
 

@@ -5,8 +5,8 @@ from dotenv import load_dotenv
 import openai
 from datetime import datetime
 
-# Load .env file
-dotenv_path = 'C:\\Users\\ADMIN\\Documents\\Web\\MKMŽ Slivenec\\.env'
+# Load the .env file
+dotenv_path = os.path.join(os.getcwd(), '.env')
 load_dotenv(dotenv_path, override=True)
 
 # Load API keys from environment variables
@@ -16,7 +16,7 @@ tavily_api_key = os.getenv('TAVILY_API_KEY')
 # Initialize OpenAI API
 openai.api_key = openai_api_key
 
-def gather_info_from_tavily():
+def ask_tavily_for_events():
     url = 'https://api.tavily.com/search'
     headers = {
         'Authorization': f'Bearer {tavily_api_key}',
@@ -41,7 +41,7 @@ def gather_info_from_tavily():
         print(f"Error with Tavily API: {response.status_code}")
         return None
 
-def rewrite_info_with_openai(events):
+def ask_chatgpt_to_format(events):
     prompt = (
         "Následující je seznam železničních akcí, které jsem našel na internetu. Prosím, seřaď je podle data od nejbližšího po nejvzdálenější a formátuj odpověď jako JSON pole, "
         "kde každá akce bude obsahovat 'název', 'datum', 'místo' a 'popis'. Odpověz prosím v češtině. Zde jsou akce:\n\n"
@@ -71,6 +71,7 @@ def save_response_to_file(response, filename):
         print(f"Error saving response to file: {e}")
 
 def main():
+    # Check last_run.txt file
     last_run_file = 'last_run.txt'
     try:
         with open(last_run_file, 'r') as f:
@@ -83,9 +84,9 @@ def main():
         print("Script has already run today.")
         return
 
-    events = gather_info_from_tavily()
+    events = ask_tavily_for_events()
     if events:
-        response = rewrite_info_with_openai(events)
+        response = ask_chatgpt_to_format(events)
         print("AI Response:")
         print(response)
         

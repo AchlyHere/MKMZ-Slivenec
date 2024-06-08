@@ -1,9 +1,6 @@
 name: Permissions Workflow
 
-on:
-  push:
-    branches:
-      - main
+on: push
 
 jobs:
   build:
@@ -11,15 +8,33 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
-      - name: Set up .NET Core
-        uses: actions/setup-dotnet@v1
+      - name: Set up Python
+        uses: actions/setup-python@v4
         with:
-          dotnet-version: '3.1'
+          python-version: '3.9'
 
-      - name: Build and test
+      - name: Install dependencies
         run: |
-          dotnet restore
-          dotnet build --configuration Release --no-restore
-          dotnet test --no-restore --verbosity normal
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run the script
+        run: python ask_chatgpt_about_events.py
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          TAVILY_API_KEY: ${{ secrets.TAVILY_API_KEY }}
+
+      - name: Check for changes
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add events.json last_run.txt
+          if ! git diff --cached --quiet; then
+            git commit -m 'Update events.json and last_run.txt'
+            git push
+          else
+            echo "No changes to commit"
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN_GITHUB }}

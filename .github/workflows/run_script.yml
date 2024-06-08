@@ -29,8 +29,8 @@ jobs:
       - name: Run the script
         run: python ask_chatgpt_about_events.py
         env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           TAVILY_API_KEY: ${{ secrets.TAVILY_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
 
       - name: Check for changes
         run: |

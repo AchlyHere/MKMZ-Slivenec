@@ -24,7 +24,7 @@ def ask_tavily_for_events():
     }
     payload = {
         'api_key': tavily_api_key,
-        'query': 'aktuální a budoucí železniční akce v České republice a sousedních zemích',
+        'query': 'Najdi mi aktuální a budoucí železniční akce v České republice a sousedních zemích',
         'search_depth': 'advanced',
         'include_answer': False,
         'include_images': False,

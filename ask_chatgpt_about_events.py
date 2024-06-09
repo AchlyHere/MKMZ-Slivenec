@@ -6,7 +6,7 @@ import openai
 from datetime import datetime
 
 # Load the .env file
-dotenv_path = os.path.join(os.getcwd(), '.env')
+dotenv_path = '.env'  # Ensure this path is correct
 load_dotenv(dotenv_path, override=True)
 
 # Load API keys from environment variables

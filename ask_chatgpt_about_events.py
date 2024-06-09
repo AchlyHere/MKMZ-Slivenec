@@ -5,15 +5,15 @@ from dotenv import load_dotenv
 import openai
 from datetime import datetime
 
-# Načtení .env souboru
-dotenv_path = '.env'  # Ujistěte se, že je tato cesta správná
+# Load the .env file
+dotenv_path = '.env'
 load_dotenv(dotenv_path, override=True)
 
-# Načtení API klíčů z environmentálních proměnných
+# Load API keys from environment variables
 openai_api_key = os.getenv('OPENAI_API_KEY')
 tavily_api_key = os.getenv('TAVILY_API_KEY')
 
-# Inicializace OpenAI API
+# Initialize OpenAI API
 openai.api_key = openai_api_key
 
 def ask_tavily_for_events():
@@ -71,7 +71,7 @@ def save_response_to_file(response, filename):
         print(f"Error saving response to file: {e}")
 
 def main():
-    # Kontrola souboru last_run.txt
+    # Check last_run.txt file
     last_run_file = 'last_run.txt'
     try:
         with open(last_run_file, 'r') as f:

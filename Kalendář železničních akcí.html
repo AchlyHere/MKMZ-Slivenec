@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Kalendář železničních akcí.css">
+    <link rel="stylesheet" href="assets/css/Kalendář železničních akcí.css">
+    <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
     <title>Kalendář železničních akcí</title>
 </head>
 <body>
     <div class="container">
         <div class="left-section">
-            <img src="IMG_0488.JPEG" alt="MKMŽ Slivenec Logo">
+            <img src="assets/images/IMG_0488.JPEG" alt="MKMŽ Slivenec Logo">
             <p class="title">MKMŽ Slivenec</p>
             <nav class="navigation">
                 <ul>
@@ -20,7 +21,7 @@
                     <li><a href="jak_jezdime.html">Jak jezdíme</a></li>
                     <li><a href="schuzky.html">Schůzky</a></li>
                     <li><a href="fotoalbum.html">Fotoalbum</a></li>
-                    <li><a href="Kalendář železničních akcí.html">Kalendář železničních akcí</a></li>
+                    <li><a href="Kalendář_železničních_akcí.html">Kalendář železničních akcí</a></li>
                 </ul>
             </nav>
             <div class="contact-info">
@@ -43,7 +44,7 @@
     <script>
         async function loadEvents() {
             try {
-                const response = await fetch('events.json');
+                const response = await fetch('assets/js/events.json');
                 const data = await response.json();
                 const events = JSON.parse(data);
 

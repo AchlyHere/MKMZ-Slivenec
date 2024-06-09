@@ -1,7 +1,7 @@
-title: MKMZ Slivenec
-description: Stránky MKMZ Slivenec
+title: MKMŽ Slivenec
+description: Stránky MKMŽ Slivenec
 baseurl: ""  # the subpath of your site, e.g. /blog
-url: "https://yourusername.github.io"  # the base hostname & protocol for your site
+url: "https://achlyhere.github.io/MKMZ-Slivenec"  # the base hostname & protocol for your site
 theme: minima
 
 # Build settings

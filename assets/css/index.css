@@ -71,6 +71,15 @@ body {
     width: 100%;
 }
 
+.contact-info a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
 .right-section {
     flex: 1;
     background-image: url('index-bg-rs.jpeg'); /* Background image */
@@ -107,7 +116,6 @@ body {
 .overlay p {
     font-size: 1.5em;
 }
-
 
 footer {
     background: #333;

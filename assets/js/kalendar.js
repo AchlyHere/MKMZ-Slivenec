@@ -6,19 +6,13 @@ document.addEventListener("DOMContentLoaded", function () {
             }
             return response.json();
         })
-        .then(data => {
-            const events = data.response; // Assuming the JSON structure includes 'response' field
-            const calendarContainer = document.getElementById("events-container");
+        .then(events => {
+            const calendarContainer = document.getElementById("calendar");
 
             events.forEach(event => {
                 const eventElement = document.createElement("div");
                 eventElement.className = "event";
-                eventElement.innerHTML = `
-                    <h2>${event.název}</h2>
-                    <p>${event.datum}</p>
-                    <p>${event.místo}</p>
-                    <p>${event.popis}</p>
-                `;
+                eventElement.innerHTML = `<h2>${event.title}</h2><p>${event.date}</p><p>${event.location}</p>`;
                 calendarContainer.appendChild(eventElement);
             });
         })

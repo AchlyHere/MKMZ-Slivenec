@@ -5,9 +5,13 @@
 @import "schuzky";
 @import "index";
 
-// If there are specific lines causing warnings, update them like this:
+/* If there are specific lines causing warnings, update them like this: */
 .example {
     margin-bottom: calc(#{$spacing-unit} / 2);
     padding-left: calc(#{$spacing-unit} / 2);
     padding-right: calc(#{$spacing-unit} / 2);
+    /* Add a valid selector and property declaration here */
+    selector-name: value;
+    /* Example: */
+    font-size: 16px;
 }

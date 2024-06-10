@@ -1,22 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ page.title }} - {{ site.title }}</title>
-    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title | escape }}</title>
+  <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}">
 </head>
 <body>
-    <header>
-        <h1>{{ site.title }}</h1>
-        {% include header.html %}
-    </header>
-    <main>
-        {{ content }}
-    </main>
-    <footer>
-        {% include footer.html %}
-        <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}</p>
-    </footer>
+  <header>
+    <h1>{{ site.title }}</h1>
+    <nav>
+      <!-- Navigation links -->
+    </nav>
+  </header>
+  <main>
+    {{ content }}
+  </main>
+  <footer>
+    <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}. All rights reserved.</p>
+  </footer>
 </body>
 </html>

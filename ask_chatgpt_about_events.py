@@ -6,7 +6,7 @@ import openai
 from datetime import datetime
 
 # Load the .env file
-load_dotenv()
+load_dotenv('config/.env')
 
 # Load API keys from environment variables
 openai_api_key = os.getenv('OPENAI_API_KEY')
@@ -42,7 +42,7 @@ def ask_tavily_for_events():
 def ask_chatgpt_to_format(events):
     prompt = (
         "Následující je seznam železničních akcí, které jsem našel na internetu. Prosím, seřaď je podle data od nejbližšího po nejvzdálenější a formátuj odpověď jako JSON pole, "
-        "kde každá akce bude obsahovat 'název', 'datum', 'místo' a 'popis'. Odpověz prosím v češtině. Zde jsou akce:\n\n"
+        "kde každá akce bude obsahovat 'název', 'datum', 'místo' a 'popis'. Odpověz prosím v češtině. Zde jsou akce:\\n\\n"
         + json.dumps(events, ensure_ascii=False, indent=4)
     )
 
@@ -68,7 +68,7 @@ def save_response_to_file(response, filename):
         print(f"Error saving response to file: {e}")
 
 def main():
-    last_run_file = 'last_run.txt'
+    last_run_file = 'config/last_run.txt'
     try:
         with open(last_run_file, 'r') as f:
             last_run = f.read().strip()

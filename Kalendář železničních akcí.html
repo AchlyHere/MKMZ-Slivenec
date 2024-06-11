@@ -3,71 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/main.scss">
-    <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
-    <title>MKMŽ Slivenec - Kalendář železničních akcí</title>
+    <title>Kalendář železničních akcí</title>
+    <nav class="navigation">
+        <ul>
+            <li><a href="{{ '/index.html' | relative_url }}">Úvod</a></li>
+            <li><a href="{{ '/o_nas.html' | relative_url }}">O nás</a></li>
+            <li><a href="{{ '/co_je_modulove_kolejiste.html' | relative_url }}">Co je modulové kolejiště?</a></li>
+            <li><a href="{{ '/jak_stavime.html' | relative_url }}">Jak stavíme</a></li>
+            <li><a href="{{ '/jak_jezdime.html' | relative_url }}">Jak jezdíme</a></li>
+            <li><a href="{{ '/schuzky.html' | relative_url }}">Schůzky</a></li>
+            <li><a href="{{ '/fotoalbum.html' | relative_url }}">Fotoalbum</a></li>
+            <li><a href="{{ '/Kalendář_železničních_akcí.html' | relative_url }}">Kalendář železničních akcí</a></li>
+        </ul>
+    </nav>
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/kalendar.css">
 </head>
 <body>
-    <div class="container">
-        <div class="left-section">
-            <img src="/assets/images/IMG_0488.JPEG}">
-            <p class="title">MKMŽ Slivenec</p>
-            <nav class="navigation">
-                <ul>
-                    <li><a href="{{ '/index.html' | relative_url }}">Úvod</a></li>
-                    <li><a href="{{ '/o_nas.html' | relative_url }}">O nás</a></li>
-                    <li><a href="{{ '/co_je_modulove_kolejiste.html' | relative_url }}">Co je modulové kolejiště?</a></li>
-                    <li><a href="{{ '/jak_stavime.html' | relative_url }}">Jak stavíme</a></li>
-                    <li><a href="{{ '/jak_jezdime.html' | relative_url }}">Jak jezdíme</a></li>
-                    <li><a href="{{ '/schuzky.html' | relative_url }}">Schůzky</a></li>
-                    <li><a href="{{ '/fotoalbum.html' | relative_url }}">Fotoalbum</a></li>
-                    <li><a href="{{ '/Kalendář_železničních_akcí.html' | relative_url }}">Kalendář železničních akcí</a></li>
-                </ul>
-            </nav>
-            <div class="contact-info">
-                <p>Kontakt:</p>
-                <p>nadrazislivenec@seznam.cz</p>
-            </div>
-            <footer>
-                <p>&copy; 2024 MKMŽ Slivenec</p>
-                <p class="license">Tento projekt je licencován pod licencí <a href="https://example.com/license" target="_blank">MIT</a>.</p>
-            </footer>
-        </div>
-        <div class="right-section">
-            <h1>Kalendář železničních akcí</h1>
-            <div id="events-container">
-                <!-- Events will be dynamically inserted here -->
-            </div>
-        </div>
+    <h1>Kalendář železničních akcí</h1>
+    <div id="events-container">
+        {% assign events = site.data.events %}
+        {% if events.size > 0 %}
+            {% for event in events %}
+                <div class="event">
+                    <h2>{{ event.název }}</h2>
+                    <p>{{ event.datum | date: "%d. %m. %Y" }}</p>
+                    <p>{{ event.místo }}</p>
+                    <p>{{ event.popis }}</p>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>Žádné nadcházející akce.</p>
+        {% endif %}
     </div>
-
-    <script>
-        async function loadEvents() {
-            try {
-                const response = await fetch('assets/js/events.json');
-                const data = await response.json();
-                const events = JSON.parse(data);
-
-                const eventsContainer = document.getElementById('events-container');
-                events.forEach(event => {
-                    const eventElement = document.createElement('div');
-                    eventElement.classList.add('event');
-
-                    eventElement.innerHTML = `
-                        <h2>${event.název}</h2>
-                        <p>${event.datum}</p>
-                        <p>${event.místo}</p>
-                        <p>${event.popis}</p>
-                    `;
-
-                    eventsContainer.appendChild(eventElement);
-                });
-            } catch (error) {
-                console.error('Error loading events:', error);
-            }
-        }
-
-        document.addEventListener('DOMContentLoaded', loadEvents);
-    </script>
 </body>
 </html>

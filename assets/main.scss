@@ -1,6 +1,6 @@
-@import "co_je_modulove_kolejiste";
-@import "fotoalbum";
-@import "kalendar";
-@import "o_nas";
-@import "schuzky";
-@import "index";
+// assets/_scss/main.scss
+@import "partials/_variables";
+@import "partials/_mixins";
+@import "partials/_base";
+@import "partials/_layout";
+@import "partials/_components";

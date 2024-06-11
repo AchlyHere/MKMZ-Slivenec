@@ -1,9 +1,10 @@
 sass:
-  sass_dir: assets/scss
+  sass_dir: assets/_scss
   style: compressed
 
 include:
   - .htaccess
+  - assets/css
 
 collections:
   my_collection:

@@ -46,22 +46,29 @@
             try {
                 const response = await fetch('{{ site.baseurl }}/data/meetings.json');
                 const data = await response.json();
-                const meetings = data.schuzky.filter(meeting => new Date(meeting.datum) >= new Date());
-
+                const locations = Object.keys(data);
                 const meetingsContainer = document.getElementById('meetings-container');
-                if (meetings.length > 0) {
-                    meetings.forEach(meeting => {
-                        const meetingElement = document.createElement('div');
-                        meetingElement.classList.add('meeting');
 
-                        meetingElement.innerHTML = `
-                            <h2>${meeting.misto}</h2>
-                            <p>Nejbližší schůzka: ${meeting.datum} v ${meeting.cas}</p>
-                        `;
+                let meetingsFound = false;
 
-                        meetingsContainer.appendChild(meetingElement);
-                    });
-                } else {
+                locations.forEach(location => {
+                    const meetings = data[location].filter(date => new Date(date) >= new Date());
+                    if (meetings.length > 0) {
+                        meetingsFound = true;
+                        meetings.forEach(meeting => {
+                            const meetingElement = document.createElement('div');
+                            meetingElement.classList.add('meeting');
+                            const meetingDate = new Date(meeting);
+                            meetingElement.innerHTML = `
+                                <h2>${location}</h2>
+                                <p>Nejbližší schůzka: ${meetingDate.toLocaleDateString()} v ${meetingDate.toLocaleTimeString()}</p>
+                            `;
+                            meetingsContainer.appendChild(meetingElement);
+                        });
+                    }
+                });
+
+                if (!meetingsFound) {
                     meetingsContainer.innerHTML = '<p>V tomto školním roce již nejsou žádné schůzky.</p>';
                 }
             } catch (error) {

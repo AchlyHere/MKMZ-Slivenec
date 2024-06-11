@@ -1,13 +1,10 @@
-source 'https://rubygems.org'
-gem 'jekyll', '~> 4.0'
-gem "minima", "~> 2.5.1" # Example version, please check the latest version
-gem 'jekyll-sitemap'
-gem 'csv' # Add this line
-gem 'base64' # Add this line
+source "https://rubygems.org"
 
-# Use wdm only on Windows platforms
-gem 'wdm', '>= 0.1.0', platforms: [:mingw, :mswin]
+gem 'jekyll', '~> 4.0'
+gem 'minima', '~> 2.5.1'
+gem 'jekyll-sass-converter'
 
 group :jekyll_plugins do
-  gem 'jekyll-sass-converter'
+  gem 'jekyll-feed'
+  gem 'jekyll-sitemap'
 end

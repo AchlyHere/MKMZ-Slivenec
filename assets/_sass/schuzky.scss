@@ -24,13 +24,14 @@ body {
 
 .left-section img {
     width: 80%;
-    margin-bottom: 30px;
+    margin-bottom: calc(30px);
 }
 
 .title {
     font-family: 'Times New Roman', Times, serif;
     font-size: 1.5em;
     margin: 0;
+    color: #fff; /* Ensure the title text is white */
 }
 
 .navigation {
@@ -49,7 +50,7 @@ body {
 }
 
 .navigation li {
-    margin: 10px 0;
+    margin: calc(10px) 0;
 }
 
 .navigation a {
@@ -69,6 +70,7 @@ body {
     font-size: 0.8em;
     font-family: Helvetica, sans-serif;
     width: 100%;
+    color: #fff; /* Ensure contact info text is white */
 }
 
 .right-section {
@@ -85,33 +87,33 @@ body {
 h1 {
     color: #fff;
     font-family: 'Georgia', serif;
-    margin-bottom: 20px;
+    margin-bottom: calc(20px);
 }
 
-#events-container {
+#meetings-container {
     display: flex;
     flex-direction: column;
     align-items: center; /* Center content horizontally */
     gap: 20px;
 }
 
-.event {
-    background-color: #252525;
+.meeting {
+    background-color: #242222;
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 80%; /* Ensure the events take up a good portion of the available space */
+    width: 80%; /* Ensure the meetings take up a good portion of the available space */
     max-width: 600px; /* Set a maximum width */
 }
 
-.event h2 {
+.meeting h2 {
     color: #fff;
     margin-top: 0;
     font-family: 'Georgia', serif;
     font-size: 1.5em;
 }
 
-.event p {
+.meeting p {
     color: #fff; /* Set paragraph text color to white */
     margin: 5px 0;
     font-family: Helvetica, sans-serif;
@@ -122,11 +124,11 @@ footer {
     color: #fff;
     text-align: center;
     padding: 10px 0;
-    margin-top: 20px;
+    margin-top: calc(20px);
 }
 
 footer p {
-    margin: 5px 0;
+    margin: calc(5px) 0;
 }
 
 footer .license {

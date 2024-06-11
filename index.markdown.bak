@@ -1,17 +1,25 @@
-schuzky.html
+---
+layout: default
+title: Home
+---
+
+<h1>Welcome to MKMZ Slivenec</h1>
+<p>This is the home page for MKMZ Slivenec.</p>
+
+Kalendář železničních akcí.html
 <!DOCTYPE html>
 <html lang="cs">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/main.scss">
-    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
-    <title>MKMŽ Slivenec - Schůzky</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="icon" href="{{ '/assets/images/favicon.ico' | relative_url }}" type="image/x-icon">
+    <title>MKMŽ Slivenec - Kalendář železničních akcí</title>
 </head>
 <body>
     <div class="container">
         <div class="left-section">
-            <img src="assets/images/IMG_0488.JPEG">
+            <img src="{{ '/assets/images/IMG_0488.JPEG' | relative_url }}">
             <p class="title">MKMŽ Slivenec</p>
             <nav class="navigation">
                 <ul>
@@ -27,7 +35,7 @@ schuzky.html
             </nav>
             <div class="contact-info">
                 <p>Kontakt:</p>
-                <p><a href="mailto:nadrazislivenec@seznam.cz">nadrazislivenec@seznam.cz</a></p>
+                <p>nadrazislivenec@seznam.cz</p>
             </div>
             <footer>
                 <p>&copy; 2024 MKMŽ Slivenec</p>
@@ -35,43 +43,40 @@ schuzky.html
             </footer>
         </div>
         <div class="right-section">
-            <h1>Nejbližší schůzky kroužku</h1>
-            <div id="meetings-container">
-                <!-- Meetings will be dynamically inserted here -->
+            <h1>Kalendář železničních akcí</h1>
+            <div id="events-container">
+                <!-- Events will be dynamically inserted here -->
             </div>
         </div>
     </div>
 
-
     <script>
-        async function loadMeetings() {
+        async function loadEvents() {
             try {
-                const response = await fetch('data/meetings.json');
+                const response = await fetch('assets/js/events.json');
                 const data = await response.json();
-                const meetings = data.schuzky;
+                const events = JSON.parse(data);
 
+                const eventsContainer = document.getElementById('events-container');
+                events.forEach(event => {
+                    const eventElement = document.createElement('div');
+                    eventElement.classList.add('event');
 
-                const meetingsContainer = document.getElementById('meetings-container');
-                meetings.forEach(meeting => {
-                    const meetingElement = document.createElement('div');
-                    meetingElement.classList.add('meeting');
-
-
-                    meetingElement.innerHTML = `
-                        <h2>${meeting.misto}</h2>
-                        <p>Nejbližší schůzka: ${meeting.datum} v ${meeting.cas}</p>
+                    eventElement.innerHTML = `
+                        <h2>${event.název}</h2>
+                        <p>${event.datum}</p>
+                        <p>${event.místo}</p>
+                        <p>${event.popis}</p>
                     `;
 
-
-                    meetingsContainer.appendChild(meetingElement);
+                    eventsContainer.appendChild(eventElement);
                 });
             } catch (error) {
-                console.error('Error loading meetings:', error);
+                console.error('Error loading events:', error);
             }
         }
 
-
-        document.addEventListener('DOMContentLoaded', loadMeetings);
+        document.addEventListener('DOMContentLoaded', loadEvents);
     </script>
 </body>
 </html>

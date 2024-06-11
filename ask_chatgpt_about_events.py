@@ -6,8 +6,7 @@ import openai
 from datetime import datetime
 
 # Load the .env file
-dotenv_path = '.env'
-load_dotenv(dotenv_path, override=True)
+load_dotenv()
 
 # Load API keys from environment variables
 openai_api_key = os.getenv('OPENAI_API_KEY')
@@ -35,7 +34,6 @@ def ask_tavily_for_events():
     response = requests.post(url, headers=headers, json=payload)
 
     if response.status_code == 200:
-        print("Tavily API response:", response.json())
         return response.json()
     else:
         print(f"Error with Tavily API: {response.status_code}")
@@ -56,7 +54,6 @@ def ask_chatgpt_to_format(events):
                 {"role": "user", "content": prompt}
             ]
         )
-        print("ChatGPT response:", response['choices'][0]['message']['content'])
         return response['choices'][0]['message']['content']
     except Exception as e:
         print("Error with ChatGPT:", e)
@@ -71,7 +68,6 @@ def save_response_to_file(response, filename):
         print(f"Error saving response to file: {e}")
 
 def main():
-    # Check last_run.txt file
     last_run_file = 'last_run.txt'
     try:
         with open(last_run_file, 'r') as f:
@@ -87,9 +83,6 @@ def main():
     events = ask_tavily_for_events()
     if events:
         response = ask_chatgpt_to_format(events)
-        print("AI Response:")
-        print(response)
-        
         if response:
             save_response_to_file(response, 'events.json')
             with open(last_run_file, 'w') as f:

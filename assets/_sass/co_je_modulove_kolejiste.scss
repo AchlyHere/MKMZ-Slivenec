@@ -2,9 +2,7 @@ body {
     margin: 0;
     display: flex;
     height: 100vh;
-    overflow: hidden;
-    font-family: Arial, sans-serif;
-    color: #fff; /* Set default text color to white */
+    overflow: hidden; /* Ensure the whole body doesn't scroll */
 }
 
 .container {
@@ -24,14 +22,14 @@ body {
 
 .left-section img {
     width: 80%;
-    margin-bottom: 30px;
+    margin-bottom: calc(30px);
 }
 
 .title {
+    color: #fff;
     font-family: 'Times New Roman', Times, serif;
     font-size: 1.5em;
     margin: 0;
-    color: #fff; /* Ensure the title text is white */
 }
 
 .navigation {
@@ -50,7 +48,7 @@ body {
 }
 
 .navigation li {
-    margin: 10px 0;
+    margin: calc(10px);
 }
 
 .navigation a {
@@ -67,56 +65,68 @@ body {
 .contact-info {
     margin-top: auto;
     text-align: center;
+    color: #fff;
     font-size: 0.8em;
     font-family: Helvetica, sans-serif;
     width: 100%;
-    color: #fff; /* Ensure contact info text is white */
+}
+
+.contact-info a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
 }
 
 .right-section {
     flex: 1;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.7); /* Slightly darker than the left section */
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center content horizontally */
+    align-items: center;
     padding: 20px;
-    overflow-y: auto;
+    overflow-y: auto; /* Enable scrolling for the right section */
     overflow-x: hidden;
 }
 
-h1 {
+.overlay {
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
     color: #fff;
-    font-family: 'Georgia', serif;
-    margin-bottom: 20px;
+    width: 100%;
 }
 
-#meetings-container {
+.photo-album {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center content horizontally */
-    gap: 20px;
+    align-items: center;
+    gap: calc(20px);
+    margin-top: calc(20px);
 }
 
-.meeting {
-    background-color: #242222;
+.photo {
+    text-align: center;
+}
+
+.photo img {
+    width: 100%;
+    max-width: 500px; /* Adjust width as needed */
+    height: auto;
     border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 80%; /* Ensure the meetings take up a good portion of the available space */
-    max-width: 600px; /* Set a maximum width */
+    border: 2px solid #fff;
 }
 
-.meeting h2 {
+.photo-text {
+    margin-bottom: calc(10px);
     color: #fff;
-    margin-top: 0;
     font-family: 'Georgia', serif;
-    font-size: 1.5em;
 }
 
-.meeting p {
-    color: #fff; /* Set paragraph text color to white */
-    margin: 5px 0;
-    font-family: Helvetica, sans-serif;
+.photo-text h3 {
+    margin: 0;
 }
 
 footer {
@@ -124,11 +134,11 @@ footer {
     color: #fff;
     text-align: center;
     padding: 10px 0;
-    margin-top: 20px;
+    margin-top: calc(20px);
 }
 
 footer p {
-    margin: 5px 0;
+    margin: calc(5px);
 }
 
 footer .license {

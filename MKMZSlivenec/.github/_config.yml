@@ -1,6 +1,6 @@
 # SASS settings
 sass:
-  sass_dir: _sass
+  sass_dir: assets/scss
   style: compressed
 
 # Include additional files
@@ -35,3 +35,4 @@ exclude:
   - vendor/bundle
   - .gitignore
   - .github
+

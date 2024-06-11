@@ -3,37 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Schůzky</title>
-    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/schuzky.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css">
+    <link rel="icon" href="{{ site.baseurl }}/assets/images/favicon.ico" type="image/x-icon">
+    <title>MKMŽ Slivenec - Schůzky</title>
 </head>
 <body>
-    <h1>Schůzky</h1>
-    <nav class="navigation">
-        <ul>
-            <li><a href="{{ '/index.html' | relative_url }}">Úvod</a></li>
-            <li><a href="{{ '/o_nas.html' | relative_url }}">O nás</a></li>
-            <li><a href="{{ '/co_je_modulove_kolejiste.html' | relative_url }}">Co je modulové kolejiště?</a></li>
-            <li><a href="{{ '/jak_stavime.html' | relative_url }}">Jak stavíme</a></li>
-            <li><a href="{{ '/jak_jezdime.html' | relative_url }}">Jak jezdíme</a></li>
-            <li><a href="{{ '/schuzky.html' | relative_url }}">Schůzky</a></li>
-            <li><a href="{{ '/fotoalbum.html' | relative_url }}">Fotoalbum</a></li>
-            <li><a href="{{ '/Kalendář_železničních_akcí.html' | relative_url }}">Kalendář železničních akcí</a></li>
-        </ul>
-    </nav>
-    <div id="meetings-container">
-        {% assign future_meetings = site.data.meetings | where_exp: "meeting", "meeting.date >= site.time" %}
-        {% if future_meetings.size > 0 %}
-            {% for meeting in future_meetings %}
-                <div class="meeting">
-                    <h2>{{ meeting.title }}</h2>
-                    <p>{{ meeting.date | date: "%d. %m. %Y" }}</p>
-                    <p>{{ meeting.location }}</p>
-                    <p>{{ meeting.description }}</p>
-                </div>
-            {% endfor %}
-        {% else %}
-            <p>V tomto školním roce již nejsou žádné schůzky.</p>
-        {% endif %}
+    <div class="container">
+        <div class="left-section">
+            <img src="{{ site.baseurl }}/assets/images/IMG_0488.JPEG">
+            <p class="title">MKMŽ Slivenec</p>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="{{ '/index.html' | relative_url }}">Úvod</a></li>
+                    <li><a href="{{ '/o_nas.html' | relative_url }}">O nás</a></li>
+                    <li><a href="{{ '/co_je_modulove_kolejiste.html' | relative_url }}">Co je modulové kolejiště?</a></li>
+                    <li><a href="{{ '/jak_stavime.html' | relative_url }}">Jak stavíme</a></li>
+                    <li><a href="{{ '/jak_jezdime.html' | relative_url }}">Jak jezdíme</a></li>
+                    <li><a href="{{ '/schuzky.html' | relative_url }}">Schůzky</a></li>
+                    <li><a href="{{ '/fotoalbum.html' | relative_url }}">Fotoalbum</a></li>
+                    <li><a href="{{ '/Kalendář_železničních_akcí.html' | relative_url }}">Kalendář železničních akcí</a></li>
+                </ul>
+            </nav>
+            <div class="contact-info">
+                <p>Kontakt:</p>
+                <p><a href="mailto:nadrazislivenec@seznam.cz">nadrazislivenec@seznam.cz</a></p>
+            </div>
+            <footer>
+                <p>&copy; 2024 MKMŽ Slivenec</p>
+                <p class="license">Tento projekt je licencován pod licencí <a href="https://example.com/license" target="_blank">MIT</a>.</p>
+            </footer>
+        </div>
+        <div class="right-section">
+            <h1>Nejbližší schůzky kroužku</h1>
+            <div id="meetings-container">
+                <!-- Meetings will be dynamically inserted here -->
+            </div>
+        </div>
     </div>
+
+    <script>
+        async function loadMeetings() {
+            try {
+                const response = await fetch('{{ site.baseurl }}/data/meetings.json');
+                const data = await response.json();
+                const meetings = data.schuzky.filter(meeting => new Date(meeting.datum) >= new Date());
+
+                const meetingsContainer = document.getElementById('meetings-container');
+                if (meetings.length > 0) {
+                    meetings.forEach(meeting => {
+                        const meetingElement = document.createElement('div');
+                        meetingElement.classList.add('meeting');
+
+                        meetingElement.innerHTML = `
+                            <h2>${meeting.misto}</h2>
+                            <p>Nejbližší schůzka: ${meeting.datum} v ${meeting.cas}</p>
+                        `;
+
+                        meetingsContainer.appendChild(meetingElement);
+                    });
+                } else {
+                    meetingsContainer.innerHTML = '<p>V tomto školním roce již nejsou žádné schůzky.</p>';
+                }
+            } catch (error) {
+                console.error('Error loading meetings:', error);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', loadMeetings);
+    </script>
 </body>
 </html>

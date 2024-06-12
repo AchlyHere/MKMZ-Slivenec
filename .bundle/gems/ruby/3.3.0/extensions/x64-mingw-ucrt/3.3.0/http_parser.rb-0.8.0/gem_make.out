@@ -1,0 +1,20 @@
+current directory: C:/Users/ADMIN/Documents/Web/MKMZ-Slivenec/.bundle/gems/ruby/3.3.0/gems/http_parser.rb-0.8.0/ext/ruby_http_parser
+C:/Ruby33-x64/bin/ruby.exe extconf.rb
+creating Makefile
+
+current directory: C:/Users/ADMIN/Documents/Web/MKMZ-Slivenec/.bundle/gems/ruby/3.3.0/gems/http_parser.rb-0.8.0/ext/ruby_http_parser
+make DESTDIR\= sitearchdir\=./.gem.20240612-31916-51ylxy sitelibdir\=./.gem.20240612-31916-51ylxy clean
+
+current directory: C:/Users/ADMIN/Documents/Web/MKMZ-Slivenec/.bundle/gems/ruby/3.3.0/gems/http_parser.rb-0.8.0/ext/ruby_http_parser
+make DESTDIR\= sitearchdir\=./.gem.20240612-31916-51ylxy sitelibdir\=./.gem.20240612-31916-51ylxy
+generating ruby_http_parser-x64-mingw-ucrt.def
+compiling ruby_http_parser.c
+compiling ryah_http_parser.c
+linking shared-object ruby_http_parser.so
+
+current directory: C:/Users/ADMIN/Documents/Web/MKMZ-Slivenec/.bundle/gems/ruby/3.3.0/gems/http_parser.rb-0.8.0/ext/ruby_http_parser
+make DESTDIR\= sitearchdir\=./.gem.20240612-31916-51ylxy sitelibdir\=./.gem.20240612-31916-51ylxy install
+/usr/bin/install -c -m 0755 ruby_http_parser.so ./.gem.20240612-31916-51ylxy
+
+current directory: C:/Users/ADMIN/Documents/Web/MKMZ-Slivenec/.bundle/gems/ruby/3.3.0/gems/http_parser.rb-0.8.0/ext/ruby_http_parser
+make DESTDIR\= sitearchdir\=./.gem.20240612-31916-51ylxy sitelibdir\=./.gem.20240612-31916-51ylxy clean

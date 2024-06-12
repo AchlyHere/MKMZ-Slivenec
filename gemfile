@@ -12,7 +12,3 @@ end
 gem 'jekyll-paginate', '~> 1.1.0'
 gem 'jekyll-seo-tag', '~> 2.7.1'
 gem 'jekyll-redirect-from', '~> 0.16.0'
-<<<<<<< HEAD
-gem 'jekyll-paginate-v2', '~> 3.0'
-=======
->>>>>>> 60285c2117ee4fb8d4c6433f12bdbe1cd9f76f26

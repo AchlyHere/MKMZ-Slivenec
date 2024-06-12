@@ -75,5 +75,5 @@
   }
   
   // Fix resource paths
-  @import url('{{ site.baseurl }}/assets/main.css');
-  @import url('{{ site.baseurl }}/assets/images/favicon.ico');
+  @import url('/assets/main.css');
+  @import url('/assets/images/favicon.ico');

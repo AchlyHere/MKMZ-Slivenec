@@ -5,6 +5,10 @@
 @import "layout";
 @import "components";
 
+// Add import statements for other required files
+@import "someFolder/otherFile";
+@import "someFolder/anotherFile";
+
 // Specific styles for "Kalendář železničních akcí" page
 body {
     margin: 0;

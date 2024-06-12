@@ -21,6 +21,9 @@
   }
   
   // Fix resource paths
+  $font-family-primary: Arial, sans-serif;
+  $white: #ffffff;
+  $dark-bg-color: #000000;
   $base-url: "{{ site.baseurl }}";
   $image-path: "#{$base-url}/assets/images/favicon.ico";
   $css-path: "#{$base-url}/main.css";

@@ -1,6 +1,18 @@
-.gitignore
-_site
-.sass-cache
-.jekyll-cache
-.jekyll-metadata
-vendor
+# Ignore SCSS files
+*.scss
+
+# Ignore compiled CSS files
+*.css
+
+# Ignore compiled JavaScript files
+*.js
+
+# Ignore compiled HTML files
+*.html
+
+# Ignore directories
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata/
+vendor/

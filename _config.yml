@@ -4,7 +4,7 @@ baseurl: "" # Adjust based on your deployment scenario
 url: "http://localhost:4000" # Adjust based on your domain
 
 sass:
-  sass_dir: _sass
+  sass_dir: assets/css/_sass
   style: compressed
 
 collections:
@@ -13,7 +13,7 @@ collections:
 
 include:
   - assets/css
-  - _sass
+  - assets/css/_sass
   - assets/images/
 
 plugins:

@@ -18,3 +18,18 @@ plugins:
 
 baseurl: ""
 url: ""
+
+# Additional settings for SCSS and file cooperation
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - _site
+  - .jekyll-cache
+  - .jekyll-metadata
+  - .sass-cache
+  - .env
+  - .env.*
+  - .DS_Store
+  - Thumbs.db

@@ -1,0 +1,79 @@
+.title {
+    color: $white;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.5em;
+    margin: 0;
+  }
+  
+  .navigation {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+  
+    li {
+      margin: 10px 0;
+    }
+  
+    a {
+      color: $white;
+      text-decoration: none;
+      font-family: $font-family-primary;
+      font-size: 1.2em;
+    }
+  }
+  
+  .contact-info {
+    margin-top: auto;
+    text-align: center;
+    font-size: 0.8em;
+    font-family: $font-family-primary;
+    width: 100%;
+    color: $white;
+  
+    a {
+      color: $white;
+      text-decoration: none;
+  
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  
+  footer {
+    background: #333;
+    color: $white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+  
+    p {
+      margin: 5px 0;
+    }
+  
+    .license {
+      font-size: 0.8em;
+  
+      a {
+        color: $white;
+        text-decoration: underline;
+  
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  
+  // Fix resource paths
+  @import url('{{ site.baseurl }}/assets/main.css');
+  @import url('{{ site.baseurl }}/assets/images/favicon.ico');

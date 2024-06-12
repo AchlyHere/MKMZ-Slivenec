@@ -1,0 +1,26 @@
+// Reset some basic elements
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: $font-family-primary;
+    color: $white;
+    background-color: $dark-bg-color;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  
+  // Fix resource paths
+  $base-url: "{{ site.baseurl }}";
+  $image-path: "#{$base-url}/assets/images/favicon.ico";
+  $css-path: "#{$base-url}/main.css";

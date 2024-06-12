@@ -1,8 +1,17 @@
+@import "variables";
+@import "mixins";
+@import "base";
+@import "layout";
+@import "components";
+
+// Specific styles for "Schůzky" page
 body {
     margin: 0;
     display: flex;
     height: 100vh;
-    overflow: hidden; /* Ensure the whole body doesn't scroll */
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    color: $white; /* Set default text color to white */
 }
 
 .container {
@@ -12,7 +21,7 @@ body {
 
 .left-section {
     width: 250px;
-    background-color: #252525;
+    background-color: $dark-bg-color;
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -26,10 +35,10 @@ body {
 }
 
 .title {
-    color: #fff;
     font-family: 'Times New Roman', Times, serif;
     font-size: 1.5em;
     margin: 0;
+    color: $white; /* Ensure the title text is white */
 }
 
 .navigation {
@@ -52,7 +61,7 @@ body {
 }
 
 .navigation a {
-    color: #fff;
+    color: $white;
     text-decoration: none;
     font-family: Helvetica, sans-serif;
     font-size: 1.2em;
@@ -65,61 +74,61 @@ body {
 .contact-info {
     margin-top: auto;
     text-align: center;
-    color: #fff;
     font-size: 0.8em;
     font-family: Helvetica, sans-serif;
     width: 100%;
-}
-
-.contact-info a {
-    color: #fff;
-    text-decoration: none;
-}
-
-.contact-info a:hover {
-    text-decoration: underline;
+    color: $white; /* Ensure contact info text is white */
 }
 
 .right-section {
     flex: 1;
-    background-image: url('index-bg-rs.jpeg'); /* Background image */
-    background-size: cover; /* Cover the entire section */
-    background-position: center; /* Center the background image */
+    background-color: rgba(0, 0, 0, 0.7);
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Center content vertically */
     align-items: center; /* Center content horizontally */
     padding: 20px;
-    overflow-y: auto; /* Enable scrolling for the right section */
+    overflow-y: auto;
     overflow-x: hidden;
 }
 
-.overlay {
-    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
-    padding: 20px;
+h1 {
+    color: $white;
+    font-family: 'Georgia', serif;
+    margin-bottom: 20px;
+}
+
+#meetings-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+    gap: 20px;
+}
+
+.meeting {
+    background-color: $darker-bg-color;
     border-radius: 10px;
-    text-align: center;
-    color: #fff;
-    box-sizing: border-box; /* Ensure padding is included in the width */
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 80%; /* Ensure the meetings take up a good portion of the available space */
+    max-width: 600px; /* Set a maximum width */
 }
 
-.overlay h1,
-.overlay p {
-    margin: 0; /* Remove default margins */
-}
-
-.overlay h1 {
-    font-size: 2.5em;
-    margin-bottom: 10px;
-}
-
-.overlay p {
+.meeting h2 {
+    color: $white;
+    margin-top: 0;
+    font-family: 'Georgia', serif;
     font-size: 1.5em;
+}
+
+.meeting p {
+    color: $white; /* Set paragraph text color to white */
+    margin: 5px 0;
+    font-family: Helvetica, sans-serif;
 }
 
 footer {
     background: #333;
-    color: #fff;
+    color: $white;
     text-align: center;
     padding: 10px 0;
     margin-top: 20px;
@@ -134,8 +143,11 @@ footer .license {
 }
 
 footer .license a {
-    color: #fff;
+    color: $white;
     text-decoration: underline;
+    &:hover {
+        text-decoration: none;
+    }
 }
 
 footer .license a:hover {

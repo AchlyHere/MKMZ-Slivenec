@@ -1,0 +1,7 @@
+// Example mixin for a box shadow
+@mixin box-shadow($x, $y, $blur, $color) {
+    box-shadow: $x $y $blur $color;
+}
+
+// Fix file path for favicon.ico
+$favicon-path: "{{ site.baseurl }}/assets/images/favicon.ico";

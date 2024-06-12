@@ -1,18 +1,24 @@
+title: "Your Site Title"
+description: "A description of your site"
+baseurl: "" # Adjust based on your deployment scenario
+url: "http://localhost:4000" # Adjust based on your domain
+
 sass:
-  sass_dir: assets/scss
+  sass_dir: _sass
   style: compressed
 
-include:
-  - .htaccess
-
 collections:
-  my_collection:
+  pages:
     output: true
 
-# Build settings
-markdown: kramdown
-theme: minima
+include:
+  - assets/css
+  - _sass
+  - assets/images/
+
 plugins:
   - jekyll-feed
   - jekyll-sitemap
+  - jekyll-sass-converter
 
+# Other configurations...

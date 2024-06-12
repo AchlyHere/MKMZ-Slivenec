@@ -1,0 +1,13 @@
+// Colors
+$dark-bg-color: #252525;
+$darker-bg-color: #242222;
+$white: #fff;
+
+// Fonts
+$font-family-primary: 'Helvetica, sans-serif';
+$font-family-secondary: 'Georgia, serif';
+
+// Update resource paths
+$site-baseurl: '{{ site.baseurl }}';
+$relative-url: '{{ "main.css" | relative_url }}';
+$favicon-url: '{{ "assets/images/favicon.ico" | relative_url }}';

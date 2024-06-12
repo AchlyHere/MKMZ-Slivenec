@@ -1,3 +1,10 @@
+@import "variables";
+@import "mixins";
+@import "base";
+@import "layout";
+@import "components";
+
+// Specific styles for "O nás" page
 body {
     margin: 0;
     display: flex;
@@ -12,7 +19,7 @@ body {
 
 .left-section {
     width: 250px;
-    background-color: #252525;
+    background-color: $dark-bg-color;
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -26,7 +33,7 @@ body {
 }
 
 .title {
-    color: #fff;
+    color: $white;
     font-family: 'Times New Roman', Times, serif;
     font-size: 1.5em;
     margin: 0;
@@ -52,7 +59,7 @@ body {
 }
 
 .navigation a {
-    color: #fff;
+    color: $white;
     text-decoration: none;
     font-family: Helvetica, sans-serif;
     font-size: 1.2em;
@@ -65,14 +72,14 @@ body {
 .contact-info {
     margin-top: auto;
     text-align: center;
-    color: #fff;
+    color: $white;
     font-size: 0.8em;
     font-family: Helvetica, sans-serif;
     width: 100%;
 }
 
 .contact-info a {
-    color: #fff;
+    color: $white;
     text-decoration: none;
 }
 
@@ -84,77 +91,39 @@ body {
     flex: 1;
     background-color: rgba(0, 0, 0, 0.7);
     display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: flex-start; /* Align items to the start to prevent content cut-off */
+    flex-direction: column;
+    align-items: center;
     padding: 20px;
     overflow-y: auto;
     overflow-x: hidden;
 }
 
 .overlay {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center content horizontally */
     padding: 20px;
     border-radius: 10px;
-    color: #fff;
-    max-width: 800px; /* Optional: limit the width for better readability */
+    text-align: center;
+    color: $white;
     width: 100%;
 }
 
-.overlay h1 {
-    text-align: center;
-}
-
-.content {
+.about {
     text-align: left;
-    color: #fff;
+    margin-top: 20px;
+    color: $white;
     font-family: 'Georgia', serif;
     font-size: 1.2em;
-    margin-top: 20px;
+    text-align: center;
 }
 
-.content img {
-    width: 100%;
-    max-width: 500px;
+.about img {
+    width: 500px; /* Adjust width as needed */
     height: auto;
     border-radius: 10px;
-    border: 2px solid #fff;
-    margin: 20px 0;
+    border: 2px solid $white;
 }
 
-.content ul {
-    text-align: left;
-    margin: 20px auto;
-    padding: 0;
-    list-style: none;
-}
-
-.content ul li {
-    margin: 10px 0;
-}
-
-footer {
-    background: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-    margin-top: 20px;
-}
-
-footer p {
-    margin: 5px 0;
-}
-
-footer .license {
-    font-size: 0.8em;
-}
-
-footer .license a {
-    color: #fff;
-    text-decoration: underline;
-}
-
-footer .license a:hover {
-    text-decoration: none;
+.img-text {
+    margin-bottom: 10px;
+    color: $white;
+    font-family: 'Georgia', serif;
 }

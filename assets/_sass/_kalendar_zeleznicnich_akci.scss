@@ -1,8 +1,18 @@
+// Fix resource paths
+@import "variables";
+@import "mixins";
+@import "base";
+@import "layout";
+@import "components";
+
+// Specific styles for "Kalendář železničních akcí" page
 body {
     margin: 0;
     display: flex;
     height: 100vh;
-    overflow: hidden; /* Ensure the whole body doesn't scroll */
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    color: $white; /* Set default text color to white */
 }
 
 .container {
@@ -12,7 +22,7 @@ body {
 
 .left-section {
     width: 250px;
-    background-color: #252525;
+    background-color: $dark-bg-color;
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -26,7 +36,6 @@ body {
 }
 
 .title {
-    color: #fff;
     font-family: 'Times New Roman', Times, serif;
     font-size: 1.5em;
     margin: 0;
@@ -52,7 +61,7 @@ body {
 }
 
 .navigation a {
-    color: #fff;
+    color: $white;
     text-decoration: none;
     font-family: Helvetica, sans-serif;
     font-size: 1.2em;
@@ -65,73 +74,60 @@ body {
 .contact-info {
     margin-top: auto;
     text-align: center;
-    color: #fff;
     font-size: 0.8em;
     font-family: Helvetica, sans-serif;
     width: 100%;
 }
 
-.contact-info a {
-    color: #fff;
-    text-decoration: none;
-}
-
-.contact-info a:hover {
-    text-decoration: underline;
-}
-
 .right-section {
     flex: 1;
-    background-color: rgba(0, 0, 0, 0.7); /* Slightly darker than the left section */
+    background-color: rgba(0, 0, 0, 0.7);
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center; /* Center content horizontally */
     padding: 20px;
-    overflow-y: auto; /* Enable scrolling for the right section */
+    overflow-y: auto;
     overflow-x: hidden;
 }
 
-.overlay {
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    color: #fff;
-    width: 100%;
+h1 {
+    color: $white;
+    font-family: 'Georgia', serif;
+    margin-bottom: 20px;
 }
 
-.photo-album {
+#events-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center; /* Center content horizontally */
     gap: 20px;
-    margin-top: 20px;
 }
 
-.photo {
-    text-align: center;
-}
-
-.photo img {
-    width: 100%;
-    max-width: 500px; /* Adjust width as needed */
-    height: auto;
+.event {
+    background-color: $dark-bg-color;
     border-radius: 10px;
-    border: 2px solid #fff;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 80%; /* Ensure the events take up a good portion of the available space */
+    max-width: 600px; /* Set a maximum width */
 }
 
-.photo-text {
-    margin-bottom: 10px;
-    color: #fff;
+.event h2 {
+    color: $white;
+    margin-top: 0;
     font-family: 'Georgia', serif;
+    font-size: 1.5em;
 }
 
-.photo-text h3 {
-    margin: 0;
+.event p {
+    color: $white; /* Set paragraph text color to white */
+    margin: 5px 0;
+    font-family: Helvetica, sans-serif;
 }
 
 footer {
     background: #333;
-    color: #fff;
+    color: $white;
     text-align: center;
     padding: 10px 0;
     margin-top: 20px;
@@ -146,10 +142,11 @@ footer .license {
 }
 
 footer .license a {
-    color: #fff;
+    color: $white;
     text-decoration: underline;
 }
 
 footer .license a:hover {
     text-decoration: none;
 }
+

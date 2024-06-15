@@ -15,4 +15,9 @@ gem 'jekyll-redirect-from', '~> 0.16.0'
 gem 'csv', require: false
 gem 'base64', require: false
 gem 'bigdecimal', require: false
-gem 'wdm', '>= 0.1.0' if Gem.win_platform?
+gem 'json', require: false
+gem 'httparty', '~> 0.18.1'
+gem 'nokogiri', '~> 1.11.7'
+gem 'dotenv', '~> 2.7.6'
+gem 'rspec', '~> 3.10.0', group: :test
+gem 'rubocop', '~> 1.18.1', require: false, group: :development

@@ -12,3 +12,7 @@ end
 gem 'jekyll-paginate', '~> 1.1.0'
 gem 'jekyll-seo-tag', '~> 2.7.1'
 gem 'jekyll-redirect-from', '~> 0.16.0'
+gem 'csv', require: false
+gem 'base64', require: false
+gem 'bigdecimal', require: false
+gem 'wdm', '>= 0.1.0' if Gem.win_platform?

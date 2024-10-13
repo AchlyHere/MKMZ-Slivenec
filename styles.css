@@ -184,6 +184,10 @@ body {
     text-decoration: none
 }
 
+.pohoto-text a:hover {
+    text-decoration:underline
+}
+
 .photo-text h3 {
     margin: 0;
 }

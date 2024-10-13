@@ -237,12 +237,12 @@ body {
 }
 
 /* Responsive adjustments */
-@media only screen and (max-width:768px){
+@media only screen and (max-width: 768px) {
     .left-section {
-        width: 40%; /* Take up 40% of the screen when not collapsed */
-        transition: width 0.5s; /* Add a smooth transition effect */
+        width: 40%;
+        transition: width 0.5s;
     }
-    
+
     .left-section.collapsed {
         width: 0;
         overflow: hidden;
@@ -251,15 +251,15 @@ body {
         border: none;
         transition: width 0.5s;
     }
-    
+
     .right-section {
-        width: 60%; /* Take up 60% of the screen when left section is not collapsed */
+        width: 60%;
     }
-    
+
     .right-section.expanded {
-        width: 100%; /* Take up 100% of the screen when left section is collapsed */
+        width: 100%;
     }
-    
+
     .hamburger {
         position: absolute;
         top: 10px;
@@ -267,209 +267,141 @@ body {
         z-index: 1;
         background-color: #252525;
         border-radius: 50%;
-        padding: 3px; /* Reduced padding */
+        padding: 3px;
         cursor: pointer;
-        width: 20px; /* Reduced width */
-        height: 20px; /* Reduced height */
+        width: 20px;
+        height: 20px;
         display: flex;
         justify-content: center;
         align-items: center;
     }
-    
+
     .hamburger::before,
     .hamburger::after {
         content: '';
         position: absolute;
-        width: 12px; /* Reduced width of lines */
+        width: 12px;
         height: 2px;
         background-color: #fff;
         transition: transform 0.3s;
     }
-    
+
     .hamburger::before {
-        top: 6px; /* Adjusted position of top line */
+        top: 6px;
     }
-    
+
     .hamburger::after {
-        bottom: 6px; /* Adjusted position of bottom line */
+        bottom: 6px;
     }
-    
+
     .hamburger span {
         position: absolute;
-        width: 12px; /* Reduced width of middle line */
+        width: 12px;
         height: 2px;
         background-color: #fff;
         transition: transform 0.3s;
     }
-    
-    /* Add a class to toggle the hamburger icon when the menu is open */
+
     .hamburger.open::before {
         transform: rotate(45deg) translate(5px, 5px);
     }
-    
+
     .hamburger.open::after {
         transform: rotate(-45deg) translate(5px, -5px);
     }
-    
+
     .hamburger.open span {
         transform: scaleX(0);
     }
-    
+
     .right-section {
-        width: 100%; /* Expand the right section on small devices */
-        padding: 10px; /* Adjust padding for smaller screens */
+        width: 100%;
+        padding: 10px;
     }
-    
+
     .content img {
         max-width: 100%;
     }
-    
+
     .photo img {
         max-width: 100%;
     }
-    
+
     .meeting {
         width: 90%;
     }
-    
+
     .left-section img {
         width: 90%;
     }
-    
+
     .about {
         font-size: 1em;
     }
-    
+
     .about img {
         width: 90%;
         max-width: none;
     }
 }
 
-
-@media screen and (min-width:1080px) and (max-width:1440px){
+@media screen and (min-width: 768px) and (max-width: 1080px) {
     .right-section {
-        width: 100%; /* Expand the right section on small devices */
-        padding: 10px; /* Adjust padding for smaller screens */
+        width: 100%;
+        padding: 10px;
     }
-    
-    .content img {
-        max-width: 100%;
-    }
-    
-    .photo img {
-        max-width: 100%;
-    }
-    
-    .meeting {
-        width: 90%;
-    }
-    
-    .left-section img {
-        width: 90%;
-    }
-    
-    .about {
-        font-size: 1em;
-    }
-    
-    .about img {
-        width: 90%;
-        max-width: none;
-    }
-    
-    .photo-album {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr); /* 3 sloupce */
-        grid-template-rows: repeat(2, 1fr); /* 2 řádky */
-        grid-gap: 30px; /* Mezera mezi fotkami */
-    }
-    
-    .photo {
-        width: 100%; /* Fotky vyplní celou šířku buňky gridu */
-        box-sizing: border-box;
-    }
-}
 
-@media screen and (min-width:1440px){
-    .right-section {
-        width: 100%; /* Expand the right section on small devices */
-        padding: 10px; /* Adjust padding for smaller screens */
-    }
-    
-    .content img {
-        max-width: 25%;
-        height: auto;
-    }
-    
-    .photo img {
-        max-width: 100%;
-    }
-    
-    .meeting {
-        width: 90%;
-    }
-    
-    .left-section img {
-        width: 90%;
-    }
-    
-    .about {
-        font-size: 1em;
-    }
-    
-    .about img {
-        width: 90%;
-        max-width: none;
-    }
-    
-    .photo-album {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr); /* 4 sloupce */
-        grid-template-rows: repeat(3, 1fr); /* 3 řádky */
-        grid-gap: 30px; /* Mezera mezi fotkami */
-    }
-    
-    .photo {
-        width: 100%; /* Fotky vyplní celou šířku buňky gridu */
-        box-sizing: border-box;
-    }
-}
-
-@media screen and (min-width:768px) and (max-width:1080px){
-    .right-section {
-        width: 100%; /* Expand the right section on small devices */
-        padding: 10px; /* Adjust padding for smaller screens */
-    }
-    
     .content img {
         max-width: 33.33%;
         height: auto;
     }
-    
+
     .photo img {
         max-width: 100%;
     }
-    
+
     .meeting {
         width: 90%;
     }
-    
+
     .left-section img {
         width: 90%;
     }
-    
+
     .about {
         font-size: 1em;
     }
-    
+
     .about img {
         width: 100%;
         max-width: none;
-	}
-    
+    }
+}
+
+@media (min-width: 1080px) and (max-width: 1440px) {
+    .photo-album {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-gap: 15px;
+    }
+
     .photo {
-        width: 100%; /* Fotky vyplní celou šířku buňky gridu */
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+@media (min-width: 1440px) {
+    .photo-album {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        grid-gap: 15px;
+    }
+
+    .photo {
+        width: 100%;
         box-sizing: border-box;
     }
 }

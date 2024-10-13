@@ -145,7 +145,7 @@ body {
 .about img {
     width: 100%; /* Make images responsive */
     max-width: 500px; /* Set a maximum width */
-    height: auto;
+    height: 300px;
     border-radius: 10px;
     border: 2px solid #fff;
 }

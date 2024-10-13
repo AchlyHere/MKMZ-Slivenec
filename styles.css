@@ -172,7 +172,7 @@ body {
     width: 100%; /* Ensure images take full width of their container */
     max-width: 100%; /* Ensure images do not exceed their natural size */
     object-fit: cover;
-    height: auto;
+    height: 300px;
     border-radius: 10px;
     border: 2px solid #fff;
 }

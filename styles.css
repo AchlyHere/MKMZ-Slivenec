@@ -17,6 +17,7 @@ body {
 .left-section {
     width: 250px;
     background-color: #252525;
+	font-family: Helvetica, sans-serif;
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -145,7 +146,7 @@ body {
 .about img {
     width: 100%; /* Make images responsive */
     max-width: 500px; /* Set a maximum width */
-    height: 300px;
+    height: auto;
     border-radius: 10px;
     border: 2px solid #fff;
 }
@@ -166,13 +167,14 @@ body {
 
 .photo {
     text-align: center;
+	width: 100%;
 }
 
 .photo img {
     width: 100%; /* Ensure images take full width of their container */
     max-width: 100%; /* Ensure images do not exceed their natural size */
     object-fit: cover;
-    height: 300px;
+    height: 200px;
     border-radius: 10px;
     border: 2px solid #fff;
 }
@@ -180,12 +182,8 @@ body {
 .photo-text {
     margin-bottom: 10px;
     color: #fff;
-    font-family: 'Georgia', serif;
+    font-family: 'Open Sans', sans-serif;
     text-decoration: none
-}
-
-.pohoto-text:hover {
-    text-decoration:underline
 }
 
 .photo-text h3 {
@@ -219,7 +217,7 @@ body {
 .meeting p {
     color: #fff; /* Set paragraph text color to white */
     margin: 5px 0;
-    font-family: Helvetica, sans-serif;
+    font-family: 'Roboto Slab', serif;
 }
 
 /* Responsive adjustments */
@@ -310,9 +308,7 @@ body {
         max-width: 100%;
     }
     
-    .photo {
-        width: 100%;
-    }
+    
     
     .photo img {
         max-width: 100%;
@@ -334,4 +330,19 @@ body {
         width: 90%;
         max-width: none;
     }
+}
+.photo a {
+	text-decoration: none;
+}
+
+.photo a:hover{
+	text-decoration: underline;
+}
+
+.photo-text a {
+	text-decoration: none
+}
+
+.photo-text a:hover {
+	text-decoration: underline;
 }

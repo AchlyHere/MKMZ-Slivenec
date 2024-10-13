@@ -384,6 +384,7 @@ body {
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: repeat(2, 1fr);
         grid-gap: 15px;
+		margin-top: 20px;
     }
 
     .photo {
@@ -398,6 +399,7 @@ body {
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: repeat(3, 1fr);
         grid-gap: 15px;
+		margin-top: 20px;
     }
 
     .photo {

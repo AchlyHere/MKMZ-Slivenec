@@ -391,31 +391,31 @@ body {
 }
 
 @media (min-width: 1080px) and (max-width: 1440px) {
-    .photo-album {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(2, 1fr);
-        grid-gap: 15px;
-		padding-top: 5px;
-    }
+  .photo-album {
+    display: flex; /* Použití flexboxu */
+    flex-direction: column; /* Fotky se zobrazí v sloupci */
+    flex-wrap: wrap; /* Povolení zalomení fotek */
+    gap: 15px;
+    padding-top: 5px;
+  }
 
-    .photo {
-        width: 100%;
-        box-sizing: border-box;
-    }
+  .photo {
+    width: 33.33%; /* Každá fotka zabírá 1/3 šířky */
+    box-sizing: border-box;
+  }
 }
 
 @media (min-width: 1440px) {
-    .photo-album {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: repeat(3, 1fr);
-        grid-gap: 15px;
-		margin-top: 5px;
-    }
+  .photo-album {
+    display: flex; /* Použití flexboxu */
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 5px;
+  }
 
-    .photo {
-        width: 100%;
-        box-sizing: border-box;
-    }
+  .photo {
+    width: 25%; /* Každá fotka zabírá 1/4 šířky */
+    box-sizing: border-box;
+  }
 }

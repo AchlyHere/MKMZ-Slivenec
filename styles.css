@@ -237,6 +237,10 @@ body {
 	text-decoration: underline;
 }
 
+.year {
+	flex-basis: 100%;
+	margin-bottom: 20px;
+}
 
 /* Responsive adjustments */
 @media only screen and (max-width: 768px) {
@@ -385,13 +389,12 @@ body {
 }
 
 @media (min-width: 1080px) and (max-width: 1440px) {
-    .year {
-		flex-basis: 100%;
-		margin-bottom: 30px;
+    .photo-album {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         gap: 15px;
+        padding-top: 30px;
         align-items: center;
     }
 
@@ -404,8 +407,7 @@ body {
 }
 
 @media (min-width: 1440px) {
-    .year {
-		flex-basis: 100%;
+    .photo-album {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;

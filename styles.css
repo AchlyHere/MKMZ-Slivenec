@@ -381,10 +381,11 @@ body {
 @media (min-width: 1080px) and (max-width: 1440px) {
   .photo-album {
     display: flex; /* Použití flexboxu */
-    flex-direction: row; /* Fotky se zobrazí v sloupci */
+    flex-direction: row; /* Fotky se zobrazí v řadě */
     flex-wrap: wrap; /* Povolení zalomení fotek */
     gap: 15px;
     padding-top: 5px;
+	align-items: center;
   }
 
   .photo {
@@ -400,10 +401,13 @@ body {
     flex-wrap: wrap;
     gap: 15px;
     margin-top: 5px;
+	align-items: center;
   }
 
   .photo {
-    width: 25%; /* Každá fotka zabírá 1/4 šířky */
+	width: auto;
+    max-width: 100%; /* Každá fotka zabírá 1/4 šířky */
+	height: 300px;
     box-sizing: border-box;
   }
 }

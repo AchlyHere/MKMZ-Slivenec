@@ -238,6 +238,7 @@ body {
 }
 
 .year {
+	flex-basis: 100%;
 	margin-bottom: 10px;
 }
 

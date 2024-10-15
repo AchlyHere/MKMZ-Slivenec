@@ -395,19 +395,21 @@ body {
     flex-wrap: wrap;
     gap: 15px;
     padding-top: 30px;
+    justify-content: center; /* Fotky budou vycentrované */
   }
 
   .year {
     display: flex;
-    flex-direction: column;
-    width: 100%; /* .year zabírá celou šířku */
+    flex-direction: row; /* Fotky v řádku */
+    flex-wrap: wrap; /* Zalomení fotek */
+    width: 100%; 
   }
 
   .photo-item {
     width: 33.33%; 
     display: flex;
-    flex-direction: row;
-	justify-content: center;
+    flex-direction: column;
+    align-items: center;
   }
 }
 
@@ -419,18 +421,20 @@ body {
     gap: 15px;
     margin-top: 30px;
     margin-bottom: 30px;
+    justify-content: center; 
   }
 
   .year {
     display: flex;
-    flex-direction: column;
-    width: 100%; /* .year zabírá celou šířku */
+    flex-direction: row; /* Fotky v řádku */
+    flex-wrap: wrap; /* Zalomení fotek */
+    width: 100%;
   }
 
   .photo-item {
     width: 25%;
     display: flex;
-    flex-direction: row;
-	justify-content: center;
+    flex-direction: column;
+    align-items: center;
   }
 }

@@ -389,38 +389,48 @@ body {
 }
 
 @media (min-width: 1080px) and (max-width: 1440px) {
-    .photo-album {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 15px;
-        padding-top: 30px;
-        align-items: center;
-    }
+  .photo-album {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding-top: 30px;
+  }
 
-    .photo-item {
-        width: 33.33%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+  .year {
+    display: flex; /* Nastavení .year jako flex kontejner */
+    flex-direction: column; /* Zarovnání fotek a nadpisů pod sebe */
+    flex-basis: 33.33%; /* Každý rok zabírá 1/3 šířky */
+  }
+
+  .photo-item {
+    width: 100%; /* Fotky a nadpisy vyplní celou šířku .year */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 @media (min-width: 1440px) {
-    .photo-album {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 15px;
-        margin-top: 30px;
-        align-items: center;
-        margin-bottom: 30px;
-    }
+  .photo-album {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
 
-    .photo-item {
-        width: 25%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+  .year {
+    display: flex; /* Nastavení .year jako flex kontejner */
+    flex-direction: column; /* Zarovnání fotek a nadpisů pod sebe */
+    flex-basis: 25%; /* Každý rok zabírá 1/4 šířky */
+  }
+
+  .photo-item {
+    width: 100%; /* Fotky a nadpisy vyplní celou šířku .year */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }

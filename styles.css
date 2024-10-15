@@ -239,7 +239,7 @@ body {
 
 .year {
 	flex-basis: 100%;
-	margin-bottom: 10px;
+	margin-bottom: 20px;
 }
 
 /* Responsive adjustments */
@@ -349,6 +349,10 @@ body {
         width: 90%;
         max-width: none;
     }
+
+    .photo-item {
+        width: 100%; /* Šířka na 100% v mobilním zobrazení */
+    }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1080px) {
@@ -385,38 +389,38 @@ body {
 }
 
 @media (min-width: 1080px) and (max-width: 1440px) {
-  .photo-album {
-    display: flex; /* Použití flexboxu */
-    flex-direction: row; /* Fotky se zobrazí v řadě */
-    flex-wrap: wrap; /* Povolení zalomení fotek */
-    gap: 15px;
-    padding-top: 30px;
-	align-items: center;
-  }
+    .photo-album {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 15px;
+        padding-top: 30px;
+        align-items: center;
+    }
 
-  .photo {
-    width: 33.33%; /* Každá fotka zabírá 1/3 šířky */
-    box-sizing: border-box;
-    align-items: center;
-  }
+    .photo-item {
+        width: 33.33%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 @media (min-width: 1440px) {
-  .photo-album {
-    display: flex; /* Použití flexboxu */
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 15px;
-    margin-top: 30px;
-    align-items: center;
-    margin-bottom: 30px;
-  }
+    .photo-album {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-top: 30px;
+        align-items: center;
+        margin-bottom: 30px;
+    }
 
-  .photo {
-    width: auto;
-    max-width: 100%; /* Každá fotka zabírá 1/4 šířky */
-    height: 300px;
-    box-sizing: border-box;
-    align-items: center;
-  }
+    .photo-item {
+        width: 25%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 }

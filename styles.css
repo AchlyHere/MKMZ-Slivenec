@@ -389,7 +389,7 @@ body {
 }
 
 @media (min-width: 1080px) and (max-width: 1440px) {
-    .photo-album {
+    .year {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
@@ -407,7 +407,7 @@ body {
 }
 
 @media (min-width: 1440px) {
-    .photo-album {
+    .year {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;

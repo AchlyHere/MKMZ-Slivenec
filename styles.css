@@ -160,10 +160,11 @@ body {
 .photo-album {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    margin-top: 20px;
-}
+    flex-wrap: wrap;
+    gap: 15px;
+    padding-top: 30px;
+    justify-content: center; 
+  }
 
 .photo {
     text-align: center;
@@ -388,55 +389,14 @@ body {
     }
 }
 
-@media (min-width: 1080px) and (max-width: 1440px) {
-  .photo-album {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    gap: 15px;
-    padding-top: 30px;
-    justify-content: center; 
-  }
-
-  .year {
-    display: flex;
-    flex-direction: row; /* Fotky v řádku */
-    flex-wrap: wrap;
-    width: 100%; 
-    justify-content: center; 
-  }
-
-  .photo-item {
-    width: 33.33%; 
-    display: flex;
-    flex-direction: column; /* Fotka a nadpis pod sebou */
-    align-items: center;
-  }
+@media (min-width: 1080px) and (max-width: 1440px){
+    .photo {
+        width: calc(33.33% - 15px); /* Three items in a row */
+    }
 }
 
 @media (min-width: 1440px) {
-  .photo-album {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    gap: 15px;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    justify-content: space-around; 
-  }
-
-  .year {
-    display: flex;
-    flex-direction: row; /* Fotky v řádku */
-    flex-wrap: wrap;
-    width: 100%;
-    justify-content: center; 
-  }
-
-  .photo-item {
-    width: 25%;
-    display: flex;
-    flex-direction: column; /* Fotka a nadpis pod sebou */
-    align-items: center;
-  }
+    .photo {
+        width: calc(25% - 15px); /* Four items in a row */
+    }
 }

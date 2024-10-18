@@ -395,7 +395,7 @@ body {
     flex-wrap: wrap;
     gap: 15px;
     padding-top: 30px;
-    justify-content: center; 
+    justify-content: space-around; 
   }
 
   .year {

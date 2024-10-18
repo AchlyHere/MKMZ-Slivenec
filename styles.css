@@ -391,11 +391,11 @@ body {
 @media (min-width: 1080px) and (max-width: 1440px) {
   .photo-album {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     gap: 15px;
     padding-top: 30px;
-    justify-content: space-around; 
+    justify-content: center; 
   }
 
   .year {
@@ -417,12 +417,12 @@ body {
 @media (min-width: 1440px) {
   .photo-album {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     gap: 15px;
     margin-top: 30px;
     margin-bottom: 30px;
-    justify-content: center; 
+    justify-content: space-around; 
   }
 
   .year {

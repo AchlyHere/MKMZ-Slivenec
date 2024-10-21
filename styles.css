@@ -77,6 +77,7 @@ body {
     font-family: Helvetica, sans-serif;
     width: 100%;
     padding: 20px 0; /* Add padding for spacing */
+	flex-direction: row;
 }
 
 .contact-info a {

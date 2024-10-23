@@ -33,6 +33,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 });
             });
 
+            meetingsContainer.innerHTML = ''; // Vymazání všech předchozích schůzek
+
             if (closestMeeting) {
                 const meetingDiv = document.createElement('div');
                 meetingDiv.classList.add('meeting');

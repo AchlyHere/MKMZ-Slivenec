@@ -19,39 +19,34 @@ document.addEventListener('DOMContentLoaded', function () {
             const meetingsContainer = document.getElementById('meetings-container');
             const now = new Date();
 
-            // Najít nejbližší budoucí schůzku
-            let closestMeeting = null;
-            let closestDate = null;
-
-            data.schuzky.forEach(meeting => {
-                meeting.dates.forEach(date => {
-                    const meetingDate = new Date(date);
-                    if (meetingDate > now && (closestDate === null || meetingDate < closestDate)) {
-                        closestMeeting = { name: meeting.name, address: meeting.address, date: meetingDate };
-                        closestDate = meetingDate;
-                    }
-                });
-            });
+            // Najít nejbližší budoucí schůzku pro každou lokalitu
+            const closestMeetings = data.schuzky.map(meeting => {
+                const futureDates = meeting.dates.filter(date => new Date(date) > now);
+                const closestDate = futureDates.length > 0 ? futureDates.reduce((a, b) => new Date(a) < new Date(b) ? a : b) : null;
+                return { name: meeting.name, address: meeting.address, date: closestDate };
+            }).filter(meeting => meeting.date !== null);
 
             meetingsContainer.innerHTML = ''; // Vymazání všech předchozích schůzek
 
-            if (closestMeeting) {
-                const meetingDiv = document.createElement('div');
-                meetingDiv.classList.add('meeting');
+            if (closestMeetings.length > 0) {
+                closestMeetings.forEach(meeting => {
+                    const meetingDiv = document.createElement('div');
+                    meetingDiv.classList.add('meeting');
 
-                const title = document.createElement('h2');
-                title.textContent = closestMeeting.name;
-                meetingDiv.appendChild(title);
+                    const title = document.createElement('h2');
+                    title.textContent = meeting.name;
+                    meetingDiv.appendChild(title);
 
-                const address = document.createElement('p');
-                address.textContent = `Adresa: ${closestMeeting.address}`;
-                meetingDiv.appendChild(address);
+                    const address = document.createElement('p');
+                    address.textContent = `Adresa: ${meeting.address}`;
+                    meetingDiv.appendChild(address);
 
-                const date = document.createElement('p');
-                date.textContent = `Datum: ${closestMeeting.date.toLocaleString('cs-CZ')}`;
-                meetingDiv.appendChild(date);
+                    const date = document.createElement('p');
+                    date.textContent = `Datum: ${new Date(meeting.date).toLocaleString('cs-CZ')}`;
+                    meetingDiv.appendChild(date);
 
-                meetingsContainer.appendChild(meetingDiv);
+                    meetingsContainer.appendChild(meetingDiv);
+                });
             } else {
                 // Zobrazení zprávy, pokud nejsou žádné budoucí schůzky
                 const noMeetingsMessage = document.createElement('p');

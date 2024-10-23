@@ -32,12 +32,41 @@
                 <p><a href="mailto:nadrazislivenec@seznam.cz">nadrazislivenec@seznam.cz</a></p>
             </div>
         </div>
-        <div class="right-section">
-            <h1>Nejbližší schůzky kroužku</h1>
-            <div id="meetings-container">
-                <!-- Meetings will be dynamically inserted here -->
-            </div>
-        </div>
+            <div class="right-section">
+                <h1>Nejbližší schůzky kroužku</h1>
+                <div id="meetings-container">
+                    <script>
+                        fetch('meetings.json')
+                            .then(response => response.json())
+                            .then(data => {
+                                let container = document.getElementById('meetings-container');
+                                data.schuzky.forEach(meeting => {
+                                    let meetingDiv = document.createElement('div');
+                                    meetingDiv.classList.add('meeting');
+
+                                    let title = document.createElement('h2');
+                                    title.textContent = meeting.name;
+                                    meetingDiv.appendChild(title);
+
+                                    let address = document.createElement('p');
+                                    address.textContent = `Adresa: ${meeting.address}`;
+                                    meetingDiv.appendChild(address);
+
+                                    let datesList = document.createElement('ul');
+                                    meeting.dates.forEach(date => {
+                                        let listItem = document.createElement('li');
+                                        listItem.textContent = new Date(date).toLocaleString('cs-CZ');
+                                        datesList.appendChild(listItem);
+                                    });
+                                    meetingDiv.appendChild(datesList);
+
+                                    container.appendChild(meetingDiv);
+                                });
+                            })
+                            .catch(error => console.error('Error loading meetings:', error));
+                    </script>
+                </div>
+		</div>
     </div>
     <script src="scripts.js"></script>
 </body>

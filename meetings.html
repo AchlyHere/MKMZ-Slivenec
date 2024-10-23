@@ -36,48 +36,9 @@
             <div class="right-section">
                 <h1>Nejbližší schůzky kroužku</h1>
                 <div id="meetings-container">
-                    <script>
-                        fetch('meetings.json')
-                            .then(response => response.json())
-                            .then(data => {
-                                let container = document.getElementById('meetings-container');
-                                let now = new Date();
-                                let futureMeetings = data.schuzky.map(meeting => {
-                                    let futureDates = meeting.dates.filter(date => new Date(date) > now);
-                                    return { name: meeting.name, address: meeting.address, dates: futureDates };
-                                }).filter(meeting => meeting.dates.length > 0);
-
-                                if (futureMeetings.length === 0) {
-                                    container.textContent = 'Žádné další naplánované schůzky';
-                                } else {
-                                    futureMeetings.forEach(meeting => {
-                                        let meetingDiv = document.createElement('div');
-                                        meetingDiv.classList.add('meeting');
-
-                                        let title = document.createElement('h2');
-                                        title.textContent = meeting.name;
-                                        meetingDiv.appendChild(title);
-
-                                        let address = document.createElement('p');
-                                        address.textContent = `Adresa: ${meeting.address}`;
-                                        meetingDiv.appendChild(address);
-
-                                        let datesList = document.createElement('ul');
-                                        meeting.dates.forEach(date => {
-                                            let listItem = document.createElement('li');
-                                            listItem.textContent = new Date(date).toLocaleString('cs-CZ');
-                                            datesList.appendChild(listItem);
-                                        });
-                                        meetingDiv.appendChild(datesList);
-
-                                        container.appendChild(meetingDiv);
-                                    });
-                                }
-                            })
-                            .catch(error => console.error('Error loading meetings:', error));
-                    </script>
+                    
                 </div>
-				<script>scripts.js</script>
+				<script>src="scripts.js"</script>
             </div>
         </div>
     </body>

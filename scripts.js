@@ -13,7 +13,7 @@
   });
 
   // Pole schůzek s daty a popisy
-  const meetings = [
+  /*const meetings = [
       { date: '' },
       { date: '' },
       { date: '' }
@@ -47,5 +47,5 @@
         meetingsContainer.appendChild(meetingDiv);
       }
     });
-  }
+  }*/
 });

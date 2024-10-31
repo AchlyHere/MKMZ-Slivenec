@@ -95,7 +95,6 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center; /* Center content horizontally */
-	justify-content: center;
     padding: 20px;
     overflow-y: auto; /* Enable scrolling for the right section */
     overflow-x: hidden;
@@ -116,7 +115,6 @@ body {
     overflow-y: auto; /* Enable scrolling for the right section */
     overflow-x: hidden;
     box-sizing: border-box; /* Ensure padding is included in the width */
-	transition: width 0.3s ease;
 }
 
 .overlay {
@@ -197,12 +195,9 @@ body {
 
 .meetings-container {
     display: flex;
-	max-height: 80%;
-	max-width: auto;
     flex-direction: column;
     align-items: center; /* Center content horizontally */
     gap: 20px;
-	padding: 20px;
 }
 
 .meeting {

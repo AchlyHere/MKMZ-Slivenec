@@ -6,14 +6,14 @@ body {
     overflow: hidden;
     font-family: Arial, sans-serif;
     color: #fff; /* Set default text color to white */
-    background-color: #000; /* Přidejte nebo upravte toto nastavení */
+    background-color: #000; /* Background color for the entire page */
 }
 
 .container {
     display: flex;
     width: 100%;
     height: 100%; /* Ensure the container fills the available height */
-    background-color: #000; /* Přidáno, aby celý kontejner měl stejnou barvu pozadí */
+    background-color: #000; /* Ensure container has a consistent background */
 }
 
 .left-section {
@@ -80,6 +80,7 @@ body {
     width: 100%;
     padding: 20px 0; /* Add padding for spacing */
     flex-direction: row;
+    background-color: #252525; /* Ensure it blends with the left section */
 }
 
 .contact-info a {
@@ -93,7 +94,7 @@ body {
 
 .right-section {
     flex: 1;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.5); /* Lighter background than the left section */
     display: flex;
     flex-direction: column;
     align-items: center; /* Center content horizontally */
@@ -102,6 +103,7 @@ body {
     overflow-x: hidden;
     box-sizing: border-box; /* Ensure padding is included in the width */
     transition: width 0.3s ease;
+    text-align: center; /* Center text horizontally */
 }
 
 .right-section-index {
@@ -126,7 +128,7 @@ body {
     color: #fff;
     width: 100%;
     box-sizing: border-box; /* Ensure padding is included in the width */
-    background-color: rgba(0, 0, 0, 0.7); /* Ensure consistency across all overlay elements */
+    background-color: rgba(0, 0, 0, 0.5); /* Ensure consistency across all overlay elements */
 }
 
 .overlay-index {
@@ -211,6 +213,7 @@ body {
     width: 80%; /* Ensure the meetings take up a good portion of the available space */
     max-width: 600px; /* Set a maximum width */
     box-sizing: border-box; /* Ensure padding */
+    text-align: center; /* Center text horizontally */
 }
 
 .meeting h2 {
@@ -330,7 +333,7 @@ body {
         padding: 10px;
     }
 
-    .content img {
+       .content img {
         max-width: 100%;
     }
 
@@ -395,9 +398,8 @@ body {
 
 @media (min-width: 1080px) and (max-width: 1440px) {
   .photo-album {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 15px;
     padding-top: 30px;
     justify-content: center; 
@@ -412,7 +414,6 @@ body {
   }
 
   .photo-item {
-    width: 100%; 
     display: flex;
     flex-direction: column; /* Fotka a nadpis pod sebou */
     align-items: center;
@@ -421,9 +422,8 @@ body {
 
 @media (min-width: 1440px) {
   .photo-album {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     gap: 15px;
     margin-top: 30px;
     margin-bottom: 30px;
@@ -439,7 +439,6 @@ body {
   }
 
   .photo-item {
-    width: 100%;
     display: flex;
     flex-direction: column; /* Fotka a nadpis pod sebou */
     align-items: center;

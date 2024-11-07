@@ -1,4 +1,4 @@
- document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function () {
   // Získání referencí na potřebné HTML elementy
   const hamburger = document.getElementById('hamburger');
   const leftSection = document.querySelector('.left-section');
@@ -13,7 +13,7 @@
   });
 
   // Pole schůzek s daty a popisy
-  /*const meetings = [
+  const meetings = [
       { date: '' },
       { date: '' },
       { date: '' }
@@ -47,5 +47,5 @@
         meetingsContainer.appendChild(meetingDiv);
       }
     });
-  }*/
+  }
 });

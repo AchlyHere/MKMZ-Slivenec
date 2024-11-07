@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   // Pole schůzek s daty a popisy
-  const meetings = [
+  /*const meetings = [
       { date: '' },
       { date: '' },
       { date: '' }
@@ -47,5 +47,5 @@ document.addEventListener('DOMContentLoaded', function () {
         meetingsContainer.appendChild(meetingDiv);
       }
     });
-  }
+  }*/
 });

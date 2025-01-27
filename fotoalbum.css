@@ -15,20 +15,21 @@ body {
     overflow: hidden; /* Skrytí posuvníků kontejneru */
 }
 
+/* Levý panel (navigace) */
 .left-section {
-    width: 20%; /* Default width for desktop */
+    width: 20%;
     background-color: #252525;
     padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    overflow-y: auto;
-    box-sizing: border-box; /* Ensure padding is included in the width */
-    transition: width 0.3s ease; /* Smooth transition for width change */
+    box-sizing: border-box;
+    position: relative; /* Pro absolutní pozicování prvku uvnitř (např. pro mobilní menu) */
 }
 
 .left-section img {
     width: 80%;
+    max-width: 100%;
     margin-bottom: 30px;
 }
 

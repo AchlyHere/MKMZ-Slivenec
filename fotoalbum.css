@@ -1,33 +1,43 @@
-/* Reset default margin and flex container setup */
+/*
+ * fotoalbum.css - Styly pro fotoalbum MKMŽ Slivenec
+ * Autor: Gemini (úprava pro srozumitelnost)
+ * Datum: 2023-10-27
+ * Verze: 1.0
+ */
+
+/* Globální styly a reset */
 body {
-    margin: 0;
+    margin: 0; /* Reset výchozích okrajů */
+    font-family: Arial, sans-serif; /* Základní font */
     display: flex;
-    flex-direction: column; /* Stack sections vertically */
-    height: 100vh;
-    overflow: hidden; /* Ensure the whole body doesn't scroll */
-    font-family: Arial, sans-serif; /* Default font for consistency */
+    flex-direction: column; /* Vertikální uspořádání prvků */
+    min-height: 100vh; /* Minimální výška 100% viewportu */
+    overflow-x: hidden; /* Skrytí horizontálního posuvníku */
 }
 
+/* Hlavní kontejner */
 .container {
     display: flex;
-    flex: 1; /* Expand container to fill available space */
-    overflow: hidden; /* Prevent scrolling on the container */
+    flex: 1; /* Vyplnění dostupné výšky */
+    overflow: hidden; /* Skrytí posuvníků kontejneru */
 }
 
+/* Levý panel (navigace) */
 .left-section {
-    width: 20%; /* Occupy 20% width for larger screens */
+    width: 20%;
     background-color: #252525;
     padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    overflow-y: auto;
-    transition: width 0.3s ease; /* Smooth transition for width change */
+    overflow-y: auto; /* Posuvník pro delší obsah */
+    transition: width 0.3s ease; /* Plynulá změna šířky */
+    box-sizing: border-box; /* Zahrnutí paddingu do šířky */
 }
 
 .left-section img {
-    width: 80%; /* Ensure images take full width of container */
-    max-width: 100%; /* Ensure images do not exceed their natural size */
+    width: 80%;
+    max-width: 100%;
     margin-bottom: 30px;
 }
 
@@ -36,21 +46,25 @@ body {
     font-family: 'Times New Roman', Times, serif;
     font-size: 1.5em;
     margin: 0;
+    text-align: center; /* Vycentrování nadpisu */
 }
 
+/* Navigace */
 .navigation {
-    flex-grow: 1; /* Expand navigation to take remaining space */
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
+    width: 100%; /* Navigace přes celou šířku levého panelu */
 }
 
 .navigation ul {
     list-style: none;
     padding: 0;
     margin: 0;
+    width: 100%;
 }
 
 .navigation li {
@@ -62,76 +76,92 @@ body {
     text-decoration: none;
     font-family: Helvetica, sans-serif;
     font-size: 1.2em;
+    display: block; /* Odkazy přes celý řádek pro lepší klikatelnost */
+    padding: 5px 10px; /* Přidání paddingu pro lepší vzhled */
 }
 
 .navigation a:hover {
     text-decoration: underline;
 }
 
+/* Kontaktní informace */
 .contact-info {
     margin-top: auto;
     text-align: center;
-    color: #fff; /* Updated color */
+    color: #fff;
     font-size: 0.8em;
     font-family: Helvetica, sans-serif;
     width: 100%;
-    padding: 20px 0; /* Add padding for spacing */
+    padding: 20px 0;
+    box-sizing: border-box;
 }
 
 .contact-info a {
-    color: #fff; /* Make email link white */
-    text-decoration: none; /* Remove underline for consistency */
+    color: #fff;
+    text-decoration: none;
 }
 
 .contact-info a:hover {
-    text-decoration: underline; /* Add underline on hover for clarity */
+    text-decoration: underline;
 }
 
+/* Pravý panel (fotoalbum) */
 .right-section {
     flex: 1;
-    background-color: rgba(0, 0, 0, 0.7); /* Slightly darker than the left section */
+    background-color: rgba(0, 0, 0, 0.7);
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 20px;
-    overflow-y: auto; /* Enable scrolling for the right section */
+    overflow-y: auto;
     overflow-x: hidden;
-    box-sizing: border-box; /* Ensure padding is included in the width */
+    box-sizing: border-box;
 }
 
-/* Overlay styles */
+/* Překryv (nadpisy roků) */
 .overlay {
     padding: 20px;
     border-radius: 10px;
     text-align: center;
     color: #fff;
     width: 100%;
-    box-sizing: border-box; /* Ensure padding is included in the width */
+    box-sizing: border-box;
+    margin-bottom: 20px; /* Přidán odstup mezi roky */
 }
 
-/* Photo album styles */
+.overlay h1 {
+    margin: 0; /* Odstranění výchozích okrajů nadpisu */
+}
+
+/* Fotoalbum */
 .photo-album {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    margin-top: 20px;
+    display: grid; /* Použití gridu pro lepší uspořádání */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responzivní grid */
+    grid-gap: 20px;
+    width: 100%;
+    max-width: 1200px; /* Maximální šířka fotoalba */
 }
 
 .photo {
     text-align: center;
 }
 
+.photo a {
+    display: block; /* Zajistí, že odkaz pokrývá celou fotku */
+}
+
 .photo img {
-    width: 100%; /* Ensure images take full width of their container */
-    max-width: 100%; /* Ensure images do not exceed their natural size */
+    width: 100%;
     height: auto;
     border-radius: 10px;
     border: 2px solid #fff;
+    display: block; /* Odstranění mezery pod obrázkem */
+    object-fit: cover; /* Aby se obrázky ořezávaly a zachovávaly poměr stran */
+    aspect-ratio: 4/3; /* Nastavení poměru stran obrázků */
 }
 
 .photo-text {
-    margin-bottom: 10px;
+    margin-top: 10px;
     color: #fff;
     font-family: 'Georgia', serif;
 }
@@ -140,21 +170,20 @@ body {
     margin: 0;
 }
 
-/* Responsive adjustments */
+/* Responzivní design */
 @media (max-width: 768px) {
     .left-section {
-        width: 40%; /* Thinner width for mobile devices */
+        width: 100%; /* Levý panel přes celou šířku na mobilech */
+        overflow-y: auto; /* Posuvník pro delší obsah */
+        position: relative;
     }
-    
+    .container{
+        flex-direction: column;
+    }
     .right-section {
-        padding: 10px; /* Adjust padding for smaller screens */
+        padding: 10px;
     }
-    
-    .photo {
-        width: 100%; /* Ensure photos take full width on small screens */
-    }
-    
-    .photo img {
-        max-width: 100%; /* Ensure images do not exceed container width */
+    .photo-album {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Menší fotky na mobilech */
     }
 }

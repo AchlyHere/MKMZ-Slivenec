@@ -1,24 +1,24 @@
 /*
  * fotoalbum.css - Styly pro fotoalbum MKMŽ Slivenec
- * Autor: Gemini (úprava pro srozumitelnost)
- * Datum: 2023-10-27
- * Verze: 1.0
+ * Autor: Gemini
+ * Datum: 2023-10-27 (Aktualizováno)
+ * Verze: 1.1
  */
 
 /* Globální styly a reset */
 body {
-    margin: 0; /* Reset výchozích okrajů */
-    font-family: Arial, sans-serif; /* Základní font */
+    margin: 0;
+    font-family: Arial, sans-serif;
     display: flex;
-    flex-direction: column; /* Vertikální uspořádání prvků */
+    flex-direction: column;
     min-height: 100vh; /* Minimální výška 100% viewportu */
-    overflow-x: hidden; /* Skrytí horizontálního posuvníku */
+    overflow-x: hidden;
 }
 
 /* Hlavní kontejner */
 .container {
     display: flex;
-    flex: 1; /* Vyplnění dostupné výšky */
+    height: 100vh; /* Pevná výška kontejneru */
     overflow: hidden; /* Skrytí posuvníků kontejneru */
 }
 
@@ -30,9 +30,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    overflow-y: auto; /* Posuvník pro delší obsah */
-    transition: width 0.3s ease; /* Plynulá změna šířky */
-    box-sizing: border-box; /* Zahrnutí paddingu do šířky */
+    box-sizing: border-box;
+    position: relative; /* Pro absolutní pozicování prvku uvnitř (např. pro mobilní menu) */
 }
 
 .left-section img {
@@ -46,18 +45,18 @@ body {
     font-family: 'Times New Roman', Times, serif;
     font-size: 1.5em;
     margin: 0;
-    text-align: center; /* Vycentrování nadpisu */
+    text-align: center;
 }
 
 /* Navigace */
 .navigation {
-    flex-grow: 1;
+    flex-grow: 1; /* Vyplní zbývající prostor */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    width: 100%; /* Navigace přes celou šířku levého panelu */
+    width: 100%;
 }
 
 .navigation ul {
@@ -76,12 +75,14 @@ body {
     text-decoration: none;
     font-family: Helvetica, sans-serif;
     font-size: 1.2em;
-    display: block; /* Odkazy přes celý řádek pro lepší klikatelnost */
-    padding: 5px 10px; /* Přidání paddingu pro lepší vzhled */
+    display: block;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease; /* Plynulý přechod barvy pozadí */
 }
 
 .navigation a:hover {
     text-decoration: underline;
+    background-color: rgba(255, 255, 255, 0.1); /* Jemné zvýraznění pozadí při najetí myší */
 }
 
 /* Kontaktní informace */
@@ -107,14 +108,11 @@ body {
 
 /* Pravý panel (fotoalbum) */
 .right-section {
-    flex: 1;
+    flex: 1; /* Vyplní dostupný prostor */
     background-color: rgba(0, 0, 0, 0.7);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     padding: 20px;
-    overflow-y: auto;
-    overflow-x: hidden;
+    overflow-y: auto; /* Povolení posouvání */
+    height: 100%;
     box-sizing: border-box;
 }
 
@@ -126,28 +124,33 @@ body {
     color: #fff;
     width: 100%;
     box-sizing: border-box;
-    margin-bottom: 20px; /* Přidán odstup mezi roky */
+    margin-bottom: 20px;
 }
 
 .overlay h1 {
-    margin: 0; /* Odstranění výchozích okrajů nadpisu */
+    margin: 0;
 }
 
 /* Fotoalbum */
 .photo-album {
-    display: grid; /* Použití gridu pro lepší uspořádání */
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responzivní grid */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     grid-gap: 20px;
     width: 100%;
-    max-width: 1200px; /* Maximální šířka fotoalba */
+    max-width: 1200px;
 }
 
 .photo {
     text-align: center;
+    transition: transform 0.3s ease; /* Přidán plynulý přechod pro transformaci */
+}
+
+.photo:hover {
+    transform: scale(1.05); /* Jemné zvětšení fotky při najetí myší */
 }
 
 .photo a {
-    display: block; /* Zajistí, že odkaz pokrývá celou fotku */
+    display: block;
 }
 
 .photo img {
@@ -155,10 +158,16 @@ body {
     height: auto;
     border-radius: 10px;
     border: 2px solid #fff;
-    display: block; /* Odstranění mezery pod obrázkem */
-    object-fit: cover; /* Aby se obrázky ořezávaly a zachovávaly poměr stran */
-    aspect-ratio: 4/3; /* Nastavení poměru stran obrázků */
+    display: block;
+    object-fit: cover;
+    aspect-ratio: 4/3;
+    transition: box-shadow 0.3s ease; /* Přidán plynulý přechod pro stín */
 }
+
+.photo img:hover {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Jemný stín při najetí myší */
+}
+
 
 .photo-text {
     margin-top: 10px;
@@ -172,18 +181,22 @@ body {
 
 /* Responzivní design */
 @media (max-width: 768px) {
-    .left-section {
-        width: 100%; /* Levý panel přes celou šířku na mobilech */
-        overflow-y: auto; /* Posuvník pro delší obsah */
-        position: relative;
-    }
-    .container{
+    .container {
         flex-direction: column;
+        height: auto; /* Automatická výška na mobilech */
     }
+
+    .left-section {
+        width: 100%;
+        overflow-y: auto;
+    }
+
     .right-section {
         padding: 10px;
+        height: auto;
     }
+
     .photo-album {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Menší fotky na mobilech */
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     }
 }

@@ -1,17 +1,23 @@
 /* Globální styly a reset */
+html {
+    height: 100%; /* Důležité pro 100vh */
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Minimální výška 100% viewportu */
+    min-height: 100vh;
     overflow-x: hidden;
+    box-sizing: border-box; /* Přidáno i pro body pro jistotu */
 }
 
 /* Hlavní kontejner */
 .container {
     display: flex;
-    height: 100vh; /* Pevná výška kontejneru */
+    height: 100%; /* Výška 100% rodiče (body) */
     overflow: hidden; /* Skrytí posuvníků kontejneru */
 }
 
@@ -24,7 +30,8 @@ body {
     flex-direction: column;
     align-items: center;
     box-sizing: border-box;
-    position: relative; /* Pro absolutní pozicování prvku uvnitř (např. pro mobilní menu) */
+    position: relative;
+    overflow: hidden; /* Zamezí přetečení obsahu levého panelu */
 }
 
 .left-section img {

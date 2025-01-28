@@ -200,3 +200,21 @@ body {
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     }
 }
+
+@media (min-width: 1440px) {
+    .photo-album {
+        grid-template-columns: repeat(4, 1fr); /* 4 sloupce */
+    }
+}
+
+@media (min-width: 1080px) and (max-width: 1439pc) {
+    .photo-album {
+        grid-template-columns: repeat(3, 1fr); /* 3 sloupce */
+    }
+}
+
+@media (max-width: 1079px) {
+    .photo-album {
+        grid-template-columns: 1fr /* 1 sloupec */
+    }
+}

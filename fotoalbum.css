@@ -8,16 +8,17 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+    flex-direction: column; /* Klíčové pro výšku */
+    min-height: 100vh; /* Pro jistotu */
     overflow-x: hidden;
     box-sizing: border-box;
+    height: 100vh; /* Výška celého okna */
 }
 
 /* Hlavní kontejner */
 .container {
     display: flex;
-    height: 100%;
+    height: 100%; /* Nyní bude fungovat správně */
     overflow: hidden;
 }
 
@@ -31,8 +32,8 @@ body {
     align-items: center;
     box-sizing: border-box;
     position: relative;
-    overflow: hidden; /* Zamezí přetečení obsahu levého panelu */
-    height: 100%; /* Levá část bude mít vždy 100% výšku kontejneru */
+    overflow: hidden;
+    height: 100%; /* Nyní bude fungovat správně */
 }
 
 .left-section img {

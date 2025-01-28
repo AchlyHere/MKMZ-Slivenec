@@ -148,10 +148,11 @@ body {
 
 .album-gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Upraveno na minmax(300px, 1fr) */
     grid-gap: 20px;
     width: 100%;
     max-width: 1200px;
+    margin: 0 auto; /* Centrování galerie */
 }
 
 .photo {
@@ -165,6 +166,7 @@ body {
 
 .photo a {
     display: block;
+    position: relative; /* Pro umístění photo-text */
 }
 
 .photo img {
@@ -183,10 +185,22 @@ body {
 }
 
 .photo-text {
-    margin-top: 10px;
+    position: absolute; /* Absolutní pozicování */
+    bottom: 0; /* Umístění dole */
+    left: 0; /* Od levého okraje */
+    width: 100%; /* Šířka 100% */
+    background-color: rgba(0, 0, 0, 0.5); /* Průhledné pozadí */
     color: #fff;
-    font-family: 'Georgia', serif;
+    padding: 10px;
+    text-align: center;
+    transform: translateY(100%); /* Skryté mimo obrazovku */
+    transition: transform 0.3s ease; /* Plynulý přechod */
 }
+
+.photo:hover .photo-text {
+    transform: translateY(0); /* Zobrazení po najetí myší */
+}
+
 
 .photo-text h3 {
     margin: 0;

@@ -8,17 +8,17 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     display: flex;
-    flex-direction: column; /* Klíčové pro výšku */
-    min-height: 100vh; /* Pro jistotu */
+    flex-direction: column;
+    min-height: 100vh;
     overflow-x: hidden;
     box-sizing: border-box;
-    height: 100vh; /* Výška celého okna */
+    height: 100vh;
 }
 
 /* Hlavní kontejner */
 .container {
     display: flex;
-    height: 100%; /* Nyní bude fungovat správně */
+    height: 100%;
     overflow: hidden;
 }
 
@@ -33,7 +33,7 @@ body {
     box-sizing: border-box;
     position: relative;
     overflow: hidden;
-    height: 100%; /* Nyní bude fungovat správně */
+    height: 100%;
 }
 
 .left-section img {
@@ -55,12 +55,12 @@ body {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Zarovná obsah navigace nahoru */
+    justify-content: flex-start;
     align-items: center;
     text-align: center;
     width: 100%;
-    overflow-y: auto; /* Přidán posuvník pro navigaci */
-    height: 100%; /* Navigace má 100% výšku levého panelu */
+    overflow-y: auto;
+    height: 100%;
 }
 
 .navigation ul {
@@ -131,12 +131,22 @@ body {
     margin-bottom: 20px;
 }
 
-.overlay h1 {
+.overlay h1,
+.overlay h2 {
     margin: 0;
 }
 
 /* Fotoalbum */
-.photo-album {
+.album-section {
+    margin-bottom: 20px;
+}
+
+.album-title {
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.album-gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     grid-gap: 20px;
@@ -205,25 +215,25 @@ body {
         height: auto;
     }
 
-    .photo-album {
+    .album-gallery {
         grid-template-columns: 1fr;
     }
 }
 
 @media (min-width: 1440px) {
-    .photo-album {
+    .album-gallery {
         grid-template-columns: repeat(4, 1fr);
     }
 }
 
 @media (min-width: 1080px) and (max-width: 1439px) {
-    .photo-album {
+    .album-gallery {
         grid-template-columns: repeat(3, 1fr);
     }
 }
 
 @media (max-width: 1079px) {
-    .photo-album {
+    .album-gallery {
         grid-template-columns: 1fr;
     }
 }

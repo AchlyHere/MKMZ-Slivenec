@@ -1,6 +1,6 @@
 /* Globální styly a reset */
 html {
-    height: 100%; /* Důležité pro 100vh */
+    height: 100%;
     box-sizing: border-box;
 }
 
@@ -11,14 +11,14 @@ body {
     flex-direction: column;
     min-height: 100vh;
     overflow-x: hidden;
-    box-sizing: border-box; /* Přidáno i pro body pro jistotu */
+    box-sizing: border-box;
 }
 
 /* Hlavní kontejner */
 .container {
     display: flex;
-    height: 100%; /* Výška 100% rodiče (body) */
-    overflow: hidden; /* Skrytí posuvníků kontejneru */
+    height: 100%;
+    overflow: hidden;
 }
 
 /* Levý panel (navigace) */
@@ -32,6 +32,7 @@ body {
     box-sizing: border-box;
     position: relative;
     overflow: hidden; /* Zamezí přetečení obsahu levého panelu */
+    height: 100%; /* Levá část bude mít vždy 100% výšku kontejneru */
 }
 
 .left-section img {
@@ -50,13 +51,15 @@ body {
 
 /* Navigace */
 .navigation {
-    flex-grow: 1; /* Vyplní zbývající prostor */
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start; /* Zarovná obsah navigace nahoru */
     align-items: center;
     text-align: center;
     width: 100%;
+    overflow-y: auto; /* Přidán posuvník pro navigaci */
+    height: 100%; /* Navigace má 100% výšku levého panelu */
 }
 
 .navigation ul {
@@ -77,12 +80,12 @@ body {
     font-size: 1.2em;
     display: block;
     padding: 5px 10px;
-    transition: background-color 0.3s ease; /* Plynulý přechod barvy pozadí */
+    transition: background-color 0.3s ease;
 }
 
 .navigation a:hover {
     text-decoration: underline;
-    background-color: rgba(255, 255, 255, 0.1); /* Jemné zvýraznění pozadí při najetí myší */
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 /* Kontaktní informace */
@@ -108,10 +111,10 @@ body {
 
 /* Pravý panel (fotoalbum) */
 .right-section {
-    flex: 1; /* Vyplní dostupný prostor */
+    flex: 1;
     background-color: rgba(0, 0, 0, 0.7);
     padding: 20px;
-    overflow-y: auto; /* Povolení posouvání */
+    overflow-y: auto;
     height: 100%;
     box-sizing: border-box;
 }
@@ -142,11 +145,11 @@ body {
 
 .photo {
     text-align: center;
-    transition: transform 0.3s ease; /* Přidán plynulý přechod pro transformaci */
+    transition: transform 0.3s ease;
 }
 
 .photo:hover {
-    transform: scale(1.05); /* Jemné zvětšení fotky při najetí myší */
+    transform: scale(1.05);
 }
 
 .photo a {
@@ -161,13 +164,12 @@ body {
     display: block;
     object-fit: cover;
     aspect-ratio: 4/3;
-    transition: box-shadow 0.3s ease; /* Přidán plynulý přechod pro stín */
+    transition: box-shadow 0.3s ease;
 }
 
 .photo img:hover {
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Jemný stín při najetí myší */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
-
 
 .photo-text {
     margin-top: 10px;
@@ -183,11 +185,17 @@ body {
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
-        height: auto; /* Automatická výška na mobilech */
+        height: auto;
     }
 
     .left-section {
         width: 100%;
+        height: auto;
+        overflow-y: auto;
+    }
+
+    .navigation {
+        height: auto;
         overflow-y: auto;
     }
 
@@ -197,24 +205,24 @@ body {
     }
 
     .photo-album {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        grid-template-columns: 1fr;
     }
 }
 
 @media (min-width: 1440px) {
     .photo-album {
-        grid-template-columns: repeat(4, 1fr); /* 4 sloupce */
+        grid-template-columns: repeat(4, 1fr);
     }
 }
 
-@media (min-width: 1080px) and (max-width: 1439pc) {
+@media (min-width: 1080px) and (max-width: 1439px) {
     .photo-album {
-        grid-template-columns: repeat(3, 1fr); /* 3 sloupce */
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
 @media (max-width: 1079px) {
     .photo-album {
-        grid-template-columns: 1fr /* 1 sloupec */
+        grid-template-columns: 1fr;
     }
 }

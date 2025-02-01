@@ -8,17 +8,17 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     display: flex;
-    flex-direction: column; /* Klíčové pro výšku */
-    min-height: 100vh; /* Pro jistotu */
+    flex-direction: column;
+    min-height: 100vh;
     overflow-x: hidden;
     box-sizing: border-box;
-    height: 100vh; /* Výška celého okna */
+    height: 100vh;
 }
 
 /* Hlavní kontejner */
 .container {
     display: flex;
-    height: 100%; /* Nyní bude fungovat správně */
+    height: 100%;
     overflow: hidden;
 }
 
@@ -33,7 +33,7 @@ body {
     box-sizing: border-box;
     position: relative;
     overflow: hidden;
-    height: 100%; /* Nyní bude fungovat správně */
+    height: 100%;
 }
 
 .left-section img {
@@ -55,12 +55,12 @@ body {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Zarovná obsah navigace nahoru */
+    justify-content: flex-start;
     align-items: center;
     text-align: center;
     width: 100%;
-    overflow-y: auto; /* Přidán posuvník pro navigaci */
-    height: 100%; /* Navigace má 100% výšku levého panelu */
+    overflow-y: auto;
+    height: 100%;
 }
 
 .navigation ul {
@@ -131,17 +131,28 @@ body {
     margin-bottom: 20px;
 }
 
-.overlay h1 {
+.overlay h1,
+.overlay h2 {
     margin: 0;
 }
 
 /* Fotoalbum */
-.photo-album {
+.album-section {
+    margin-bottom: 20px;
+}
+
+.album-title {
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.album-gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Upraveno na minmax(300px, 1fr) */
     grid-gap: 20px;
     width: 100%;
     max-width: 1200px;
+    margin: 0 auto; /* Centrování galerie */
 }
 
 .photo {
@@ -155,6 +166,7 @@ body {
 
 .photo a {
     display: block;
+    position: relative; /* Pro umístění photo-text */
 }
 
 .photo img {
@@ -173,10 +185,22 @@ body {
 }
 
 .photo-text {
-    margin-top: 10px;
+    position: absolute; /* Absolutní pozicování */
+    bottom: 0; /* Umístění dole */
+    left: 0; /* Od levého okraje */
+    width: 100%; /* Šířka 100% */
+    background-color: rgba(0, 0, 0, 0.5); /* Průhledné pozadí */
     color: #fff;
-    font-family: 'Georgia', serif;
+    padding: 10px;
+    text-align: center;
+    transform: translateY(100%); /* Skryté mimo obrazovku */
+    transition: transform 0.3s ease; /* Plynulý přechod */
 }
+
+.photo:hover .photo-text {
+    transform: translateY(0); /* Zobrazení po najetí myší */
+}
+
 
 .photo-text h3 {
     margin: 0;
@@ -205,25 +229,25 @@ body {
         height: auto;
     }
 
-    .photo-album {
+    .album-gallery {
         grid-template-columns: 1fr;
     }
 }
 
 @media (min-width: 1440px) {
-    .photo-album {
+    .album-gallery {
         grid-template-columns: repeat(4, 1fr);
     }
 }
 
 @media (min-width: 1080px) and (max-width: 1439px) {
-    .photo-album {
+    .album-gallery {
         grid-template-columns: repeat(3, 1fr);
     }
 }
 
 @media (max-width: 1079px) {
-    .photo-album {
+    .album-gallery {
         grid-template-columns: 1fr;
     }
 }

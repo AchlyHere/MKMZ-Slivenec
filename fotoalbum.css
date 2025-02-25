@@ -134,6 +134,7 @@ body {
 .overlay h1,
 .overlay h2 {
     margin: 0;
+    margin-top: 10px;
 }
 
 /* Fotoalbum */

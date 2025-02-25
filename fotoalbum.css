@@ -141,14 +141,33 @@ body {
     line-height: 1.2em;
 }
 
-/* Fotoalbum */
+/* Album sekce */
 .album-section {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .album-title {
     color: #fff;
+    margin-bottom: 5px;
+    font-size: 1.4em;
+}
+
+.album-links {
+    color: #fff;
+    margin-top: 0;
     margin-bottom: 10px;
+    font-size: 0.9em;
+    text-align: center;
+}
+
+.album-links a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+.album-links a:hover {
+    text-decoration: underline;
 }
 
 .photo-album {

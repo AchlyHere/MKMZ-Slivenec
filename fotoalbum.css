@@ -146,9 +146,9 @@ body {
     margin-bottom: 10px;
 }
 
-.album-gallery {
+.photo-album {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Upraveno na minmax(300px, 1fr) */
+    grid-template-columns: 1fr; /* Výchozí styl 1 sloupec */
     grid-gap: 20px;
     width: 100%;
     max-width: 1200px;
@@ -207,7 +207,7 @@ body {
 }
 
 /* Responzivní design */
-@media (max-width: 768px) {
+@media (max-width: 768px) { /* Pro telefony v collapsed left section – TODO: Zkontrolovat collapsed left section */
     .container {
         flex-direction: column;
         height: auto;
@@ -229,25 +229,25 @@ body {
         height: auto;
     }
 
-    .album-gallery {
-        grid-template-columns: 1fr;
+    .photo-album {
+        grid-template-columns: 1fr; /* 1 fotka na řádek */
     }
 }
 
-@media (min-width: 1440px) {
-    .album-gallery {
-        grid-template-columns: repeat(4, 1fr);
+@media (min-width: 769px) and (max-width: 1079px) { /* Pro tablety a menší desktopy */
+    .photo-album {
+        grid-template-columns: 1fr; /* 1 fotka na řádek */
     }
 }
-
-@media (min-width: 1080px) and (max-width: 1439px) {
-    .album-gallery {
-        grid-template-columns: repeat(3, 1fr);
+    
+@media (min-width: 1080px) and (max-width: 1439px) { /* Pro desktopy */
+    .photo-album {
+        grid-template-columns: repeat(3, 1fr); /* 3 fotky na řádek */
     }
 }
-
-@media (max-width: 1079px) {
-    .album-gallery {
-        grid-template-columns: 1fr;
+    
+@media (min-width: 1440px) { /* Pro velké desktopy a monitory */
+    .photo-album {
+        grid-template-columns: repeat(4, 1fr); /* 4 fotky na řádek */
     }
 }

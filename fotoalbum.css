@@ -132,12 +132,18 @@ body {
 }
 
 .overlay h1{
+    margin-top: 15px;
     margin-bottom: 15px;
+    margin-left: 0;
+    margin-right: 0;
     line-height: 1.2em;
 }
 
 .overlay h2 {
     margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 0;
+    margin-right: 0;
     line-height: 1.2em;
 }
 

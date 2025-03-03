@@ -39,7 +39,7 @@ body {
 .left-section img {
     width: 80%;
     max-width: 100%;
-    margin-bottom: 30px;
+    margin-bottom: 40px; /* ZVĚTŠEN margin-bottom pro větší mezeru mezi roky */
 }
 
 .title {
@@ -120,7 +120,7 @@ body {
     box-sizing: border-box;
 }
 
-/* Překryv (nadpisy roků) */
+/* Překryv (nadpisy roků) - ZVĚTŠENÉ MARGINY */
 .overlay {
     padding: 20px;
     border-radius: 10px;
@@ -128,20 +128,20 @@ body {
     color: #fff;
     width: 100%;
     box-sizing: border-box;
-    margin-bottom: 30px;
+    margin-bottom: 40px; /* ZVĚTŠEN margin-bottom pro větší mezeru mezi roky */
 }
 
 .overlay h1 {
-    margin-top: 20px; /* Increased margin */
-    margin-bottom: 20px; /* Increased margin */
+    margin-top: 40px;      /* ZVĚTŠEN margin-top pro větší mezeru nad rokem */
+    margin-bottom: 40px;   /* ZVĚTŠEN margin-bottom pro větší mezeru pod rokem */
     margin-left: 0;
     margin-right: 0;
     line-height: 1.2em;
 }
 
 .overlay h2 {
-    margin-top: 20px; /* Increased margin */
-    margin-bottom: 20px; /* Increased margin */
+    margin-top: 40px;      /* ZVĚTŠEN margin-top pro větší mezeru nad albem */
+    margin-bottom: 40px;   /* ZVĚTŠEN margin-bottom pro větší mezeru pod albem */
     margin-left: 0;
     margin-right: 0;
     line-height: 1.2em;

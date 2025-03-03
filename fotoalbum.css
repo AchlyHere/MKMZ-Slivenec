@@ -131,17 +131,17 @@ body {
     margin-bottom: 30px;
 }
 
-.overlay h1{
-    margin-top: 15px;
-    margin-bottom: 15px;
+.overlay h1 {
+    margin-top: 20px; /* Increased margin */
+    margin-bottom: 20px; /* Increased margin */
     margin-left: 0;
     margin-right: 0;
     line-height: 1.2em;
 }
 
 .overlay h2 {
-    margin-top: 15px;
-    margin-bottom: 15px;
+    margin-top: 20px; /* Increased margin */
+    margin-bottom: 20px; /* Increased margin */
     margin-left: 0;
     margin-right: 0;
     line-height: 1.2em;
@@ -149,19 +149,19 @@ body {
 
 /* Album sekce */
 .album-section {
-    margin-bottom: 30px;
+    margin-bottom: 40px; /* Increased margin */
 }
 
 .album-title {
     color: #fff;
-    margin-bottom: 5px;
+    margin-bottom: 10px; /* Increased margin */
     font-size: 1.4em;
 }
 
 .album-links {
     color: #fff;
     margin-top: 0;
-    margin-bottom: 10px;
+    margin-bottom: 20px; /* Increased margin */
     font-size: 0.9em;
     text-align: center;
 }
@@ -169,7 +169,7 @@ body {
 .album-links a {
     color: #fff;
     text-decoration: none;
-    margin: 0 5px;
+    margin: 0 10px; /* Increased margin */
 }
 
 .album-links a:hover {
@@ -179,11 +179,11 @@ body {
 .photo-album {
     display: grid;
     grid-template-columns: 1fr; /* Výchozí styl 1 sloupec */
-    grid-gap: 20px;
+    grid-gap: 30px; /* Increased gap */
     width: 100%;
     max-width: 1200px;
     margin: 0 auto; /* Centrování galerie */
-    margin-bottom: 30px;
+    margin-bottom: 40px; /* Increased margin */
 }
 
 .photo {
@@ -231,7 +231,6 @@ body {
 .photo:hover .photo-text {
     transform: translateY(0); /* Zobrazení po najetí myší */
 }
-
 
 .photo-text h3 {
     margin: 0;

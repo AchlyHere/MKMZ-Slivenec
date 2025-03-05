@@ -13,7 +13,7 @@ body {
     height: 100%;
 }
 
-/* Left Section */
+/* Left section styling */
 .left-section {
     width: 20%;
     background-color: #252525;
@@ -24,7 +24,6 @@ body {
     overflow-y: auto;
     box-sizing: border-box;
     transition: width 0.3s ease, left 0.3s ease;
-    position: relative;
 }
 
 .left-section img {
@@ -76,6 +75,7 @@ body {
     font-size: 0.8em;
     font-family: Helvetica, sans-serif;
     width: 100%;
+    padding: 20px 0;
 }
 
 .contact-info a {
@@ -87,7 +87,7 @@ body {
     text-decoration: underline;
 }
 
-/* Right Section */
+/* Right section styling */
 .right-section {
     flex: 1;
     background-color: rgba(0, 0, 0, 0.7);
@@ -100,6 +100,7 @@ body {
     box-sizing: border-box;
 }
 
+/* Overlay styling */
 .overlay {
     padding: 20px;
     border-radius: 10px;
@@ -108,6 +109,7 @@ body {
     width: 100%;
 }
 
+/* About section styling */
 .about {
     text-align: center;
     margin-top: 20px;
@@ -130,17 +132,26 @@ body {
     font-family: 'Georgia', serif;
 }
 
+/* Toggle button */
+.toggle-btn {
+    display: none;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
     .left-section {
         width: 100%;
+        height: 100%;
         position: fixed;
         top: 0;
         left: -100%;
-        height: 100%;
-        z-index: 5;
-        background-color: #252525;
+        z-index: 1000;
         padding-top: 60px;
+        transition: left 0.3s ease;
     }
 
     .left-section.open {
@@ -148,6 +159,7 @@ body {
     }
 
     .right-section {
+        width: 100%;
         padding: 10px;
     }
 
@@ -160,9 +172,9 @@ body {
         max-width: none;
     }
 
-    /* Toggle button */
     .toggle-btn {
-        position: absolute;
+        display: block;
+        position: fixed;
         top: 10px;
         left: 10px;
         background: none;
@@ -170,7 +182,6 @@ body {
         color: #fff;
         font-size: 2em;
         cursor: pointer;
-        z-index: 10;
-        display: block;
+        z-index: 1001;
     }
 }

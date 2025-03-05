@@ -3,8 +3,8 @@ body {
     margin: 0;
     display: flex;
     height: 100vh;
-    overflow: hidden; /* Ensure the whole body doesn't scroll */
-    font-family: Arial, sans-serif; /* Consistent font across the site */
+    overflow: hidden;
+    font-family: Arial, sans-serif;
 }
 
 .container {
@@ -12,21 +12,22 @@ body {
     width: 100%;
 }
 
-/* Left section styling */
+/* Left Section */
 .left-section {
-    width: 20%; /* Default width for desktop */
+    width: 20%;
     background-color: #252525;
     padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     overflow-y: auto;
-    box-sizing: border-box; /* Ensure padding is included in the width */
-    transition: width 0.3s ease; /* Smooth transition for width change */
+    box-sizing: border-box;
+    transition: width 0.3s ease, left 0.3s ease;
+    position: relative;
 }
 
 .left-section img {
-    width: 80%; /* Ensure images are responsive */
+    width: 80%;
     margin-bottom: 30px;
 }
 
@@ -70,46 +71,44 @@ body {
 .contact-info {
     margin-top: auto;
     text-align: center;
-    color: #fff; /* Updated color */
+    color: #fff;
     font-size: 0.8em;
     font-family: Helvetica, sans-serif;
     width: 100%;
-    padding: 20px 0; /* Add padding for spacing */
+    padding: 20px 0;
 }
 
 .contact-info a {
-    color: #fff; /* Make email link white */
-    text-decoration: none; /* Remove underline for consistency */
+    color: #fff;
+    text-decoration: none;
 }
 
 .contact-info a:hover {
-    text-decoration: underline; /* Add underline on hover for clarity */
+    text-decoration: underline;
 }
 
-/* Right section styles */
+/* Right Section */
 .right-section {
     flex: 1;
-    background-color: rgba(0, 0, 0, 0.7); /* Slightly darker than the left section */
+    background-color: rgba(0, 0, 0, 0.7);
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 20px;
-    overflow-y: auto; /* Enable scrolling for the right section */
+    overflow-y: auto;
     overflow-x: hidden;
-    box-sizing: border-box; /* Ensure padding is included in the width */
+    box-sizing: border-box;
 }
 
-/* Overlay styles */
 .overlay {
     padding: 20px;
     border-radius: 10px;
     text-align: center;
     color: #fff;
     width: 100%;
-    box-sizing: border-box; /* Ensure padding is included in the width */
+    box-sizing: border-box;
 }
 
-/* Content styles */
 .content {
     text-align: left;
     color: #fff;
@@ -119,8 +118,8 @@ body {
 }
 
 .content img {
-    width: 100%; /* Ensure images are responsive */
-    max-width: 500px; /* Ensure images don't exceed a reasonable width */
+    width: 100%;
+    max-width: 500px;
     height: auto;
     border-radius: 10px;
     border: 2px solid #fff;
@@ -158,28 +157,23 @@ body {
         width: 100%;
         position: fixed;
         top: 0;
-        left: -100%; /* Initially hidden */
+        left: -100%;
         height: 100%;
         z-index: 5;
-        background-color: #252525; /* Ensure background is visible */
-        padding-top: 60px; /* Make space for the toggle button */
+        background-color: #252525;
+        padding-top: 60px;
     }
 
     .left-section.open {
-        left: 0; /* Show the left section */
+        left: 0;
     }
 
     .right-section {
         padding: 10px;
     }
 
-    .about {
-        font-size: 1em;
-    }
-
-    .about img {
-        width: 90%;
-        max-width: none;
+    .content img {
+        max-width: 100%;
     }
 
     .toggle-btn {

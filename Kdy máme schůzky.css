@@ -5,7 +5,7 @@ body {
     height: 100vh;
     overflow: hidden;
     font-family: Arial, sans-serif;
-    color: #fff; /* Set default text color to white */
+    color: #fff;
 }
 
 .container {
@@ -13,17 +13,18 @@ body {
     width: 100%;
 }
 
-/* Left section styling */
+/* Left Section */
 .left-section {
-    width: 20%; /* Default width for desktop */
+    width: 20%;
     background-color: #252525;
     padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     overflow-y: auto;
-    box-sizing: border-box; /* Ensure padding is included in the width */
-    transition: width 0.3s ease; /* Smooth transition for width change */
+    box-sizing: border-box;
+    transition: width 0.3s ease, left 0.3s ease;
+    position: relative;
 }
 
 .left-section img {
@@ -35,7 +36,7 @@ body {
     font-family: 'Times New Roman', Times, serif;
     font-size: 1.5em;
     margin: 0;
-    color: #fff; /* Ensure the title text is white */
+    color: #fff;
 }
 
 .navigation {
@@ -71,62 +72,58 @@ body {
 .contact-info {
     margin-top: auto;
     text-align: center;
-    color: #fff; /* Updated color */
+    color: #fff;
     font-size: 0.8em;
     font-family: Helvetica, sans-serif;
     width: 100%;
-    padding: 20px 0; /* Add padding for spacing */
+    padding: 20px 0;
 }
 
 .contact-info a {
-    color: #fff; /* Make email link white */
-    text-decoration: none; /* Remove underline for consistency */
+    color: #fff;
+    text-decoration: none;
 }
 
 .contact-info a:hover {
-    text-decoration: underline; /* Add underline on hover for clarity */
+    text-decoration: underline;
 }
 
-/* Right section styles */
+/* Right Section */
 .right-section {
     flex: 1;
     background-color: rgba(0, 0, 0, 0.7);
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center content horizontally */
+    align-items: center;
     padding: 20px;
     overflow-y: auto;
     overflow-x: hidden;
-    box-sizing: border-box; /* Ensure padding is included in the width */
+    box-sizing: border-box;
 }
 
-/* Header styles */
 h1 {
     color: #fff;
     font-family: 'Georgia', serif;
     margin-bottom: 20px;
 }
 
-/* Meetings container styles */
 #meetings-container {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center content horizontally */
+    align-items: center;
     gap: 20px;
 }
 
-/* Meeting box styles */
 .meeting {
     background-color: #242222;
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 80%; /* Ensure the meetings take up a good portion of the available space */
-    max-width: 600px; /* Set a maximum width */
-    box-sizing: border-box; /* Ensure padding is included in the width */
+    width: 80%;
+    max-width: 600px;
+    box-sizing: border-box;
 }
 
-/* Meeting heading styles */
 .meeting h2 {
     color: #fff;
     margin-top: 0;
@@ -134,25 +131,10 @@ h1 {
     font-size: 1.5em;
 }
 
-/* Meeting paragraph styles */
 .meeting p {
-    color: #fff; /* Set paragraph text color to white */
+    color: #fff;
     margin: 5px 0;
     font-family: Helvetica, sans-serif;
-}
-
-/* Toggle button */
-.toggle-btn {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    background: none;
-    border: none;
-    color: #fff;
-    font-size: 2em;
-    cursor: pointer;
-    z-index: 10;
-    display: none; /* Hidden on desktop */
 }
 
 /* Responsive adjustments */
@@ -161,31 +143,40 @@ h1 {
         width: 100%;
         position: fixed;
         top: 0;
-        left: -100%; /* Initially hidden */
+        left: -100%;
         height: 100%;
         z-index: 5;
-        background-color: #252525; /* Ensure background is visible */
-        padding-top: 60px; /* Make space for the toggle button */
+        background-color: #252525;
+        padding-top: 60px;
     }
 
     .left-section.open {
-        left: 0; /* Show the left section */
+        left: 0;
     }
 
     .right-section {
         padding: 10px;
     }
 
-    .about {
-        font-size: 1em;
-    }
-
-    .about img {
+    .meeting {
         width: 90%;
-        max-width: none;
     }
 
+    .left-section img {
+        width: 90%;
+    }
+
+    /* Toggle button */
     .toggle-btn {
-        display: block; /* Show the toggle button */
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background: none;
+        border: none;
+        color: #fff;
+        font-size: 2em;
+        cursor: pointer;
+        z-index: 10;
+        display: block;
     }
 }

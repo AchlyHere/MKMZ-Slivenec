@@ -3,7 +3,7 @@ body {
     margin: 0;
     display: flex;
     height: 100vh;
-    overflow: hidden; /* Ensure the whole body doesn't scroll */
+    overflow: hidden;
     font-family: Arial, sans-serif;
 }
 
@@ -13,16 +13,18 @@ body {
     height: 100%;
 }
 
+/* Left Section */
 .left-section {
-    width: 20%; /* Default width for desktop */
+    width: 20%;
     background-color: #252525;
     padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     overflow-y: auto;
-    box-sizing: border-box; /* Ensure padding is included in the width */
-    transition: width 0.3s ease; /* Smooth transition for width change */
+    box-sizing: border-box;
+    transition: width 0.3s ease, left 0.3s ease;
+    position: relative;
 }
 
 .left-section img {
@@ -87,34 +89,35 @@ body {
     text-decoration: underline;
 }
 
+/* Right Section */
 .right-section {
     flex: 1;
-    background-image: url('index-bg-rs.jpeg'); /* Background image */
-    background-size: cover; /* Cover the entire section */
-    background-position: center; /* Center the background image */
+    background-image: url('index-bg-rs.jpeg');
+    background-size: cover;
+    background-position: center;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Center content vertically */
-    align-items: center; /* Center content horizontally */
+    justify-content: center;
+    align-items: center;
     padding: 20px;
-    overflow-y: auto; /* Enable scrolling for the right section */
+    overflow-y: auto;
     overflow-x: hidden;
-    box-sizing: border-box; /* Ensure padding is included in the width */
+    box-sizing: border-box;
 }
 
 .overlay {
-    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    background-color: rgba(0, 0, 0, 0.7);
     padding: 20px;
     border-radius: 10px;
     text-align: center;
-    color: #fff; /* Ensure text is white */
-    box-sizing: border-box; /* Ensure padding is included in the width */
-    max-width: 100%; /* Ensure it doesn't exceed the container width */
+    color: #fff;
+    box-sizing: border-box;
+    max-width: 100%;
 }
 
 .overlay h1,
 .overlay p {
-    margin: 0; /* Remove default margins */
+    margin: 0;
 }
 
 .overlay h1 {
@@ -126,51 +129,38 @@ body {
     font-size: 1.5em;
 }
 
-/* Toggle button */
-.toggle-btn {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    background: none;
-    border: none;
-    color: #fff;
-    font-size: 2em;
-    cursor: pointer;
-    z-index: 10;
-    display: none; /* Hidden on desktop */
-}
-
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .left-section {
         width: 100%;
         position: fixed;
         top: 0;
-        left: -100%; /* Initially hidden */
+        left: -100%;
         height: 100%;
         z-index: 5;
-        background-color: #252525; /* Ensure background is visible */
-        padding-top: 60px; /* Make space for the toggle button */
+        background-color: #252525;
+        padding-top: 60px;
     }
 
     .left-section.open {
-        left: 0; /* Show the left section */
+        left: 0;
     }
 
     .right-section {
-        padding: 10px;
+        margin-top: 0;
     }
 
-    .about {
-        font-size: 1em;
-    }
-
-    .about img {
-        width: 90%;
-        max-width: none;
-    }
-
+    /* Toggle button */
     .toggle-btn {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background: none;
+        border: none;
+        color: #fff;
+        font-size: 2em;
+        cursor: pointer;
+        z-index: 10;
         display: block; /* Show the toggle button */
     }
 }

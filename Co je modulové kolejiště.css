@@ -138,17 +138,51 @@ body {
     margin: 10px 0;
 }
 
+/* Toggle button */
+.toggle-btn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 2em;
+    cursor: pointer;
+    z-index: 10;
+    display: none; /* Hidden on desktop */
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .left-section {
-        width: 40%; /* Thinner width for mobile devices */
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: -100%; /* Initially hidden */
+        height: 100%;
+        z-index: 5;
+        background-color: #252525; /* Ensure background is visible */
+        padding-top: 60px; /* Make space for the toggle button */
+    }
+
+    .left-section.open {
+        left: 0; /* Show the left section */
     }
 
     .right-section {
-        padding: 10px; /* Adjust padding for smaller screens */
+        padding: 10px;
     }
 
-    .content img {
-        max-width: 100%; /* Ensure images take full width on small screens */
+    .about {
+        font-size: 1em;
+    }
+
+    .about img {
+        width: 90%;
+        max-width: none;
+    }
+
+    .toggle-btn {
+        display: block; /* Show the toggle button */
     }
 }

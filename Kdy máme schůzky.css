@@ -11,17 +11,18 @@ body {
 .container {
     display: flex;
     width: 100%;
-    height: 100%; /* Ensure the container fills the available height */
 }
 
+/* Left section styling */
 .left-section {
-    width: 250px;
+    width: 20%; /* Default width for desktop */
     background-color: #252525;
     padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     overflow-y: auto;
+    box-sizing: border-box; /* Ensure padding is included in the width */
     transition: width 0.3s ease; /* Smooth transition for width change */
 }
 
@@ -86,6 +87,7 @@ body {
     text-decoration: underline; /* Add underline on hover for clarity */
 }
 
+/* Right section styles */
 .right-section {
     flex: 1;
     background-color: rgba(0, 0, 0, 0.7);
@@ -144,15 +146,15 @@ h1 {
     .left-section {
         width: 40%; /* Thinner width for mobile devices */
     }
-    
+
     .right-section {
         padding: 10px; /* Adjust padding for smaller screens */
     }
-    
+
     .meeting {
         width: 90%; /* Ensure meetings take full width on small screens */
     }
-    
+
     .left-section img {
         width: 90%; /* Adjust image width for mobile devices */
     }

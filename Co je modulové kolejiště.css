@@ -12,14 +12,16 @@ body {
     width: 100%;
 }
 
+/* Left section styling */
 .left-section {
-    width: 250px; /* Fixed width for larger screens */
+    width: 20%; /* Default width for desktop */
     background-color: #252525;
     padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     overflow-y: auto;
+    box-sizing: border-box; /* Ensure padding is included in the width */
     transition: width 0.3s ease; /* Smooth transition for width change */
 }
 
@@ -141,11 +143,11 @@ body {
     .left-section {
         width: 40%; /* Thinner width for mobile devices */
     }
-    
+
     .right-section {
         padding: 10px; /* Adjust padding for smaller screens */
     }
-    
+
     .content img {
         max-width: 100%; /* Ensure images take full width on small screens */
     }

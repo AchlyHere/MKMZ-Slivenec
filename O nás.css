@@ -15,13 +15,14 @@ body {
 
 /* Left section styling */
 .left-section {
-    width: 250px;
+    width: 20%; /* Default width for desktop */
     background-color: #252525;
     padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     overflow-y: auto;
+    box-sizing: border-box; /* Ensure padding is included in the width */
     transition: width 0.3s ease; /* Smooth transition for width change */
 }
 

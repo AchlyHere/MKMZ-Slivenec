@@ -127,7 +127,7 @@ body {
 
 /* Sekce roku */
 .year-section {
-    margin-bottom: 60px; /* Zvětšete mezeru mezi jednotlivými roky */
+    margin-bottom: 60px;
 }
 
 /* Překryv (nadpisy roků) */
@@ -138,7 +138,7 @@ body {
     color: #fff;
     width: 100%;
     box-sizing: border-box;
-    margin-bottom: 20px; /* Zmenšete mezeru pod nadpisem roku */
+    margin-bottom: 20px;
 }
 
 .year-section .overlay h1 {
@@ -158,38 +158,9 @@ body {
 }
 
 /* Album sekce */
-.album-section {
-    margin-bottom: 40px;
-}
-
-.album-title {
-    color: #fff;
-    margin-bottom: 10px;
-    font-size: 1.4em;
-}
-
-.album-links {
-    color: #fff;
-    margin-top: 0;
-    margin-bottom: 20px;
-    font-size: 0.9em;
-    text-align: center;
-}
-
-.album-links a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 10px;
-}
-
-.album-links a:hover {
-    text-decoration: underline;
-}
-
-/* Fotogalerie */
 .photo-album {
     display: grid;
-    grid-template-columns: 1fr; /* Výchozí 1 sloupec */
+    grid-template-columns: 1fr;
     grid-gap: 30px;
     width: 100%;
     max-width: 1200px;
@@ -197,6 +168,18 @@ body {
     margin-bottom: 40px;
 }
 
+/* Skupina fotek */
+.photo-group {
+    margin-bottom: 30px;
+}
+
+.photo-group h2 {
+    color: #fff;
+    margin-bottom: 10px;
+    font-size: 1.4em;
+}
+
+/* Jednotlivá fotka */
 .photo {
     text-align: center;
     transition: transform 0.3s ease;
@@ -204,11 +187,6 @@ body {
 
 .photo:hover {
     transform: scale(1.05);
-}
-
-.photo a {
-    display: block;
-    position: relative;
 }
 
 .photo img {
@@ -226,29 +204,25 @@ body {
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
-.photo-text {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+/* Odkazy k fotce */
+.photo-links {
     color: #fff;
-    padding: 10px;
+    margin-top: 10px;
     text-align: center;
-    transform: translateY(100%);
-    transition: transform 0.3s ease;
 }
 
-.photo:hover .photo-text {
-    transform: translateY(0);
+.photo-links a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
 }
 
-.photo-text h3 {
-    margin: 0;
+.photo-links a:hover {
+    text-decoration: underline;
 }
 
 /* Responzivní design */
-@media (max-width: 768px) { /* Pro mobilní telefony */
+@media (max-width: 768px) {
     .container {
         flex-direction: column;
         height: auto;
@@ -275,19 +249,19 @@ body {
     }
 }
 
-@media (min-width: 769px) and (max-width: 1023px) { /* Pro tablety */
+@media (min-width: 769px) and (max-width: 1023px) {
     .photo-album {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-@media (min-width: 1024px) and (max-width: 1439px) { /* Pro desktopy */
+@media (min-width: 1024px) and (max-width: 1439px) {
     .photo-album {
         grid-template-columns: repeat(3, 1fr);
     }
 }
 
-@media (min-width: 1440px) { /* Pro velké desktopy a monitory */
+@media (min-width: 1440px) {
     .photo-album {
         grid-template-columns: repeat(4, 1fr);
     }

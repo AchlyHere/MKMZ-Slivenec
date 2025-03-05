@@ -4,6 +4,10 @@ html {
     box-sizing: border-box;
 }
 
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -11,15 +15,17 @@ body {
     flex-direction: column;
     min-height: 100vh;
     overflow-x: hidden;
-    box-sizing: border-box;
+    /*box-sizing: border-box; Duplicitní, přesunuto do globálního resetu */
     height: 100vh;
+    background-color: #f4f4f4; /* Jemné pozadí */
+    color: #333; /* Tmavší text pro lepší čitelnost */
 }
 
-/* Hlavní kontejner */
+/* Kontejner pro celé rozložení */
 .container {
     display: flex;
     height: 100%;
-    overflow: hidden;
+    overflow: hidden; /* Skryje overflow */
 }
 
 /* Levý panel (navigace) */
@@ -39,7 +45,7 @@ body {
 .left-section img {
     width: 80%;
     max-width: 100%;
-    margin-bottom: 40px; /* ZVĚTŠEN margin-bottom pro větší mezeru mezi roky */
+    margin-bottom: 40px;
 }
 
 .title {
@@ -120,7 +126,7 @@ body {
     box-sizing: border-box;
 }
 
-/* Překryv (nadpisy roků) - ZVĚTŠENÉ MARGINY */
+/* Překryv (nadpisy roků) */
 .overlay {
     padding: 20px;
     border-radius: 10px;
@@ -128,20 +134,20 @@ body {
     color: #fff;
     width: 100%;
     box-sizing: border-box;
-    margin-bottom: 40px; /* ZVĚTŠEN margin-bottom pro větší mezeru mezi roky */
+    margin-bottom: 40px;
 }
 
 .overlay h1 {
-    margin-top: 40px;      /* ZVĚTŠEN margin-top pro větší mezeru nad rokem */
-    margin-bottom: 40px;   /* ZVĚTŠEN margin-bottom pro větší mezeru pod rokem */
+    margin-top: 40px;
+    margin-bottom: 40px;
     margin-left: 0;
     margin-right: 0;
     line-height: 1.2em;
 }
 
 .overlay h2 {
-    margin-top: 40px;      /* ZVĚTŠEN margin-top pro větší mezeru nad albem */
-    margin-bottom: 40px;   /* ZVĚTŠEN margin-bottom pro větší mezeru pod albem */
+    margin-top: 40px;
+    margin-bottom: 40px;
     margin-left: 0;
     margin-right: 0;
     line-height: 1.2em;
@@ -149,19 +155,19 @@ body {
 
 /* Album sekce */
 .album-section {
-    margin-bottom: 40px; /* Increased margin */
+    margin-bottom: 40px;
 }
 
 .album-title {
     color: #fff;
-    margin-bottom: 10px; /* Increased margin */
+    margin-bottom: 10px;
     font-size: 1.4em;
 }
 
 .album-links {
     color: #fff;
     margin-top: 0;
-    margin-bottom: 20px; /* Increased margin */
+    margin-bottom: 20px;
     font-size: 0.9em;
     text-align: center;
 }
@@ -169,21 +175,22 @@ body {
 .album-links a {
     color: #fff;
     text-decoration: none;
-    margin: 0 10px; /* Increased margin */
+    margin: 0 10px;
 }
 
 .album-links a:hover {
     text-decoration: underline;
 }
 
+/* Fotogalerie */
 .photo-album {
     display: grid;
-    grid-template-columns: 1fr; /* Výchozí styl 1 sloupec */
-    grid-gap: 30px; /* Increased gap */
+    grid-template-columns: 1fr; /* Výchozí 1 sloupec */
+    grid-gap: 30px;
     width: 100%;
     max-width: 1200px;
-    margin: 0 auto; /* Centrování galerie */
-    margin-bottom: 40px; /* Increased margin */
+    margin: 0 auto;
+    margin-bottom: 40px;
 }
 
 .photo {
@@ -216,20 +223,20 @@ body {
 }
 
 .photo-text {
-    position: absolute; /* Absolutní pozicování */
-    bottom: 0; /* Umístění dole */
-    left: 0; /* Od levého okraje */
-    width: 100%; /* Šířka 100% */
-    background-color: rgba(0, 0, 0, 0.5); /* Průhledné pozadí */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
     color: #fff;
     padding: 10px;
     text-align: center;
-    transform: translateY(100%); /* Skryté mimo obrazovku */
-    transition: transform 0.3s ease; /* Plynulý přechod */
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
 }
 
 .photo:hover .photo-text {
-    transform: translateY(0); /* Zobrazení po najetí myší */
+    transform: translateY(0);
 }
 
 .photo-text h3 {
@@ -237,7 +244,7 @@ body {
 }
 
 /* Responzivní design */
-@media (max-width: 768px) { /* Pro telefony v collapsed left section – TODO: Zkontrolovat collapsed left section */
+@media (max-width: 768px) { /* Pro mobilní telefony */
     .container {
         flex-direction: column;
         height: auto;
@@ -264,18 +271,18 @@ body {
     }
 }
 
-@media (min-width: 769px) and (max-width: 1079px) { /* Pro tablety a menší desktopy */
+@media (min-width: 769px) and (max-width: 1023px) { /* Pro tablety */
     .photo-album {
-        grid-template-columns: 1fr; /* 1 fotka na řádek */
+        grid-template-columns: repeat(2, 1fr); /* 2 fotky na řádek */
     }
 }
-    
-@media (min-width: 1080px) and (max-width: 1439px) { /* Pro desktopy */
+
+@media (min-width: 1024px) and (max-width: 1439px) { /* Pro desktopy */
     .photo-album {
         grid-template-columns: repeat(3, 1fr); /* 3 fotky na řádek */
     }
 }
-    
+
 @media (min-width: 1440px) { /* Pro velké desktopy a monitory */
     .photo-album {
         grid-template-columns: repeat(4, 1fr); /* 4 fotky na řádek */

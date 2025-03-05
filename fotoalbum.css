@@ -15,17 +15,16 @@ body {
     flex-direction: column;
     min-height: 100vh;
     overflow-x: hidden;
-    /*box-sizing: border-box; Duplicitní, přesunuto do globálního resetu */
     height: 100vh;
-    background-color: #f4f4f4; /* Jemné pozadí */
-    color: #333; /* Tmavší text pro lepší čitelnost */
+    background-color: #f4f4f4;
+    color: #333;
 }
 
 /* Kontejner pro celé rozložení */
 .container {
     display: flex;
     height: 100%;
-    overflow: hidden; /* Skryje overflow */
+    overflow: hidden;
 }
 
 /* Levý panel (navigace) */
@@ -126,18 +125,23 @@ body {
     box-sizing: border-box;
 }
 
+/* Sekce roku */
+.year-section {
+    margin-bottom: 60px; /* Zvětšete mezeru mezi jednotlivými roky */
+}
+
 /* Překryv (nadpisy roků) */
-.overlay {
+.year-section .overlay {
     padding: 20px;
     border-radius: 10px;
     text-align: center;
     color: #fff;
     width: 100%;
     box-sizing: border-box;
-    margin-bottom: 40px;
+    margin-bottom: 20px; /* Zmenšete mezeru pod nadpisem roku */
 }
 
-.overlay h1 {
+.year-section .overlay h1 {
     margin-top: 40px;
     margin-bottom: 40px;
     margin-left: 0;
@@ -145,7 +149,7 @@ body {
     line-height: 1.2em;
 }
 
-.overlay h2 {
+.year-section .overlay h2 {
     margin-top: 40px;
     margin-bottom: 40px;
     margin-left: 0;
@@ -204,7 +208,7 @@ body {
 
 .photo a {
     display: block;
-    position: relative; /* Pro umístění photo-text */
+    position: relative;
 }
 
 .photo img {
@@ -267,24 +271,24 @@ body {
     }
 
     .photo-album {
-        grid-template-columns: 1fr; /* 1 fotka na řádek */
+        grid-template-columns: 1fr;
     }
 }
 
 @media (min-width: 769px) and (max-width: 1023px) { /* Pro tablety */
     .photo-album {
-        grid-template-columns: repeat(2, 1fr); /* 2 fotky na řádek */
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (min-width: 1024px) and (max-width: 1439px) { /* Pro desktopy */
     .photo-album {
-        grid-template-columns: repeat(3, 1fr); /* 3 fotky na řádek */
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
 @media (min-width: 1440px) { /* Pro velké desktopy a monitory */
     .photo-album {
-        grid-template-columns: repeat(4, 1fr); /* 4 fotky na řádek */
+        grid-template-columns: repeat(4, 1fr);
     }
 }

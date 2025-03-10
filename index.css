@@ -80,14 +80,14 @@ body {
 }
 
 .contact-info p {
-    font-size: 1.6em;
+    font-size: 1.4em;   /* Velikost textu "Kontakt:" */
 }
 
 .contact-info a {
     color: #fff;
     text-decoration: none;
     font-family: Helvetica, sans-serif;
-    font-size: 1.6em;
+    font-size: 1.4em;    /* Velikost e-mailu */
 }
 
 .contact-info a:hover {

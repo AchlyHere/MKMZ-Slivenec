@@ -62,7 +62,7 @@ body {
     color: #fff;
     text-decoration: none;
     font-family: Helvetica, sans-serif;
-    font-size: 1.6em; /* Increased font size even more */
+    font-size: 1.6em;
 }
 
 .navigation a:hover {
@@ -87,7 +87,7 @@ body {
     color: #fff;
     text-decoration: none;
     font-family: Helvetica, sans-serif;
-    font-size: 1.6em; /* increased size for contact email */
+    font-size: 1.6em; /* SAME SIZE AS NAVIGATION */
 }
 
 .contact-info a:hover {
@@ -149,11 +149,11 @@ body {
         font-size: 1.2em;
     }
 
-     .contact-info p {
-        font-size: 1.2em; /* increased size for contact label */
+    .contact-info p {
+        font-size: 1.2em;
     }
 
     .contact-info a {
-        font-size: 1.2em; /* increased size for contact email */
+        font-size: 1.2em;
     }
 }

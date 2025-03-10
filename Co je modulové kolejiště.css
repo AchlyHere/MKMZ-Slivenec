@@ -1,24 +1,154 @@
-@import 'layout.css';
-@import 'navigation.css';
-@import 'contact.css';
-@import 'overlay.css';
-@import 'content.css';
+/* Reset default margin and flex container setup */
+body {
+    margin: 0;
+    display: flex;
+    height: 100vh;
+    overflow: hidden; /* Ensure the whole body doesn't scroll */
+    font-family: Arial, sans-serif; /* Consistent font across the site */
+}
 
+.container {
+    display: flex;
+    width: 100%;
+}
+
+/* Left section styling */
+.left-section {
+    width: 20%; /* Default width for desktop */
+    background-color: #252525;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+    box-sizing: border-box; /* Ensure padding is included in the width */
+    transition: width 0.3s ease; /* Smooth transition for width change */
+}
+
+.left-section img {
+    width: 80%; /* Ensure images are responsive */
+    margin-bottom: 30px;
+}
+
+.title {
+    color: #fff;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.5em;
+    margin: 0;
+}
+
+.navigation {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.navigation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navigation li {
+    margin: 10px 0;
+}
+
+.navigation a {
+    color: #fff;
+    text-decoration: none;
+    font-family: Helvetica, sans-serif;
+    font-size: 1.2em;
+}
+
+.navigation a:hover {
+    text-decoration: underline;
+}
+
+.contact-info {
+    margin-top: auto;
+    text-align: center;
+    color: #fff; /* Updated color */
+    font-size: 0.8em;
+    font-family: Helvetica, sans-serif;
+    width: 100%;
+    padding: 20px 0; /* Add padding for spacing */
+}
+
+.contact-info a {
+    color: #fff; /* Make email link white */
+    text-decoration: none; /* Remove underline for consistency */
+}
+
+.contact-info a:hover {
+    text-decoration: underline; /* Add underline on hover for clarity */
+}
+
+/* Right section styles */
 .right-section {
-    background-color: rgba(0, 0, 0, 0.7);
+    flex: 1;
+    background-color: rgba(0, 0, 0, 0.7); /* Slightly darker than the left section */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    overflow-y: auto; /* Enable scrolling for the right section */
+    overflow-x: hidden;
+    box-sizing: border-box; /* Ensure padding is included in the width */
+}
+
+/* Overlay styles */
+.overlay {
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    color: #fff;
+    width: 100%;
+    box-sizing: border-box; /* Ensure padding is included in the width */
+}
+
+/* Content styles */
+.content {
+    text-align: left;
+    color: #fff;
+    font-family: 'Georgia', serif;
+    font-size: 1.2em;
+    margin-top: 20px;
+}
+
+.content img {
+    width: 100%; /* Ensure images are responsive */
+    max-width: 500px; /* Ensure images don't exceed a reasonable width */
+    height: auto;
+    border-radius: 10px;
+    border: 2px solid #fff;
+    margin: 20px 0;
+}
+
+.content ul {
+    text-align: left;
+    margin: 20px auto;
+    padding: 0;
+    list-style: none;
+}
+
+.content ul li {
+    margin: 10px 0;
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .left-section {
-        width: 40%;
+        width: 40%; /* Thinner width for mobile devices */
     }
 
     .right-section {
-        padding: 10px;
+        padding: 10px; /* Adjust padding for smaller screens */
     }
 
     .content img {
-        max-width: 100%;
+        max-width: 100%; /* Ensure images take full width on small screens */
     }
 }

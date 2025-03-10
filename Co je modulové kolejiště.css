@@ -1,10 +1,10 @@
-/* Reset default margin and flex container setup */
+/* Base styles */
 body {
     margin: 0;
     display: flex;
     height: 100vh;
-    overflow: hidden; /* Ensure the whole body doesn't scroll */
-    font-family: Arial, sans-serif; /* Consistent font across the site */
+    overflow: hidden;
+    font-family: Arial, sans-serif;
 }
 
 .container {
@@ -12,31 +12,32 @@ body {
     width: 100%;
 }
 
-/* Left section styling */
+/* Left section styling - TAKEN FROM index.css */
 .left-section {
-    width: 20%; /* Default width for desktop */
+    width: 20%;
     background-color: #252525;
     padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     overflow-y: auto;
-    box-sizing: border-box; /* Ensure padding is included in the width */
-    transition: width 0.3s ease; /* Smooth transition for width change */
+    box-sizing: border-box;
+    transition: width 0.3s ease;
 }
 
 .left-section img {
-    width: 80%; /* Ensure images are responsive */
+    width: 80%;
     margin-bottom: 30px;
 }
 
 .title {
     color: #fff;
     font-family: 'Times New Roman', Times, serif;
-    font-size: 1.5em;
+    font-size: 2em;
     margin: 0;
 }
 
+/* Navigation styling - TAKEN FROM index.css */
 .navigation {
     flex-grow: 1;
     display: flex;
@@ -53,50 +54,53 @@ body {
 }
 
 .navigation li {
-    margin: 10px 0;
+    margin: 15px 0;
 }
 
 .navigation a {
     color: #fff;
     text-decoration: none;
     font-family: Helvetica, sans-serif;
-    font-size: 1.2em;
+    font-size: 1.6em;
 }
 
 .navigation a:hover {
     text-decoration: underline;
 }
 
+/* Contact info styling - TAKEN FROM index.css */
 .contact-info {
     margin-top: auto;
     text-align: center;
-    color: #fff; /* Updated color */
-    font-size: 0.8em;
+    color: #fff;
+    font-size: 1.2em;
     font-family: Helvetica, sans-serif;
     width: 100%;
-    padding: 20px 0; /* Add padding for spacing */
+    padding: 20px 0;
 }
 
 .contact-info a {
-    color: #fff; /* Make email link white */
-    text-decoration: none; /* Remove underline for consistency */
+    color: #fff;
+    text-decoration: none;
+    font-family: Helvetica, sans-serif;
+    font-size: 1.4em;
 }
 
 .contact-info a:hover {
-    text-decoration: underline; /* Add underline on hover for clarity */
+    text-decoration: underline;
 }
 
 /* Right section styles */
 .right-section {
     flex: 1;
-    background-color: rgba(0, 0, 0, 0.7); /* Slightly darker than the left section */
+    background-color: rgba(0, 0, 0, 0.7);
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 20px;
-    overflow-y: auto; /* Enable scrolling for the right section */
+    overflow-y: auto;
     overflow-x: hidden;
-    box-sizing: border-box; /* Ensure padding is included in the width */
+    box-sizing: border-box;
 }
 
 /* Overlay styles */
@@ -106,7 +110,7 @@ body {
     text-align: center;
     color: #fff;
     width: 100%;
-    box-sizing: border-box; /* Ensure padding is included in the width */
+    box-sizing: border-box;
 }
 
 /* Content styles */
@@ -119,8 +123,8 @@ body {
 }
 
 .content img {
-    width: 100%; /* Ensure images are responsive */
-    max-width: 500px; /* Ensure images don't exceed a reasonable width */
+    width: 100%;
+    max-width: 500px;
     height: auto;
     border-radius: 10px;
     border: 2px solid #fff;
@@ -141,14 +145,26 @@ body {
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .left-section {
-        width: 40%; /* Thinner width for mobile devices */
+        width: 40%;
     }
 
     .right-section {
-        padding: 10px; /* Adjust padding for smaller screens */
+        padding: 10px;
     }
 
     .content img {
-        max-width: 100%; /* Ensure images take full width on small screens */
+        max-width: 100%;
+    }
+
+    .navigation a {
+        font-size: 1.2em; /* Increased font size even more */
+    }
+
+    .contact-info {
+        font-size: 1.2em;
+    }
+    
+    .contact-info a {
+        font-size: 1.2em;
     }
 }

@@ -74,7 +74,7 @@ body {
     margin-top: auto;
     text-align: center;
     color: #fff;
-    font-size: 1.2em; /* Increased font size */
+    font-size: 1.6em;
     font-family: Helvetica, sans-serif;
     width: 100%;
 }
@@ -82,7 +82,7 @@ body {
 .contact-info a {
     color: #fff;
     text-decoration: none;
-    font-size: 1.4em; /* Increased font size */
+    font-size: 1.4em;
 }
 
 .contact-info a:hover {
@@ -142,5 +142,13 @@ body {
 
     .navigation a {
         font-size: 1.2em; /* Increased font size even more */
+    }
+
+    .contact-info {
+        font-size: 1.2em;
+    }
+    
+    .contact-info a {
+        font-size: 1.2em;
     }
 }

@@ -23,7 +23,7 @@ body {
     height: 100%;
 }
 
-/* Levá sekce (menu, kontakt,...) */
+/* Left section styling (Copied from index.css) */
 .left-section {
     width: 20%;
     background-color: #252525;
@@ -48,6 +48,7 @@ body {
     margin: 0;
 }
 
+/* Navigation styling (Copied from index.css) */
 .navigation {
     flex-grow: 1;
     display: flex;
@@ -78,6 +79,7 @@ body {
     text-decoration: underline;
 }
 
+/* Contact info styling (Copied from index.css) */
 .contact-info {
     margin-top: auto;
     text-align: center;
@@ -99,7 +101,7 @@ body {
     text-decoration: underline;
 }
 
-/* Pravý panel (fotoalbum) */
+/* Right section styling */
 .right-section {
     flex: 1;
     background-color: rgba(0, 0, 0, 0.7);
@@ -223,7 +225,20 @@ body {
     .photo-album {
         grid-template-columns: 1fr;
     }
+    
+    .navigation a {
+        font-size: 1.2em; /* Increased font size even more */
+    }
+
+    .contact-info {
+        font-size: 1.2em;
+    }
+    
+    .contact-info a {
+        font-size: 1.2em;
+    }
 }
+
 
 @media (min-width: 769px) and (max-width: 1023px) {
     .photo-album {

@@ -3,7 +3,7 @@ body {
     margin: 0;
     display: flex;
     height: 100vh;
-    overflow: hidden; /* Ensure the whole body doesn't scroll */
+    overflow: hidden;
     font-family: Arial, sans-serif;
 }
 
@@ -13,16 +13,17 @@ body {
     height: 100%;
 }
 
+/* Left section styling */
 .left-section {
-    width: 20%; /* Default width for desktop */
+    width: 20%;
     background-color: #252525;
     padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     overflow-y: auto;
-    box-sizing: border-box; /* Ensure padding is included in the width */
-    transition: width 0.3s ease; /* Smooth transition for width change */
+    box-sizing: border-box;
+    transition: width 0.3s ease;
 }
 
 .left-section img {
@@ -37,11 +38,12 @@ body {
     margin: 0;
 }
 
+/* Navigation styling */
 .navigation {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: center; /* Vertically center the navigation */
     align-items: center;
     text-align: center;
 }
@@ -53,25 +55,26 @@ body {
 }
 
 .navigation li {
-    margin: 10px 0;
+    margin: 15px 0; /* Increased margin for better spacing */
 }
 
 .navigation a {
     color: #fff;
     text-decoration: none;
     font-family: Helvetica, sans-serif;
-    font-size: 1.2em;
+    font-size: 1.4em; /* Increased font size */
 }
 
 .navigation a:hover {
     text-decoration: underline;
 }
 
+/* Contact info styling */
 .contact-info {
     margin-top: auto;
     text-align: center;
     color: #fff;
-    font-size: 0.8em;
+    font-size: 1em; /* Increased font size */
     font-family: Helvetica, sans-serif;
     width: 100%;
 }
@@ -79,7 +82,6 @@ body {
 .contact-info a {
     color: #fff;
     text-decoration: none;
-    font-family: Helvetica, sans-serif;
     font-size: 1.2em;
 }
 
@@ -87,34 +89,36 @@ body {
     text-decoration: underline;
 }
 
+/* Right section styling */
 .right-section {
     flex: 1;
-    background-image: url('index-bg-rs.jpeg'); /* Background image */
-    background-size: cover; /* Cover the entire section */
-    background-position: center; /* Center the background image */
+    background-image: url('index-bg-rs.jpeg');
+    background-size: cover;
+    background-position: center;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Center content vertically */
-    align-items: center; /* Center content horizontally */
+    justify-content: center;
+    align-items: center;
     padding: 20px;
-    overflow-y: auto; /* Enable scrolling for the right section */
+    overflow-y: auto;
     overflow-x: hidden;
-    box-sizing: border-box; /* Ensure padding is included in the width */
+    box-sizing: border-box;
 }
 
+/* Overlay styling */
 .overlay {
-    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    background-color: rgba(0, 0, 0, 0.7);
     padding: 20px;
     border-radius: 10px;
     text-align: center;
-    color: #fff; /* Ensure text is white */
-    box-sizing: border-box; /* Ensure padding is included in the width */
-    max-width: 100%; /* Ensure it doesn't exceed the container width */
+    color: #fff;
+    box-sizing: border-box;
+    max-width: 100%;
 }
 
 .overlay h1,
 .overlay p {
-    margin: 0; /* Remove default margins */
+    margin: 0;
 }
 
 .overlay h1 {
@@ -126,14 +130,13 @@ body {
     font-size: 1.5em;
 }
 
-/* Toggle button (hidden now as we're not using it) */
-.toggle-btn {
-    display: none; /* Hidden as it's not used */
-}
-
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .left-section {
-        width: 40%; /* Thinner width for mobile devices */
+        width: 40%;
+    }
+
+    .right-section {
+        padding: 10px;
     }
 }

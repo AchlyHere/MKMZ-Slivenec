@@ -80,14 +80,14 @@ body {
 }
 
 .contact-info p {
-    font-size: 1.6em; /* increased size for contact label */
+    font-size: 1.6em;
 }
 
 .contact-info a {
     color: #fff;
     text-decoration: none;
     font-family: Helvetica, sans-serif;
-    font-size: 1.6em; /* SAME SIZE AS NAVIGATION */
+    font-size: 1.6em;
 }
 
 .contact-info a:hover {

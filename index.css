@@ -74,15 +74,20 @@ body {
     margin-top: auto;
     text-align: center;
     color: #fff;
-    font-size: 1.6em;
     font-family: Helvetica, sans-serif;
     width: 100%;
+    padding: 20px 0;
+}
+
+.contact-info p {
+    font-size: 1.6em; /* increased size for contact label */
 }
 
 .contact-info a {
     color: #fff;
     text-decoration: none;
-    font-size: 1.4em;
+    font-family: Helvetica, sans-serif;
+    font-size: 1.6em; /* increased size for contact email */
 }
 
 .contact-info a:hover {
@@ -141,14 +146,14 @@ body {
     }
 
     .navigation a {
-        font-size: 1.2em; /* Increased font size even more */
-    }
-
-    .contact-info {
         font-size: 1.2em;
     }
     
+     .contact-info p {
+        font-size: 1.2em; /* increased size for contact label */
+    }
+
     .contact-info a {
-        font-size: 1.2em;
+        font-size: 1.2em; /* increased size for contact email */
     }
 }

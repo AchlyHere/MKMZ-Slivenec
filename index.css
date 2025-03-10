@@ -139,4 +139,8 @@ body {
     .right-section {
         padding: 10px;
     }
+
+    .navigation a {
+        font-size: 1.2em; /* Increased font size even more */
+    }
 }

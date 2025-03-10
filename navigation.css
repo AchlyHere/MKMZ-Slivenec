@@ -1,0 +1,29 @@
+.navigation {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.navigation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navigation li {
+    margin: 10px 0;
+}
+
+.navigation a {
+    color: #fff;
+    text-decoration: none;
+    font-family: Helvetica, sans-serif;
+    font-size: 1.2em;
+}
+
+.navigation a:hover {
+    text-decoration: underline;
+}

@@ -13,24 +13,39 @@ document.addEventListener('DOMContentLoaded', function () {
                 return;
             }
 
-            let hasFutureMeetings = false;
             const today = new Date();
+            const groupedMeetings = {};
 
+            // Group meetings by name
             meetings.forEach(meeting => {
-                if (meeting.dates && meeting.dates.length > 0) {
-                    meeting.dates.forEach(date => {
-                        const meetingDate = new Date(date);
+                if (!groupedMeetings[meeting.name]) {
+                    groupedMeetings[meeting.name] = [];
+                }
+                meeting.dates.forEach(date => {
+                    const meetingDate = new Date(date);
+                    if (meetingDate >= today) {
+                        groupedMeetings[meeting.name].push(meetingDate);
+                    }
+                });
+            });
 
-                        if (meetingDate >= today) {
-                            hasFutureMeetings = true;
+            // Display grouped meetings
+            let hasFutureMeetings = false;
+            for (const name in groupedMeetings) {
+                if (groupedMeetings.hasOwnProperty(name)) {
+                    const meetingDates = groupedMeetings[name];
 
-                            const meetingDiv = document.createElement('div');
-                            meetingDiv.classList.add('meeting');
+                    if (meetingDates.length > 0) {
+                        hasFutureMeetings = true; // Set flag if there is a future meeting
 
-                            const nameHeader = document.createElement('h2');
-                            nameHeader.textContent = meeting.name;
-                            meetingDiv.appendChild(nameHeader);
+                        const meetingDiv = document.createElement('div');
+                        meetingDiv.classList.add('meeting');
 
+                        const nameHeader = document.createElement('h2');
+                        nameHeader.textContent = name;
+                        meetingDiv.appendChild(nameHeader);
+
+                        meetingDates.forEach(meetingDate => {
                             const formattedDate = meetingDate.toLocaleDateString('cs-CZ', {
                                 year: 'numeric',
                                 month: 'long',
@@ -41,12 +56,12 @@ document.addEventListener('DOMContentLoaded', function () {
                             const dateParagraph = document.createElement('p');
                             dateParagraph.textContent = formattedDate;
                             meetingDiv.appendChild(dateParagraph);
+                        });
 
-                            meetingsContainer.appendChild(meetingDiv);
-                        }
-                    });
+                        meetingsContainer.appendChild(meetingDiv);
+                    }
                 }
-            });
+            }
 
             if (!hasFutureMeetings) {
                 const noMeetingsMessage = document.createElement('p');
@@ -64,4 +79,3 @@ document.addEventListener('DOMContentLoaded', function () {
             meetingsContainer.appendChild(errorMessage);
         });
 });
-

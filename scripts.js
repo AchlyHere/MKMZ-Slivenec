@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             const today = new Date();
+            let hasFutureMeetings = false;
 
             meetings.forEach(meeting => {
                 const meetingDiv = document.createElement('div');
@@ -24,10 +25,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 meetingDiv.appendChild(nameHeader);
 
                 if (meeting.dates && meeting.dates.length > 0) {
+                    let hasValidDates = false;
                     meeting.dates.forEach(date => {
                         const meetingDate = new Date(date);
 
-                        if (meetingDate >= today) {  // Display only future meetings
+                        if (meetingDate >= today) {
+                            hasFutureMeetings = true;
+                            hasValidDates = true;
 
                             const formattedDate = meetingDate.toLocaleDateString('cs-CZ', {
                                 year: 'numeric',
@@ -41,21 +45,17 @@ document.addEventListener('DOMContentLoaded', function () {
                             meetingDiv.appendChild(dateParagraph);
                         }
                     });
-                } else {
-                    const noDatesMessage = document.createElement('p');
-                    noDatesMessage.textContent = 'Žádné termíny';
-                    meetingDiv.appendChild(noDatesMessage);
+                    if (!hasValidDates) {
+                         const noDatesMessage = document.createElement('p');
+                         noDatesMessage.textContent = 'Žádné termíny';
+                         meetingDiv.appendChild(noDatesMessage);
+                    }
+
                 }
-
-                meetingsContainer.appendChild(meetingDiv);
+                meetingsContainer.appendChild(meetingDiv)
             });
 
-            // Check if there are any future meetings
-            const hasFutureMeetings = Array.from(meetingsContainer.children).some(meetingDiv => {
-                return meetingDiv.querySelectorAll('p').length > 0;
-            });
-
-            if (!hasFutureMeetings && meetingsContainer.children.length === 0) {
+            if (!hasFutureMeetings) {
                 const noMeetingsMessage = document.createElement('p');
                 noMeetingsMessage.textContent = 'Žádné další naplánované schůzky';
                 noMeetingsMessage.classList.add('no-meetings-message');

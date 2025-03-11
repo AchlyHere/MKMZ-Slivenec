@@ -44,7 +44,7 @@ body {
 .title {
     color: #fff;
     font-family: 'Times New Roman', Times, serif;
-    font-size: 2.0em;  /* Změněno na 2em pro konzistenci */
+    font-size: 2em;  /* Změněno na 2em pro konzistenci */
     margin: 0;
 }
 

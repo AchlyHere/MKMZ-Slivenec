@@ -14,38 +14,21 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             const today = new Date();
-            const groupedMeetings = {};
 
-            // Group meetings by name
             meetings.forEach(meeting => {
-                if (!groupedMeetings[meeting.name]) {
-                    groupedMeetings[meeting.name] = [];
-                }
-                meeting.dates.forEach(date => {
-                    const meetingDate = new Date(date);
-                    if (meetingDate >= today) {
-                        groupedMeetings[meeting.name].push(meetingDate);
-                    }
-                });
-            });
+                const meetingDiv = document.createElement('div');
+                meetingDiv.classList.add('meeting');
 
-            // Display grouped meetings
-            let hasFutureMeetings = false;
-            for (const name in groupedMeetings) {
-                if (groupedMeetings.hasOwnProperty(name)) {
-                    const meetingDates = groupedMeetings[name];
+                const nameHeader = document.createElement('h2');
+                nameHeader.textContent = meeting.name;
+                meetingDiv.appendChild(nameHeader);
 
-                    if (meetingDates.length > 0) {
-                        hasFutureMeetings = true; // Set flag if there is a future meeting
+                if (meeting.dates && meeting.dates.length > 0) {
+                    meeting.dates.forEach(date => {
+                        const meetingDate = new Date(date);
 
-                        const meetingDiv = document.createElement('div');
-                        meetingDiv.classList.add('meeting');
+                        if (meetingDate >= today) {  // Display only future meetings
 
-                        const nameHeader = document.createElement('h2');
-                        nameHeader.textContent = name;
-                        meetingDiv.appendChild(nameHeader);
-
-                        meetingDates.forEach(meetingDate => {
                             const formattedDate = meetingDate.toLocaleDateString('cs-CZ', {
                                 year: 'numeric',
                                 month: 'long',
@@ -56,14 +39,23 @@ document.addEventListener('DOMContentLoaded', function () {
                             const dateParagraph = document.createElement('p');
                             dateParagraph.textContent = formattedDate;
                             meetingDiv.appendChild(dateParagraph);
-                        });
-
-                        meetingsContainer.appendChild(meetingDiv);
-                    }
+                        }
+                    });
+                } else {
+                    const noDatesMessage = document.createElement('p');
+                    noDatesMessage.textContent = 'Žádné termíny';
+                    meetingDiv.appendChild(noDatesMessage);
                 }
-            }
 
-            if (!hasFutureMeetings) {
+                meetingsContainer.appendChild(meetingDiv);
+            });
+
+            // Check if there are any future meetings
+            const hasFutureMeetings = Array.from(meetingsContainer.children).some(meetingDiv => {
+                return meetingDiv.querySelectorAll('p').length > 0;
+            });
+
+            if (!hasFutureMeetings && meetingsContainer.children.length === 0) {
                 const noMeetingsMessage = document.createElement('p');
                 noMeetingsMessage.textContent = 'Žádné další naplánované schůzky';
                 noMeetingsMessage.classList.add('no-meetings-message');

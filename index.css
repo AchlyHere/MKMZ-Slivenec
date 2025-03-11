@@ -69,25 +69,20 @@ body {
     text-decoration: underline;
 }
 
-/* Contact info styling */
+/* Contact info styling - TAKEN FROM index.css */
 .contact-info {
     margin-top: auto;
     text-align: center;
     color: #fff;
+    font-size: 1.2em;
     font-family: Helvetica, sans-serif;
     width: 100%;
-    padding: 20px 0;
-}
-
-.contact-info p {
-    font-size: 1.4em;   /* Velikost textu "Kontakt:" */
 }
 
 .contact-info a {
     color: #fff;
     text-decoration: none;
-    font-family: Helvetica, sans-serif;
-    font-size: 1.4em;    /* Velikost e-mailu */
+    font-size: 1.4em;
 }
 
 .contact-info a:hover {

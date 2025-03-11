@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 noMeetingsMessage.textContent = 'Žádné další naplánované schůzky';
                 noMeetingsMessage.classList.add('no-meetings-message');
                 meetingsContainer.appendChild(noMeetingsMessage);
-                return; // Stop processing if there are no meetings
+                return;
             }
 
             let hasFutureMeetings = false;
@@ -21,8 +21,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     meeting.dates.forEach(date => {
                         const meetingDate = new Date(date);
 
-                        if (meetingDate >= today) {  // Display only future meetings
-                            hasFutureMeetings = true; // Set flag if there is a future meeting
+                        if (meetingDate >= today) {
+                            hasFutureMeetings = true;
 
                             const meetingDiv = document.createElement('div');
                             meetingDiv.classList.add('meeting');
@@ -64,3 +64,4 @@ document.addEventListener('DOMContentLoaded', function () {
             meetingsContainer.appendChild(errorMessage);
         });
 });
+

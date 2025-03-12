@@ -26,6 +26,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 if (meeting.dates && meeting.dates.length > 0) {
                     let hasValidDates = false;
+                    const datesContainer = document.createElement('div'); // Create a container for dates
+
                     meeting.dates.forEach(date => {
                         const meetingDate = new Date(date);
 
@@ -42,26 +44,27 @@ document.addEventListener('DOMContentLoaded', function () {
                             });
                             const dateParagraph = document.createElement('p');
                             dateParagraph.textContent = formattedDate;
-                            meetingDiv.appendChild(dateParagraph);
+                            datesContainer.appendChild(dateParagraph); // Append dates to the container
                         }
                     });
-                    
-                     if (hasValidDates) {
-                         const addressParagraph = document.createElement('p');
-                         addressParagraph.textContent = 'Adresa: ' + meeting.address;
-                        addressParagraph.style.marginTop = '10px'; // Add margin
-                         meetingDiv.appendChild(addressParagraph);
 
-                         const gpsParagraph = document.createElement('p');
+                    if (hasValidDates) {
+                        meetingDiv.appendChild(datesContainer); // Append dates container to the meetingDiv
+                         const addressParagraph = document.createElement('p');
+                        addressParagraph.textContent = 'Adresa: ' + meeting.address;
+                        addressParagraph.style.marginTop = '10px'; // Add margin
+                        meetingDiv.appendChild(addressParagraph);
+
+                        const gpsParagraph = document.createElement('p');
                         gpsParagraph.textContent = `GPS: ${meeting.gpsCoordinates.latitude}, ${meeting.gpsCoordinates.longitude}`;
                         gpsParagraph.style.marginTop = '5px'; // Add margin
-                         meetingDiv.appendChild(gpsParagraph);
-                     }
-                    if (!hasValidDates) {
-                         const noDatesMessage = document.createElement('p');
-                         noDatesMessage.textContent = 'Žádné termíny';
-                         meetingDiv.appendChild(noDatesMessage);
+                        meetingDiv.appendChild(gpsParagraph);
                     }
+                     if (!hasValidDates) {
+                             const noDatesMessage = document.createElement('p');
+                            noDatesMessage.textContent = 'Žádné termíny';
+                            meetingDiv.appendChild(noDatesMessage);
+                         }
 
                 } else {
                     const noDatesMessage = document.createElement('p');

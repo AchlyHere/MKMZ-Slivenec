@@ -45,22 +45,31 @@ document.addEventListener('DOMContentLoaded', function () {
                             meetingDiv.appendChild(dateParagraph);
                         }
                     });
+                    
+                     if (hasValidDates) {
+                         const addressParagraph = document.createElement('p');
+                         addressParagraph.textContent = 'Adresa: ' + meeting.address;
+                        addressParagraph.style.marginTop = '10px'; // Add margin
+                         meetingDiv.appendChild(addressParagraph);
+
+                         const gpsParagraph = document.createElement('p');
+                        gpsParagraph.textContent = `GPS: ${meeting.gpsCoordinates.latitude}, ${meeting.gpsCoordinates.longitude}`;
+                        gpsParagraph.style.marginTop = '5px'; // Add margin
+                         meetingDiv.appendChild(gpsParagraph);
+                     }
                     if (!hasValidDates) {
-                        const noDatesMessage = document.createElement('p');
-                        noDatesMessage.textContent = 'Žádné termíny';
-                        meetingDiv.appendChild(noDatesMessage);
+                         const noDatesMessage = document.createElement('p');
+                         noDatesMessage.textContent = 'Žádné termíny';
+                         meetingDiv.appendChild(noDatesMessage);
                     }
 
-                // Add address and GPS coordinates after dates
-                    const addressParagraph = document.createElement('p');
-                    addressParagraph.textContent = 'Adresa: ' + meeting.address;
-                    meetingDiv.appendChild(addressParagraph);
-
-                    const gpsParagraph = document.createElement('p');
-                    gpsParagraph.textContent = `GPS: ${meeting.gpsCoordinates.latitude}, ${meeting.gpsCoordinates.longitude}`;
-                    meetingDiv.appendChild(gpsParagraph);
+                } else {
+                    const noDatesMessage = document.createElement('p');
+                    noDatesMessage.textContent = 'Žádné termíny';
+                    meetingDiv.appendChild(noDatesMessage);
                 }
-                meetingsContainer.appendChild(meetingDiv)
+
+                meetingsContainer.appendChild(meetingDiv);
             });
 
             if (!hasFutureMeetings) {

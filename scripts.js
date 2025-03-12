@@ -24,16 +24,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 nameHeader.textContent = meeting.name;
                 meetingDiv.appendChild(nameHeader);
 
-                // Add address
-                const addressParagraph = document.createElement('p');
-                addressParagraph.textContent = 'Adresa: ' + meeting.address;
-                meetingDiv.appendChild(addressParagraph);
-
-                // Add GPS coordinates
-                const gpsParagraph = document.createElement('p');
-                gpsParagraph.textContent = `GPS: ${meeting.gpsCoordinates.latitude}, ${meeting.gpsCoordinates.longitude}`;
-                meetingDiv.appendChild(gpsParagraph);
-
                 if (meeting.dates && meeting.dates.length > 0) {
                     let hasValidDates = false;
                     meeting.dates.forEach(date => {
@@ -60,6 +50,15 @@ document.addEventListener('DOMContentLoaded', function () {
                         noDatesMessage.textContent = 'Žádné termíny';
                         meetingDiv.appendChild(noDatesMessage);
                     }
+
+                // Add address and GPS coordinates after dates
+                    const addressParagraph = document.createElement('p');
+                    addressParagraph.textContent = 'Adresa: ' + meeting.address;
+                    meetingDiv.appendChild(addressParagraph);
+
+                    const gpsParagraph = document.createElement('p');
+                    gpsParagraph.textContent = `GPS: ${meeting.gpsCoordinates.latitude}, ${meeting.gpsCoordinates.longitude}`;
+                    meetingDiv.appendChild(gpsParagraph);
                 }
                 meetingsContainer.appendChild(meetingDiv)
             });

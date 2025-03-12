@@ -23,7 +23,7 @@ body {
     height: 100%;
 }
 
-/* Left section styling (Copied from index.css) */
+/* Left section styling */
 .left-section {
     width: 20%;
     background-color: #252525;
@@ -44,11 +44,11 @@ body {
 .title {
     color: #fff;
     font-family: 'Times New Roman', Times, serif;
-    font-size: 2em;  /* Změněno na 2em pro konzistenci */
+    font-size: 2em;
     margin: 0;
 }
 
-/* Navigation styling (Copied from index.css) */
+/* Navigation styling */
 .navigation {
     flex-grow: 1;
     display: flex;
@@ -78,27 +78,6 @@ body {
 .navigation a:hover {
     text-decoration: underline;
 }
-
-/* Contact info styling - TAKEN FROM index.css */
-.contact-info {
-    margin-top: auto;
-    text-align: center;
-    color: #fff;
-    font-size: 1.2em;
-    font-family: Helvetica, sans-serif;
-    width: 100%;
-}
-
-.contact-info a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.4em;
-}
-
-.contact-info a:hover {
-    text-decoration: underline;
-}
-
 /* Right section styling */
 .right-section {
     flex: 1;

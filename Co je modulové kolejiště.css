@@ -12,7 +12,7 @@ body {
     width: 100%;
 }
 
-/* Left section styling - TAKEN FROM index.css */
+/* Left section styling */
 .left-section {
     width: 20%;
     background-color: #252525;
@@ -37,7 +37,7 @@ body {
     margin: 0;
 }
 
-/* Navigation styling - TAKEN FROM index.css */
+/* Navigation styling */
 .navigation {
     flex-grow: 1;
     display: flex;
@@ -65,26 +65,6 @@ body {
 }
 
 .navigation a:hover {
-    text-decoration: underline;
-}
-
-/* Contact info styling - TAKEN FROM index.css */
-.contact-info {
-    margin-top: auto;
-    text-align: center;
-    color: #fff;
-    font-size: 1.2em;
-    font-family: Helvetica, sans-serif;
-    width: 100%;
-}
-
-.contact-info a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.4em;
-}
-
-.contact-info a:hover {
     text-decoration: underline;
 }
 

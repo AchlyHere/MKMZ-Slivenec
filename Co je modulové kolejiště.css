@@ -109,12 +109,11 @@ body {
     text-align: center;
     color: #fff;
     width: 100%;
-    box-sizing: border-box;
 }
 
 /* Content styles */
 .content {
-    text-align: left;
+    text-align: center;
     color: #fff;
     font-family: 'Georgia', serif;
     font-size: 1.2em;
@@ -151,8 +150,13 @@ body {
         padding: 10px;
     }
 
+    .content {
+        font-size: 1em;
+    }
+
     .content img {
-        max-width: 100%;
+        width: 90%;
+        max-width: none;
     }
 
     .navigation a {

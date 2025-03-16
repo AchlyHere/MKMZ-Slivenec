@@ -78,6 +78,28 @@ body {
 .navigation a:hover {
     text-decoration: underline;
 }
+
+/* Contact info styling - přidáno pro zachování vzhledu e-mailu */
+.contact-info {
+    margin-top: auto;
+    text-align: center;
+    color: #fff;
+    font-family: Helvetica, sans-serif;
+    width: 100%;
+    padding: 20px 0;
+}
+
+.contact-info a {
+    color: #fff !important; /* Přepsání výchozí modré barvy */
+    text-decoration: none;
+    font-family: Helvetica, sans-serif;
+    font-size: 1.4em;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
 /* Right section styling */
 .right-section {
     flex: 1;

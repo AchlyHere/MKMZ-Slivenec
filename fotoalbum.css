@@ -265,6 +265,12 @@ body {
     }
 }
 
+@media (max-width: 768px) {
+    .contact-info {
+        padding-bottom: calc(20px + env(safe-area-inset-bottom));
+    }
+}
+
 @media (min-width: 769px) and (max-width: 1079px) { /* Pro tablety a menší desktopy */
     .photo-album {
         grid-template-columns: 1fr; /* 1 fotka na řádek */

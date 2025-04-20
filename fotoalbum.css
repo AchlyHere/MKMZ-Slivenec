@@ -4,25 +4,26 @@ html {
     box-sizing: border-box;
 }
 
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
     display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    overflow-x: hidden;
-    box-sizing: border-box;
     height: 100vh;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
 }
 
-/* Hlavní kontejner */
+/* Kontejner pro celé rozložení */
 .container {
     display: flex;
+    width: 100%;
     height: 100%;
-    overflow: hidden;
 }
 
-/* Levý panel (navigace) */
+/* Left section styling */
 .left-section {
     width: 20%;
     background-color: #252525;
@@ -30,87 +31,76 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow-y: auto;
     box-sizing: border-box;
-    position: relative;
-    overflow: hidden;
-    height: 100%;
+    transition: width 0.3s ease;
 }
 
 .left-section img {
     width: 80%;
-    max-width: 100%;
     margin-bottom: 30px;
 }
 
 .title {
     color: #fff;
     font-family: 'Times New Roman', Times, serif;
-    font-size: 1.5em;
+    font-size: 2em;
     margin: 0;
-    text-align: center;
 }
 
-/* Navigace */
+/* Navigation styling */
 .navigation {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     text-align: center;
-    width: 100%;
-    overflow-y: auto;
-    height: 100%;
 }
 
 .navigation ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    width: 100%;
 }
 
 .navigation li {
-    margin: 10px 0;
+    margin: 15px 0;
 }
 
 .navigation a {
     color: #fff;
     text-decoration: none;
     font-family: Helvetica, sans-serif;
-    font-size: 1.2em;
-    display: block;
-    padding: 5px 10px;
-    transition: background-color 0.3s ease;
+    font-size: 1.6em;
 }
 
 .navigation a:hover {
     text-decoration: underline;
-    background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Kontaktní informace */
+/* Contact info styling - přidáno pro zachování vzhledu e-mailu */
 .contact-info {
     margin-top: auto;
     text-align: center;
     color: #fff;
-    font-size: 0.8em;
     font-family: Helvetica, sans-serif;
     width: 100%;
     padding: 20px 0;
-    box-sizing: border-box;
 }
 
 .contact-info a {
-    color: #fff;
+    color: #fff !important; /* Přepsání výchozí modré barvy */
     text-decoration: none;
+    font-family: Helvetica, sans-serif;
+    font-size: 1.4em;
 }
 
 .contact-info a:hover {
     text-decoration: underline;
 }
 
-/* Pravý panel (fotoalbum) */
+/* Right section styling */
 .right-section {
     flex: 1;
     background-color: rgba(0, 0, 0, 0.7);
@@ -120,72 +110,61 @@ body {
     box-sizing: border-box;
 }
 
+/* Sekce roku */
+.year-section {
+    margin-bottom: 60px;
+}
+
 /* Překryv (nadpisy roků) */
-.overlay {
+.year-section .overlay {
     padding: 20px;
     border-radius: 10px;
     text-align: center;
     color: #fff;
     width: 100%;
     box-sizing: border-box;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
-.overlay h1{
-    margin-top: 15px;
-    margin-bottom: 15px;
+.year-section .overlay h1 {
+    margin-top: 40px;
+    margin-bottom: 40px;
     margin-left: 0;
     margin-right: 0;
     line-height: 1.2em;
 }
 
-.overlay h2 {
-    margin-top: 15px;
-    margin-bottom: 15px;
+.year-section .overlay h2 {
+    margin-top: 40px;
+    margin-bottom: 40px;
     margin-left: 0;
     margin-right: 0;
     line-height: 1.2em;
 }
 
 /* Album sekce */
-.album-section {
+.photo-album {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 30px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+}
+
+/* Skupina fotek */
+.photo-group {
     margin-bottom: 30px;
 }
 
-.album-title {
+.photo-group h2 {
     color: #fff;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     font-size: 1.4em;
 }
 
-.album-links {
-    color: #fff;
-    margin-top: 0;
-    margin-bottom: 10px;
-    font-size: 0.9em;
-    text-align: center;
-}
-
-.album-links a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 5px;
-}
-
-.album-links a:hover {
-    text-decoration: underline;
-}
-
-.photo-album {
-    display: grid;
-    grid-template-columns: 1fr; /* Výchozí styl 1 sloupec */
-    grid-gap: 20px;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto; /* Centrování galerie */
-    margin-bottom: 30px;
-}
-
+/* Jednotlivá fotka */
 .photo {
     text-align: center;
     transition: transform 0.3s ease;
@@ -193,11 +172,6 @@ body {
 
 .photo:hover {
     transform: scale(1.05);
-}
-
-.photo a {
-    display: block;
-    position: relative; /* Pro umístění photo-text */
 }
 
 .photo img {
@@ -215,76 +189,69 @@ body {
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
-.photo-text {
-    position: absolute; /* Absolutní pozicování */
-    bottom: 0; /* Umístění dole */
-    left: 0; /* Od levého okraje */
-    width: 100%; /* Šířka 100% */
-    background-color: rgba(0, 0, 0, 0.5); /* Průhledné pozadí */
+/* Odkazy k fotce */
+.photo-links {
     color: #fff;
-    padding: 10px;
+    margin-top: 10px;
     text-align: center;
-    transform: translateY(100%); /* Skryté mimo obrazovku */
-    transition: transform 0.3s ease; /* Plynulý přechod */
 }
 
-.photo:hover .photo-text {
-    transform: translateY(0); /* Zobrazení po najetí myší */
+.photo-links a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
 }
 
+.photo-links a:hover {
+    text-decoration: underline;
+}
 
-.photo-text h3 {
-    margin: 0;
+/* Toggle button */
+.toggle-btn {
+    display: none;
 }
 
 /* Responzivní design */
-@media (max-width: 768px) { /* Pro telefony v collapsed left section – TODO: Zkontrolovat collapsed left section */
-    .container {
-        flex-direction: column;
-        height: auto;
-    }
-
+@media (max-width: 768px) {
     .left-section {
-        width: 100%;
-        height: auto;
-        overflow-y: auto;
-    }
-
-    .navigation {
-        height: auto;
-        overflow-y: auto;
+        width: 40%;
     }
 
     .right-section {
         padding: 10px;
-        height: auto;
     }
 
     .photo-album {
-        grid-template-columns: 1fr; /* 1 fotka na řádek */
+        grid-template-columns: 1fr;
     }
-}
+    
+    .navigation a {
+        font-size: 1.2em; /* Increased font size even more */
+    }
 
-@media (max-width: 768px) {
     .contact-info {
-        padding-bottom: calc(20px + env(safe-area-inset-bottom));
+        font-size: 1.2em;
+    }
+    
+    .contact-info a {
+        font-size: 1.2em;
     }
 }
 
-@media (min-width: 769px) and (max-width: 1079px) { /* Pro tablety a menší desktopy */
+@media (min-width: 769px) and (max-width: 1023px) { /* Pro tablety a menší desktopy */
     .photo-album {
-        grid-template-columns: 1fr; /* 1 fotka na řádek */
+        grid-template-columns: repeat(2, 1fr);
     }
 }
-    
-@media (min-width: 1080px) and (max-width: 1439px) { /* Pro desktopy */
+
+@media (min-width: 1024px) and (max-width: 1439px) {
     .photo-album {
-        grid-template-columns: repeat(3, 1fr); /* 3 fotky na řádek */
+        grid-template-columns: repeat(3, 1fr);
     }
 }
-    
-@media (min-width: 1440px) { /* Pro velké desktopy a monitory */
+
+@media (min-width: 1440px) {
     .photo-album {
-        grid-template-columns: repeat(4, 1fr); /* 4 fotky na řádek */
+        grid-template-columns: repeat(4, 1fr);
     }
 }

@@ -182,6 +182,7 @@ body {
     }
 
     .contact-info {
+        padding-bottom: calc(40px + env(safe-area-inset-bottom));
         font-size: 1.2em;
     }
     

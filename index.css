@@ -144,6 +144,10 @@ body {
     .navigation a {
         font-size: 1.2em;
     }
+    
+    .contact-info {
+        padding-bottom: calc(40px + env(safe-area-inset-bottom));
+    }
 
     .contact-info p {
         font-size: 1.2em;

@@ -238,7 +238,7 @@ body {
     }
 }
 
-@medi (max-width: 768px) {
+@media (max-width: 768px) {
     .contact-info {
         padding-bottom: calc(40px + env(safe-area-inset-bottom));
     }

@@ -80,10 +80,13 @@ body {
 }
 
 .contact-info a {
-    color: #fff !important; /* Přepsání výchozí modré barvy */
+    color: #fff !important;
     text-decoration: none;
     font-family: Helvetica, sans-serif;
     font-size: 1.4em;
+    /* word-break: normal;  <-- tento řádek NEPIŠTE ani nikde jinde nepoužívejte break-all/break-word */
+    overflow-wrap: normal;
+    white-space: normal;
 }
 
 .contact-info a:hover {

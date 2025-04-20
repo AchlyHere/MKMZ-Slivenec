@@ -82,7 +82,7 @@ body {
     color: #fff !important;
     text-decoration: none;
     font-family: Helvetica, sans-serif;
-    font-size: 1.4em;
+    font-size: 1em;
     /* word-break: normal;  <-- tento řádek NEPIŠTE ani nikde jinde nepoužívejte break-all/break-word */
     overflow-wrap: normal;
     white-space: normal;

@@ -238,6 +238,12 @@ body {
     }
 }
 
+@medi (max-width: 768px) {
+    .contact-info {
+        padding-bottom: calc(40px + env(safe-area-inset-bottom));
+    }
+}
+
 @media (min-width: 769px) and (max-width: 1023px) { /* Pro tablety a menší desktopy */
     .photo-album {
         grid-template-columns: repeat(2, 1fr);

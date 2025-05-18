@@ -3,74 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles-about.css">
+    <link rel="stylesheet" href="About.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <title>MKMŽ Slivenec - O nás</title>
 </head>
 <body>
-    <div class="container">
-        <div class="hamburger" id="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
+    <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+    <label for="menu-toggle" class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </label>
     <div class="container">
         <div class="left-section">
-            <!--suppress HtmlRequiredAltAttribute -->
-            <img src="IMG_0488.JPEG">
+            <img src="IMG_0488.JPEG" alt="Logo MKMŽ Slivenec">
             <p class="title">MKMŽ Slivenec</p>
             <nav class="navigation">
                 <ul>
-                    <li><a href="index.html">Úvod</a></li>
+                    <li><a href="Index.html">Úvod</a></li>
                     <li><a href="About.html">O nás</a></li>
                     <li><a href="Railway.html">Co je modulové kolejiště?</a></li>
-                    <li><a href="meetings.html">Schůzky</a></li>
-                    <li><a href="fotoalbum.html">Fotoalbum</a></li>
+                    <li><a href="Meetings.html">Schůzky</a></li>
+                    <li><a href="Fotoalbum.html">Fotoalbum</a></li>
                 </ul>
             </nav>
-		</div>
             <div class="contact-info">
                 <p>Kontakt:</p>
-                <p><a href="mailto:nadrazislivenec@seznam.cz">nadrazislivenec@seznam.cz</a></p>
+                <p>
+                  <a href="mailto:nadrazislivenec@seznam.cz" style="word-break: break-all;">
+                    nadrazislivenec<wbr>@seznam.cz
+                  </a>
+                </p>
+                <p style="margin-top:10px; font-size:smaller;">
+                  &copy; 2012–<span id="year"></span> MKMŽ Slivenec. Všechna práva vyhrazena.
+                </p>
+                <script>
+                  document.getElementById('year').textContent = new Date().getFullYear();
+                </script>
             </div>
         </div>
         <div class="right-section">
             <div class="overlay">
                 <h1>O nás</h1>
-                <section class="about">
-                    <div class="img">
-                        <p>Vítejte na stránkách modelářského kroužku modulové železnice MKMŽ Slivenec.</p>
-                        <p>Naším cílem je přiblížit svět železnice dětem i dospělým prostřednictvím modelářství.</p>
-                        <p>Scházíme se pravidelně každý druhý týden, kde společně vyrábíme moduly.</p>
-                        <p>Přijďte se k nám podívat a stát se součástí našeho týmu!</p>
-                    </div>
-                    <!--suppress HtmlRequiredAltAttribute -->
-                    <img src="111.jpg">
-                    <div class="img">
-                    <p>Kroužek je pro děti od třetí třídy. </p>
-                    <p>Horní hranice je neomezená. Vítáni jsou i dospělí.</p>
-                    <p>Naučíte se zde pracovat s různými materiály</p>
-                    <p>(dřevo, polystyren, sádra, barvy, lepidla, drátky, posypy, foliáž apod.)</p>
-                    </div>
-                    <div class="img">
-                    <!--suppress HtmlRequiredAltAttribute -->
-                        <img src="9.3.2009-029.jpg">
-                    <p>Každý pracuje na svém kusu modulu (48 x 86 cm) na dané téma,</p>
-                    <p>který může spojit s ostatními moduly a tím vytvořit libovolně prostorové kolejiště.</p>
-                    </div>
-                    <div class="img">
-                    <!--suppress HtmlRequiredAltAttribute -->
-                        <img src="0022.jpg">
-                    <p>Modelujeme měřítku 1:87 (velikost H0).</p>
-                    <p>V současné době je tato modelová velikost nejvíce rozšířena</p>
-                    <p>a vyrábí ji většina světových výrobců.</p>
-                    </div>
-                    <!--suppress HtmlRequiredAltAttribute -->
-                    <img src="0016.jpg">
-                </section>
+                <p>Vítejte na stránkách modelářského kroužku modulové železnice MKMŽ Slivenec.</p>
+                <p>Naším cílem je přiblížit svět železnice dětem i dospělým prostřednictvím modelářství.</p>
+                <p>Scházíme se pravidelně každý druhý týden, kde společně vyrábíme moduly.</p>
+                <p>Přijďte se k nám podívat a stát se součástí našeho týmu!</p>
+                <hr style="margin:20px 0; border: 1px solid #fff; opacity:0.3;">
+                <p>Kroužek je pro děti od třetí třídy.<br>
+                Horní hranice je neomezená. Vítáni jsou i dospělí.<br>
+                Naučíte se zde pracovat s různými materiály (dřevo, polystyren, sádra, barvy, lepidla, drátky, posypy, foliáž apod.).<br>
+                Každý pracuje na svém kusu modulu (48 x 86 cm) na dané téma, který může spojit s ostatními moduly a tím vytvořit libovolně prostorové kolejiště.<br>
+                Modelujeme v měřítku 1:87 (velikost H0).<br>
+                V současné době je tato modelová velikost nejvíce rozšířena a vyrábí ji většina světových výrobců.</p>
             </div>
         </div>
     </div>
-    <script src="scripts.js"></script>
 </body>
-</html> 
+</html>

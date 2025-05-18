@@ -3,238 +3,430 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles-fotoalbum.css">
+    <link rel="stylesheet" href="Fotoalbum.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <title>MKMŽ Slivenec - Fotoalbum</title>
 </head>
 <body>
     <div class="container">
-        <div class="hamburger" id="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
         <div class="left-section">
-            <!--suppress HtmlRequiredAltAttribute -->
             <img src="IMG_0488.JPEG">
             <p class="title">MKMŽ Slivenec</p>
             <nav class="navigation">
                 <ul>
-                    <li><a href="index.html">Úvod</a></li>
+                    <li><a href="Index.html">Úvod</a></li>
                     <li><a href="About.html">O nás</a></li>
                     <li><a href="Railway.html">Co je modulové kolejiště?</a></li>
-                    <li><a href="meetings.html">Schůzky</a></li>
-                    <li><a href="fotoalbum.html">Fotoalbum</a></li>
+                    <li><a href="Meetings.html">Schůzky</a></li>
+                    <li><a href="Fotoalbum.html">Fotoalbum</a></li>
                 </ul>
             </nav>
             <div class="contact-info">
                 <p>Kontakt:</p>
-                <p><a href="mailto:nadrazislivenec@seznam.cz">nadrazislivenec@seznam.cz</a></p>
-            </div>
+                <p>
+                  <a href="mailto:nadrazislivenec@seznam.cz" style="word-break: break-all;">
+                    nadrazislivenec<wbr>@seznam.cz
+                  </a>
+                </p>
+                <p style="margin-top:10px; font-size:smaller;">
+                  &copy; 2012–<span id="year"></span> MKMŽ Slivenec. Všechna práva vyhrazena.
+                </p>
+                <script>
+                  document.getElementById('year').textContent = new Date().getFullYear();
+                </script>
+              </div>
         </div>
         <div class="right-section">
-            <div class="overlay">
-                <h1>2023</h1>
-                <div class="year">
-                    <div class="photo-album">
+            <div class="year-section">
+                <div class="overlay">
+                    <h1>2023</h1>
+                </div>
+                <div class="photo-album">
+                    <div class="photo-group">
+                        <h2>Modletice</h2>
                         <div class="photo">
-                            <a href="https://www.nadrazislivenec.cz/fotoalbum/modletice-2023/" target="_blank">
-                                <div class="photo-text">
-                                    <h3>Modletice</h3>
-                                </div>
-                                <img src="20230924_123437.jpg" alt="Modletice 2023">
-                            </a>
+                            <img src="20230924_123437.jpg">
+                            <div class="photo-links">
+                                <a href="https://www.nadrazislivenec.cz/fotoalbum/modletice-2023/" target="_blank">Modletice</a>
+                            </div>
                         </div>
+                    </div>
+                    <div class="photo-group">
+                        <h2>Slivenec</h2>
                         <div class="photo">
-                            <a href="https://www.nadrazislivenec.cz/fotoalbum/vystava-slivenec-2023/" target="_blank">
-                                <div class="photo-text">
-                                    <h3>Slivenec</h3>
-                                </div>
-                                <img src="20230909_173539.jpg" alt="Slivenec 2023">
-                            </a>
+                            <img src="20230909_173539.jpg">
+                            <div class="photo-links">
+                                <a href="https://www.nadrazislivenec.cz/fotoalbum/vystava-slivenec-2023/" target="_blank">Slivenec</a>
+                            </div>
                         </div>
+                    </div>
+                    <div class="photo-group">
+                        <h2>Braník</h2>
                         <div class="photo">
-                            <a href="https://www.nadrazislivenec.cz/fotoalbum/branik-2023/" target="_blank">
-                                <div class="photo-text">
-                                    <h3>Braník</h3>
-                                </div>
-                                <img src="20230603_102555.jpg" alt="Braník 2023">
-                            </a>
+                            <img src="20230603_102555.jpg">
+                            <div class="photo-links">
+                                <a href="https://www.nadrazislivenec.cz/fotoalbum/branik-2023/" target="_blank">Braník</a>
+                            </div>
                         </div>
+                    </div>
+                    <div class="photo-group">
+                        <h2>Vimperk</h2>
                         <div class="photo">
-                            <a href="https://www.nadrazislivenec.cz/fotoalbum/vimperk-2023/" target="_blank">
-                                <div class="photo-text">
-                                    <h3>Vimperk</h3>
-                                </div>
-                                <img src="20230527_143321.jpg" alt="Vimperk 2023">
-                            </a>
+                            <img src="20230527_143321.jpg">
+                            <div class="photo-links">
+                                <a href="https://www.nadrazislivenec.cz/fotoalbum/vimperk-2023/" target="_blank">Vimperk</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <h1>2022</h1>
-                <div class="year">
-                    <div class="photo-album">
+            </div>
+
+            <div class="year-section">
+                <div class="overlay">
+                    <h1>2022</h1>
+                </div>
+                <div class="photo-album">
+                    <div class="photo-group">
+                        <h2>Řevnice</h2>
                         <div class="photo">
-                            <a href="https://www.nadrazislivenec.cz/fotoalbum/revnice-2022/20220521_120409.html" target="_blank">
-                                <div class="photo-text">
-                                    <h3>Řevnice</h3>
-                                </div>
-                                <img src="20220521_120409.jpg" alt="Řevnice 2022">
-                            </a>
+                            <img src="20220521_120409.jpg">
+                            <div class="photo-links">
+                                <a href="https://www.nadrazislivenec.cz/fotoalbum/revnice-2022/20220521_120409.html" target="_blank">Řevnice</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <h1>2019</h1>
-                <div class="year">
-                    <div class="photo-album">
+            </div>
+
+            <div class="year-section">
+                <div class="overlay">
+                    <h1>2019</h1>
+                </div>
+                <div class="photo-album">
+                    <div class="photo-group">
+                        <h2>Smíchovské nádraží</h2>
                         <div class="photo">
-                            <a href="https://www.rajce.idnes.cz/mokr2/album/smichovske-nadrazi-2019" target="_blank">
-                                <div class="photo-text">
-                                    <h3>Smíchovské nádraží</h3>
-                                </div>
-                                <img src="20191129_185508.jpg" alt="Smíchovské nádraží 2019">
-                            </a>
+                            <img src="20191129_185508.jpg">
+                            <div class="photo-links">
+                                <a href="https://www.rajce.idnes.cz/mokr2/album/smichovske-nadrazi-2019" target="_blank">Smíchovské nádraží</a>
+                            </div>
                         </div>
+                    </div>
+                    <div class="photo-group">
+                        <h2>Letňany</h2>
                         <div class="photo">
-                            <a href="https://www.rajce.idnes.cz/mokr2/album/letnany-2019" target="_blank">
-                                <div class="photo-text">
-                                    <h3>Letňany</h3>
-                                </div>
-                                <img src="20191018_110513.jpg" alt="Letňany 2019">
-                            </a>
+                            <img src="20191018_110513.jpg">
+                            <div class="photo-links">
+                                <a href="https://www.rajce.idnes.cz/mokr2/album/letnany-2019" target="_blank">Letňany</a>
+                            </div>
                         </div>
+                    </div>
+                    <div class="photo-group">
+                        <h2>Slivenec</h2>
                         <div class="photo">
-                            <a href="https://www.rajce.idnes.cz/mokr2/album/vystava-slivenec-2019" target="_blank">
-                                <div class="photo-text">
-                                    <h3>Slivenec</h3>
-                                </div>
-                                <img src="20190907_133314.jpg" alt="Slivenec 2019">
-                            </a>
+                            <img src="20190907_133314.jpg">
+                            <div class="photo-links">
+                                <a href="https://www.rajce.idnes.cz/mokr2/album/vystava-slivenec-2019" target="_blank">Slivenec</a>
+                            </div>
                         </div>
+                    </div>
+                    <div class="photo-group">
+                        <h2>Holešovice</h2>
                         <div class="photo">
-                            <a href="https://www.rajce.idnes.cz/mokr2/album/holesovice-2019/1449375394" target="_blank">
-                                <div class="photo-text">
-                                    <h3>Holešovice</h3>
-                                </div>
-                                <img src="20190602_175202.jpg" alt="Holešovice 2019">
-                            </a>
+                            <img src="20190602_175202.jpg">
+                            <div class="photo-links">
+                                <a href="https://www.rajce.idnes.cz/mokr2/album/holesovice-2019/1449375394" target="_blank">Holešovice</a>
+                            </div>
                         </div>
+                    </div>
+                    <div class="photo-group">
+                        <h2>Braník</h2>
                         <div class="photo">
-                            <a href="https://www.rajce.idnes.cz/mokr2/album/branik-2019" target="_blank">
-                                <div class="photo-text">
-                                    <h3>Braník</h3>
-                                </div>
-                                <img src="20190601_080346.jpg" alt="Braník 2019">
-                            </a>
+                            <img src="20190601_080346.jpg">
+                            <div class="photo-links">
+                                <a href="https://www.rajce.idnes.cz/mokr2/album/branik-2019" target="_blank">Braník</a>
+                            </div>
                         </div>
+                    </div>
+                    <div class="photo-group">
+                        <h2>Drážďany</h2>
                         <div class="photo">
-                            <a href="https://www.rajce.idnes.cz/mokr2/album/drazdany-2019" target="_blank">
-                                <div class="photo-text">
-                                    <h3>Drážďany</h3>
-                                </div>
-                                <img src="20190216_082227.jpg" alt="Drážďany 2019">
-                            </a>
+                            <img src="20190216_082227.jpg">
+                            <div class="photo-links">
+                                <a href="https://www.rajce.idnes.cz/mokr2/album/drazdany-2019" target="_blank">Drážďany</a>
+                            </div>
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <div class="year-section">
+                <div class="overlay">
+                    <h1>2018</h1>
+                </div>
+                <div class="photo-album">
+                    <div class="photo-group">
+                        <h2>Smíchovské nádraží</h2>
                         <div class="photo">
-                            <a href="https://www.rajce.idnes.cz/mokr2/album/libebona-2018" target="_blank">
-                                <div class="photo-text">
-                                    <h3>Líbebona</h3>
-                                </div>
-                                <img src="20180420_142037.jpg" alt="Líbebona 2018">
-                            </a>
+                            <img src="20181201_133118.jpg">
+                            <div class="photo-links">
+                                <a href="https://www.rajce.idnes.cz/mokr2/album/smichovske-nadrazi-prosinec-2018" target="_blank">Smíchovské nádraží</a>
+                            </div>
                         </div>
+                    </div>
+                    <div class="photo-group">
+                        <h2>Letňany</h2>
                         <div class="photo">
-                            <a href="https://www.rajce.idnes.cz/mokr2/album/vystava-chotebor-22-25-3-2018" target="_blank">
-                                <div class="photo-text">
-                                    <h3>Chotěboř</h3>
-                                </div>
-                                <img src="20180323_090826.jpg" alt="Chotěboř 2018">
-                            </a>
+                            <img src="20181026_143248.jpg">
+                            <div class="photo-links">
+                                <a href="https://www.rajce.idnes.cz/mokr2/album/letnany-2018" target="_blank">Letňany</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="photo-group">
+                        <h2>Slivenec</h2>
+                        <div class="photo">
+                            <img src="20180908_172414.jpg">
+                            <div class="photo-links">
+                                <a href="https://www.rajce.idnes.cz/mokr2/album/slivenec-2018" target="_blank">Slivenec</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="photo-group">
+                        <h2>Pečky</h2>
+                        <div class="photo">
+                            <img src="20180525_104018.jpg">
+                            <div class="photo-links">
+                                <a href="https://www.rajce.idnes.cz/mokr2/album/pecky-2018" target="_blank">Pečky</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="photo-group">
+                        <h2>Líbebona</h2>
+                        <div class="photo">
+                            <img src="20180420_142037.jpg">
+                            <div class="photo-links">
+                                <a href="https://www.rajce.idnes.cz/mokr2/album/libebona-2018" target="_blank">Líbebona</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="photo-group">
+                        <h2>Chotěboř</h2>
+                        <div class="photo">
+                            <img src="20180323_081933.jpg">
+                            <div class="photo-links">
+                                <a href="https://www.rajce.idnes.cz/mokr2/album/vystava-chotebor-22-25-3-2018" target="_blank">Chotěboř</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <h1>2017</h1>
-                <div class="year">
-                    <div class="photo-album">
+            </div>
+
+            <div class="year-section">
+                <div class="overlay">
+                    <h1>2017</h1>
+                </div>
+                <div class="photo-album">
+                    <div class="photo-group">
+                        <h2>Smíchovské nádraží</h2>
                         <div class="photo">
-                            <a href="https://www.rajce.idnes.cz/mokr2/album/vystava-smichovske-nadrazi-2-3-12-2017" target="_blank">
-                                <div class="photo-text">
-                                    <h3>Smíchovské nádraží</h3>
-                                </div>
-                                <img src="20171202_093155.jpg" alt="Smíchovské nádraží 2017">
-                            </a>
+                            <img src="20171202_093155.jpg">
+                            <div class="photo-links">
+                                <a href="http://mokr2.rajce.idnes.cz/Vystava_Smichovske_nadrazi_2.-3.12.2017/" target="_blank">Smíchovské nádraží</a>
+                            </div>
                         </div>
+                    </div>
+                    <div class="photo-group">
+                        <h2>Slivenec</h2>
                         <div class="photo">
-                            <a href="https://www.rajce.idnes.cz/mokr2/album/vystava-chotebor-8-9-dubna-2017-jirka" target="_blank">
-                                <div class="photo-text">
-                                    <h4>foto Jirka</h4>
-                                </div>
-                                <img src="pan23020.jpg" alt="Chotěboř 2017">
-                            </a>
+                            <img src="20170909_001600.jpg">
+                            <div class="photo-links">
+                                <a href="http://mokr2.rajce.idnes.cz/Vystava_Slivenec_9.-10.9.2017_-_Dan/" target="_blank">Slivenec - Foto Dan</a>
+                                <a href="http://mokr2.rajce.idnes.cz/Vystava_Chotebor_8.-9.dubna_2017_-_Petra/" target="_blank">Slivenec - Foto Jirka</a>
+                                <a href="https://photos.app.goo.gl/WuDfMELfhpwBSF5Y2" target="_blank">Slivenec - Foto Tomáš Smejkal</a>
+                                <a href="http://mokr2.rajce.idnes.cz/Vystava_Slivenec_9.-10.9.2017_-_Milan/" target="_blank">Slivenec - Foto Milan</a>
+                                <a href="https://www.rajce.idnes.cz/mokr2/album/vystava-slivenec-9-10-9-2017-daniel-livecka" target="_blank">Slivenec - Foto Daniel Livecka</a>
+                            </div>
                         </div>
+                    </div>
+                    <div class="photo-group">
+                        <h2>Chotěboř</h2>
                         <div class="photo">
-                            <a href="https://www.rajce.idnes.cz/mokr2/album/vystava-chotebor-8-9-dubna-2017-petra" target="_blank">
-                                <div class="photo-text">
-                                    <h4>foto Petra</h4>
-                                </div>
-                                <img src="pan23020.jpg" alt="Chotěboř 2017">
-                            </a>
+                            <img src="20170407_224333.jpg">
+                            <div class="photo-links">
+                                <a href="http://mokr2.rajce.idnes.cz/Vystava_Chotebor_8.-9.dubna_2017_-_Dan/" target="_blank">Chotěboř - Foto Dan</a>
+                                <a href="https://www.rajce.idnes.cz/mokr2/album/vystava-chotebor-8-9-dubna-2017-petra" target="_blank">Chotěboř - Foto Petra</a>
+                                <a href="https://www.rajce.idnes.cz/mokr2/album/vystava-chotebor-8-9-dubna-2017-jirka" target="_blank">Chotěboř - Foto Jirka</a>
+                            </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="year-section">
+                <div class="overlay">
+                    <h1>2016</h1>
+                </div>
+                <div class="photo-album">
+                    <div class="photo-group">
+                        <h2>Česká hračka</h2>
                         <div class="photo">
-                            <a href="https://www.rajce.idnes.cz/mokr2/album/vystava-chotebor-8-9-dubna-2017-dan" target="_blank">
-                                <div class="photo-text">
-                                    <h4>foto Dan</h4>
-                                </div>
-                                <img src="pan23020.jpg" alt="Chotěboř 2017">
-                            </a>
+                            <img src="023.jpg">
+                            <div class="photo-links">
+                                <a href="https://www.rajce.idnes.cz/mokr2/album/vystava-ceska-hracka-2016" target="_blank">Česká hračka</a>
+                            </div>
                         </div>
+                    </div>
+                    <div class="photo-group">
+                        <h2>Smíchovské nádraží</h2>
                         <div class="photo">
-                            <a href="https://www.rajce.idnes.cz/mokr2/album/vystava-slivenec-9-10-9-2017-daniel-livecka" target="_blank">
-                                <div class="photo-text">
-                                    <h4>foto Daniel Livecka</h4>
-                                </div>
-                                <img src="P_20170909_141942_vHDR_On_1.jpg" alt="Slivenec 2017">
-                            </a>
+                            <img src="20161202_184922.jpg">
+                            <div class="photo-links">
+                                <a href="http://mokr2.rajce.idnes.cz/Vystava_Smichovske_nadrazi_2016_-_Dan/" target="_blank">Smíchovské nádraží - Foto Dan</a>
+                                <a href="http://mokr2.rajce.idnes.cz/Vystava_Smichovske_nadrazi_2016_-_Jirka/" target="_blank">Smíchovské nádraží - Foto Jirka</a>
+                            </div>
                         </div>
+                    </div>
+                    <div class="photo-group">
+                        <h2>Slivenec</h2>
                         <div class="photo">
-                            <a href="https://mokr2.rajce.idnes.cz/" target="_blank">
-                                <div class="photo-text">
-                                    <h4>foto Milan</h4>
-                                </div>
-                                <img src="P_20170909_141942_vHDR_On_1.jpg" alt="Slivenec 2017">
-                            </a>
+                            <img src="022.jpg">
+                            <div class="photo-links">
+                                <a href="http://mokr2.rajce.idnes.cz/Vystava_MKMZ_-_Slivenec_10.-11.9.2016/" target="_blank">Slivenec</a>
+                            </div>
                         </div>
+                    </div>
+                    <div class="photo-group">
+                        <h2>12. Erlebnis Modellbahn MESSE DRESDEN</h2>
                         <div class="photo">
-                            <a href="https://www.rajce.idnes.cz/mokr2/album/vystava-slivenec-9-10-9-2017-jirka" target="_blank">
-                                <div class="photo-text">
-                                    <h4>foto Jirka</h4>
-                                </div>
-                                <img src="P_20170909_141942_vHDR_On_1.jpg" alt="Slivenec 2017">
-                            </a>
+                            <img src="006.jpg">
+                            <div class="photo-links">
+                                <a href="https://www.rajce.idnes.cz/mokr2/album/12-erlebnis-modellbahn-messe-dresden-12-14-2-ctvrtek" target="_blank">Čtvrtek</a>
+                                <a href="https://www.rajce.idnes.cz/mokr2/album/12-erlebnis-modellbahn-messe-dresden-12-14-2-patek" target="_blank">Pátek</a>
+                                <a href="https://www.rajce.idnes.cz/mokr2/album/12-erlebnis-modellbahn-messe-dresden-12-14-2-sobota" target="_blank">Sobota</a>
+                                <a href="https://www.rajce.idnes.cz/mokr2/album/12-erlebnis-modellbahn-messe-dresden-12-14-2-nedele" target="_blank">Neděle</a>
+                                <a href="http://zababov.rajce.idnes.cz/Drazdany_2016/" target="_blank">Foto Vilda</a>
+                            </div>
                         </div>
+                    </div>
+                    <div class="photo-group">
+                        <h2>Líbebona</h2>
                         <div class="photo">
-                            <a href="https://www.rajce.idnes.cz/mokr2/album/vystava-slivenec-9-10-9-2017-petra-jakub" target="_blank">
-                                <div class="photo-text">
-                                    <h4>foto Petra a Jakub</h4>
-                                </div>
-                                <img src="P_20170909_141942_vHDR_On_1.jpg" alt="Slivenec 2017">
-                            </a>
+                            <img src="20180420_142037.jpg">
+                            <div class="photo-links">
+                                <a href="https://www.rajce.idnes.cz/mokr2/album/libebona-2018" target="_blank">Líbebona</a>
+                            </div>
                         </div>
+                    </div>
+                     <div class="photo-group">
+                        <h2>Chotěboř</h2>
                         <div class="photo">
-                            <a href="https://www.rajce.idnes.cz/mokr2/album/vystava-slivenec-9-10-9-2017-dan" target="_blank">
-                                <div class="photo-text">
-                                    <h4>foto Dan</h4>
-                                </div>
-                                <img src="P_20170909_141942_vHDR_On_1.jpg" alt="Slivenec 2017">
-                            </a>
+                            <img src="20180323_081933.jpg">
+                            <div class="photo-links">
+                                <a href="https://www.rajce.idnes.cz/mokr2/album/vystava-chotebor-22-25-3-2018" target="_blank">Chotěboř</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="year-section">
+                <div class="overlay">
+                    <h1>2015</h1>
+                </div>
+                <div class="photo-album">
+                    <div class="photo-group">
+                        <h2>Smíchovské nádraží</h2>
+                        <div class="photo">
+                            <img src="04.jpg">
+                            <div class="photo-links">
+                                <a href="http://www.nadrazislivenec.cz/fotoalbum/vystava-smichovske-nadrazi/" target="_blank">Smíchovské nádraží</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="photo-group">
+                        <h2>Slivenec</h2>
+                        <div class="photo">
+                            <img src="013c.jpg">
+                            <div class="photo-links">
+                                <a href="https://www.rajce.idnes.cz/mokr2/album/vystava-mkmz-slivenec-5-6-9-2015" target="_blank">Slivenec</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="photo-group">
+                        <h2>Dětský den - Braník</h2>
+                        <div class="photo">
+                            <img src="20150530_111437.jpg">
+                            <div class="photo-links">
+                                <a href="https://www.nadrazislivenec.cz/fotoalbum/detsky-den---nadrazi-branik/" target="_blank">Dětský den - Braník</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="photo-group">
+                        <h2>Modletice</h2>
+                        <div class="photo">
+                            <img src="P3210015.jpg">
+                            <div class="photo-links">
+                                <a href="https://www.rajce.idnes.cz/mokr2/album/modletice-21-3-2015" target="_blank">Modletice</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="year-section">
+                <div class="overlay">
+                    <h1>2014</h1>
+                </div>
+                <div class="photo-album">
+                    <div class="photo-group">
+                        <h2>11. Erlebnis Modellbahn MESSE DRESDEN - návštěva</h2>
+                        <div class="photo">
+                            <img src="DSC_0720.jpg">
+                            <div class="photo-links">
+                                <a href="http://mokr2.rajce.idnes.cz/11._Erlebnis_Modellbahn_MESSE_DRESDEN_14.2.2015#" target="_blank">11. Erlebnis Modellbahn MESSE DRESDEN - návštěva</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="photo-group">
+                        <h2>Modletice</h2>
+                        <div class="photo">
+                            <img src="DSC_0496.jpg">
+                            <div class="photo-links">
+                                <a href="https://www.rajce.idnes.cz/mokr2/album/modletice-11-2014" target="_blank">Modletice</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="photo-group">
+                        <h2>Modletice podruhé</h2>
+                        <div class="photo">
+                            <img src="DSC_0443.jpg">
+                            <div class="photo-links">
+                                <a href="http://zababov.rajce.idnes.cz/Modletice_2014_4/" target="_blank">Modletice podruhé</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="photo-group">
+                        <h2>Modell hobby Spiel Lipsko - návštěva</h2>
+                        <div class="photo">
+                            <img src="20141004_124617.jpg">
+                            <div class="photo-links">
+                                <a href="https://www.rajce.idnes.cz/mokr2/album/modell-hobby-spiel-lipsko-4-10-2014" target="_blank">Modell hobby Spiel Lipsko - návštěva</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="photo-group">
+                        <h2>Slivenec</h2>
+                        <div class="photo">
+                            <img src="DSC_0188.jpg">
+                            <div class="photo-links">
+                                <a href="https://www.rajce.idnes.cz/mokr2/album/vystava-mkmz-slivenec-6-7-9-2014" target="_blank">Slivenec</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <script src="scripts.js"></script>
 </body>
 </html>

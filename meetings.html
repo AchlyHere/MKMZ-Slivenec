@@ -3,81 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles-meetings.css">
+    <link rel="stylesheet" href="Meetings.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <title>Schůzky</title>
 </head>
 <body>
     <div class="container">
-        <div class="hamburger" id="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
         <div class="left-section">
-            <!--suppress HtmlRequiredAltAttribute -->
             <img src="IMG_0488.JPEG">
             <p class="title">MKMŽ Slivenec</p>
             <nav class="navigation">
-                <ul>
-                    <li><a href="index.html">Úvod</a></li>
-                    <li><a href="About.html">O nás</a></li>
-                    <li><a href="Railway.html">Co je modulové kolejiště?</a></li>
-                    <li><a href="meetings.html">Schůzky</a></li>
-                    <li><a href="fotoalbum.html">Fotoalbum</a></li>
-                </ul>
+              <ul>
+                <li><a href="Index.html">Úvod</a></li>
+                <li><a href="About.html">O nás</a></li>
+                <li><a href="Railway.html">Co je modulové kolejiště?</a></li>
+                <li><a href="Meetings.html">Schůzky</a></li>
+                <li><a href="Fotoalbum.html">Fotoalbum</a></li>
+              </ul>
             </nav>
             <div class="contact-info">
                 <p>Kontakt:</p>
-                <p><a href="mailto:nadrazislivenec@seznam.cz">nadrazislivenec@seznam.cz</a></p>
-            </div>
+                <p>
+                  <a href="mailto:nadrazislivenec@seznam.cz" style="word-break: break-all;">
+                    nadrazislivenec<wbr>@seznam.cz
+                  </a>
+                </p>
+                <p style="margin-top:10px; font-size:smaller;">
+                  &copy; 2012–<span id="year"></span> MKMŽ Slivenec. Všechna práva vyhrazena.
+                </p>
+                <script>
+                  document.getElementById('year').textContent = new Date().getFullYear();
+                </script>
+              </div>
         </div>
         <div class="right-section">
             <h1>Nejbližší schůzky kroužku</h1>
             <div id="meetings-container">
-                <script>
-                    fetch('meetings.json')
-                        .then(response => response.json())
-                        .then(data => {
-                            let container = document.getElementById('meetings-container');
-                            let now = new Date();
-                            let futureMeetings = data.schuzky.map(meeting => {
-                                let futureDates = meeting.dates.filter(date => new Date(date) > now);
-                                return { name: meeting.name, address: meeting.address, dates: futureDates };
-                            }).filter(meeting => meeting.dates.length > 0);
-
-                            if (futureMeetings.length === 0) {
-                                container.textContent = 'Žádné další naplánované schůzky';
-                            } else {
-                                futureMeetings.forEach(meeting => {
-                                    let meetingDiv = document.createElement('div');
-                                    meetingDiv.classList.add('meeting');
-
-                                    let title = document.createElement('h2');
-                                    title.textContent = meeting.name;
-                                    meetingDiv.appendChild(title);
-
-                                    let address = document.createElement('p');
-                                    address.textContent = `Adresa: ${meeting.address}`;
-                                    meetingDiv.appendChild(address);
-
-                                    let datesList = document.createElement('ul');
-                                    meeting.dates.forEach(date => {
-                                        let listItem = document.createElement('li');
-                                        listItem.textContent = new Date(date).toLocaleString('cs-CZ');
-                                        datesList.appendChild(listItem);
-                                    });
-                                    meetingDiv.appendChild(datesList);
-
-                                    container.appendChild(meetingDiv);
-                                });
-                            }
-                        })
-                        .catch(error => console.error('Error loading meetings:', error));
-                </script>
+                <!-- Meetings will be dynamically inserted here -->
             </div>
-            <script>scripts.js</script>
         </div>
     </div>
+
+    <script src="scripts.js"></script>
 </body>
 </html>

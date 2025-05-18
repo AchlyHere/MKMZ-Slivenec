@@ -1,51 +1,93 @@
 document.addEventListener('DOMContentLoaded', function () {
-  // Získání referencí na potřebné HTML elementy
-  const hamburger = document.getElementById('hamburger');
-  const leftSection = document.querySelector('.left-section');
-  const rightSection = document.querySelector('.right-section');
+    fetch('meetings.json')
+        .then(response => response.json())
+        .then(data => {
+            const meetings = data.schuzky;
+            const meetingsContainer = document.getElementById('meetings-container');
 
-  // Přidání event listeneru pro kliknutí na hamburger ikonu
-  hamburger.addEventListener('click', function() {
-    // Přepínání CSS tříd pro změnu vzhledu a stavu menu
-    hamburger.classList.toggle('open');
-    leftSection.classList.toggle('collapsed');
-    rightSection.classList.toggle('expanded');
-  });
+            if (!meetings || meetings.length === 0) {
+                const noMeetingsMessage = document.createElement('p');
+                noMeetingsMessage.textContent = 'Žádné další naplánované schůzky';
+                noMeetingsMessage.classList.add('no-meetings-message');
+                meetingsContainer.appendChild(noMeetingsMessage);
+                return;
+            }
 
-  // Pole schůzek s daty a popisy
-  /*const meetings = [
-      { date: '' },
-      { date: '' },
-      { date: '' }
-  ];
+            const today = new Date();
+            let hasFutureMeetings = false;
 
-  const meetingsContainer = document.getElementById('meetings-container');
+            meetings.forEach(meeting => {
+                const meetingDiv = document.createElement('div');
+                meetingDiv.classList.add('meeting');
 
-  // Kontrola, zda jsou naplánovány nějaké schůzky
-  if (meetings.length === 0 || meetings.every(meeting => meeting.date === '')) {
-    // Zobrazení zprávy, pokud nejsou naplánovány žádné další schůzky
-    const noMeetingsMessage = document.createElement('p');
-    noMeetingsMessage.textContent = 'Žádné další naplánované schůzky';
-    noMeetingsMessage.classList.add('no-meetings-message');
-    meetingsContainer.appendChild(noMeetingsMessage);
-  } else {
-    // Vytvoření HTML elementů pro každou schůzku
-    meetings.forEach(meeting => {
-      if (meeting.date) {
-        const meetingDiv = document.createElement('div');
-        meetingDiv.classList.add('meeting');
+                const nameHeader = document.createElement('h2');
+                nameHeader.textContent = meeting.name;
+                meetingDiv.appendChild(nameHeader);
 
-        const dateHeader = document.createElement('h2');
-        dateHeader.textContent = meeting.date;
+                if (meeting.dates && meeting.dates.length > 0) {
+                    let hasValidDates = false;
+                    const datesContainer = document.createElement('div'); // Create a container for dates
 
-        const descriptionParagraph = document.createElement('p');
-        descriptionParagraph.textContent = meeting.description;
+                    meeting.dates.forEach(date => {
+                        const meetingDate = new Date(date);
 
-        meetingDiv.appendChild(dateHeader);
-        meetingDiv.appendChild(descriptionParagraph);
+                        if (meetingDate >= today) {
+                            hasFutureMeetings = true;
+                            hasValidDates = true;
 
-        meetingsContainer.appendChild(meetingDiv);
-      }
-    });
-  }*/
+                            const formattedDate = meetingDate.toLocaleDateString('cs-CZ', {
+                                year: 'numeric',
+                                month: 'long',
+                                day: 'numeric',
+                                hour: '2-digit',
+                                minute: '2-digit'
+                            });
+                            const dateParagraph = document.createElement('p');
+                            dateParagraph.textContent = formattedDate;
+                            datesContainer.appendChild(dateParagraph); // Append dates to the container
+                        }
+                    });
+
+                    if (hasValidDates) {
+                        meetingDiv.appendChild(datesContainer); // Append dates container to the meetingDiv
+                         const addressParagraph = document.createElement('p');
+                        addressParagraph.textContent = 'Adresa: ' + meeting.address;
+                        addressParagraph.style.marginTop = '10px'; // Add margin
+                        meetingDiv.appendChild(addressParagraph);
+
+                        const gpsParagraph = document.createElement('p');
+                        gpsParagraph.textContent = `GPS: ${meeting.gpsCoordinates.latitude}, ${meeting.gpsCoordinates.longitude}`;
+                        gpsParagraph.style.marginTop = '5px'; // Add margin
+                        meetingDiv.appendChild(gpsParagraph);
+                    }
+                     if (!hasValidDates) {
+                             const noDatesMessage = document.createElement('p');
+                            noDatesMessage.textContent = 'Žádné termíny';
+                            meetingDiv.appendChild(noDatesMessage);
+                         }
+
+                } else {
+                    const noDatesMessage = document.createElement('p');
+                    noDatesMessage.textContent = 'Žádné termíny';
+                    meetingDiv.appendChild(noDatesMessage);
+                }
+
+                meetingsContainer.appendChild(meetingDiv);
+            });
+
+            if (!hasFutureMeetings) {
+                const noMeetingsMessage = document.createElement('p');
+                noMeetingsMessage.textContent = 'Žádné další naplánované schůzky';
+                noMeetingsMessage.classList.add('no-meetings-message');
+                meetingsContainer.appendChild(noMeetingsMessage);
+            }
+        })
+        .catch(error => {
+            console.error('Error fetching meetings:', error);
+            const meetingsContainer = document.getElementById('meetings-container');
+            const errorMessage = document.createElement('p');
+            errorMessage.textContent = 'Nepodařilo se načíst schůzky.';
+            errorMessage.classList.add('no-meetings-message');
+            meetingsContainer.appendChild(errorMessage);
+        });
 });

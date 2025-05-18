@@ -95,7 +95,7 @@ body {
 /* Right section styling */
 .right-section {
     flex: 1;
-    background-image: url('index-bg-rs.jpeg');
+    background-color: rgba(0, 0, 0, 0.7);
     background-size: cover;
     background-position: center;
     display: flex;

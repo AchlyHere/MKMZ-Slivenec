@@ -125,6 +125,15 @@ body {
     text-align: center;
 }
 
+.right-section img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 10px;
+    border: 2px solid #fff;
+    margin: 20px 0;
+}
+
 /* Hamburger menu system */
 .hamburger {
     display: none;

@@ -163,7 +163,7 @@ body {
     display: none;
 }
 
-/* Mobile styles */
+/* --- RESPONSIVE MOBILE MENU --- */
 @media (max-width: 768px) {
     .hamburger {
         display: flex;
@@ -204,12 +204,14 @@ body {
         padding: 28px 10px 30px 10px;
         box-sizing: border-box;
     }
+    /* Výchozí stav - pravá sekce vidět, levá schovaná */
     .menu-toggle:not(:checked) ~ .hamburger ~ .container .left-section {
         transform: translateX(-100vw);
     }
     .menu-toggle:not(:checked) ~ .hamburger ~ .container .right-section {
         display: flex !important;
     }
+    /* Po kliknutí na hamburger - levá sekce vidět, pravá schovaná */
     .menu-toggle:checked ~ .hamburger ~ .container .left-section {
         transform: translateX(0);
     }

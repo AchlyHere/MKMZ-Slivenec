@@ -184,6 +184,7 @@ body {
 }
 
 /* Hamburger menu system */
+/* Hamburger menu system */
 .hamburger {
     display: none;
     position: fixed;
@@ -210,7 +211,7 @@ body {
     display: none;
 }
 
-/* Responzivní design */
+/* Mobilní hamburger menu */
 @media (max-width: 768px) {
     .hamburger {
         display: flex;
@@ -265,10 +266,6 @@ body {
     .menu-toggle:checked ~ .hamburger ~ .container .right-section {
         display: none !important;
     }
-    .left-section {
-        width: 100vw;
-        min-width: 0;
-    }
     .left-section img {
         width: 60%;
         max-width: 180px;
@@ -290,14 +287,6 @@ body {
         font-size: 1em;
         padding-bottom: calc(20px + env(safe-area-inset-bottom, 0px)) !important;
         margin-bottom: 0 !important;
-    }
-    .photo-album {
-        grid-template-columns: 1fr;
-    }
-}
-@media (min-width: 769px) and (max-width: 1023px) {
-    .photo-album {
-        grid-template-columns: repeat(2, 1fr);
     }
 }
 @media (min-width: 1024px) and (max-width: 1439px) {

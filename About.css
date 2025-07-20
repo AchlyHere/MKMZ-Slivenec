@@ -204,6 +204,9 @@ body {
         padding: 28px 10px 30px 10px;
         box-sizing: border-box;
     }
+    .right-section h1 {
+        text-align: center;
+    }
     /* Výchozí stav - pravá sekce vidět, levá schovaná */
     .menu-toggle:not(:checked) ~ .hamburger ~ .container .left-section {
         transform: translateX(-100vw);

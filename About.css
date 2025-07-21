@@ -197,8 +197,6 @@ body {
         display: flex !important;
         flex-direction: column;
         justify-content: flex-start;
-        align-items: flex-start;
-        text-align: left;
         width: 100vw;
         min-width: 0;
         padding: 28px 10px 30px 10px;
